@@ -1,0 +1,28 @@
+@import './nav/nav.scss';
+@import './account/account.scss';
+
+.header {
+    max-width: 100%;
+}
+.header__inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1.8rem auto;
+}
+.col-logo,
+.col-nav,
+.col-account {}
+.col-logo {
+    margin-right: auto;
+
+}
+.col-nav {}
+.col-account {}
+
+.logo {
+
+    .logo__img {
+        
+    }
+}

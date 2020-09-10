@@ -1,0 +1,63 @@
+$bg-color-button: #fff;
+
+.link {
+    color: $dark-shade-50;
+    font: normal $text-body-size / 1 $montserrat-family;
+}
+
+
+.nav {
+    max-width: 100%;
+}
+.nav__list {
+    display: flex;
+    justify-content: space-between;
+}
+.nav__item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 2rem 0 0;
+}
+.nav__link {
+    @extend .link;
+}
+.nav__link_active {
+    color: $dark-shade-75;
+    font: bold $text-body-size / 1 $montserrat-family;
+}
+.nav__button-drop {
+    @extend .link;
+    outline: none;
+    border: none;
+    background-color: $bg-color-button;
+}
+
+// NESTED LIST
+.nested {
+    position: absolute;
+    align-self: center;
+    top: 2.5rem;
+}
+.nested__item {
+
+}
+.nested__link {
+    @extend .nav__link;
+}
+.dropdown_hide {
+    display: none;
+}
+
+// ICON ARROW
+.icon-arrow {
+    cursor: pointer;
+    &::after {
+        content: '';
+        display: inline-block;
+        margin: 0 0rem 0 1rem;
+        height: 1.15rem;
+        width: 1.15rem;
+        background: center / contain no-repeat url('../../assets/images/select-arrow.svg');
+    }
+}

@@ -1,0 +1,28 @@
+@mixin linkProps {
+    &:link {
+
+    }
+    &:visited {
+
+    }
+    &:hover {
+
+    }
+    &:focus {
+
+    }
+    &:active {
+
+    }
+}
+@mixin font($width, $size, $f-family) {
+    font: $width $size $f-family;
+}
+@mixin arrowField(
+    $position: center right, 
+    $size: 15% 22.5%, 
+    $repeat: no-repeat, 
+    $path: '../images/select-arrow.svg'
+    ) {
+    background: $position / $size $repeat url($path);
+}

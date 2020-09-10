@@ -1,0 +1,72 @@
+// * * * * * * * * * * * * *
+// INPUT
+// LABEL
+.template-label {
+    color: $dark-shade-100;
+    text-transform: uppercase;
+    font: bold $title-size-h3 / 1 $montserrat-family;
+}
+.template-input {
+    outline: none;
+    color: $dark-shade-25;
+    border: .1rem solid $dark-shade-25;
+    font: normal $text-body-size / 1 $montserrat-family;
+    &::placeholder {
+        color: $dark-shade-25;
+    }
+}
+.template-hover {
+    &:focus,
+    &:hover {
+        border: .1rem solid $dark-shade-50;
+        color: $dark-shade-75;
+        &::placeholder {
+            color: $dark-shade-75;
+        }
+    }
+}
+
+// INPUT GEOMRTY
+// LABEL GEOMRTY
+.template-geometry {
+    display: flex;
+    flex-direction: column;
+    padding: 1.3rem 1.5rem;
+    border-radius: .4rem;
+    height: $input-height-44;
+    margin-top: .5rem;
+}
+.template-label-geometry {
+    margin-bottom: .5rem;
+}
+
+// WIDTH & HEIGHT
+.template-small-width {
+    width: $input-width-15;
+}
+.template-large-width {
+    width: $input-width-32;
+}
+
+// EXTENDS CLASSES USES THIS TEMPLATE
+// LABEL
+.label {
+    @extend .template-label; 
+}
+.label-geometry {
+    @extend .template-label-geometry;
+}
+
+// INPUT
+.input {
+    @extend .template-input;
+}
+.input-geometry {
+    @extend .template-geometry;
+    @extend .template-large-width; 
+}
+
+// EFFECT 
+.input_hover {
+    @extend .template-hover;
+}

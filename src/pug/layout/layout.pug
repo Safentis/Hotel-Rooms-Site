@@ -1,0 +1,18 @@
+block variables
+    - var title = "index"
+    - var kw = "index"
+    - var dc = "index description"
+
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="keywords", content="#{kw}")
+        meta(name="description", content="#{dc}")
+        title #{title}
+    body
+        block header
+            include ../components/header/header.pug
+        block content
+            
