@@ -1,10 +1,14 @@
+- var login = true
+
 mixin loginOff()
     a(class="account-in", href="#", type="button") войти
     a(class="account-registration", href="#", type="button") зарегистрироваться
 
 mixin loginOn()
-    p(class="account-login-on") Юлий Цезарь
+    p(class="account-login-on account-login-on-line") Юлий Цезарь
 
 div(class="block-account")
-    a(class="account-in", href="#", type="button") войти
-    a(class="account-registration", href="#", type="button") зарегистрироваться
+    if login == true
+        +loginOn
+    else
+        +loginOff

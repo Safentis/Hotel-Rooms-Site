@@ -4,7 +4,7 @@
     "version": "0.0.1",
     "scripts": {
         "build": "webpack --config webpack-prod.config.js",
-        "dev": "webpack-dev-server --open --config webpack-dev.config.js",
+        "dev": "webpack-dev-server --config webpack-dev.config.js",
         "predeploy": "npm run build",
         "deploy": "gh-pages -d dist"
     },

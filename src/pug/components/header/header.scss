@@ -10,13 +10,12 @@
     flex-wrap: wrap;
     margin: 1.8rem auto;
 }
-.col-logo,
-.col-nav,
-.col-account {}
-.col-logo {
+.header__col-logo {
     margin-right: auto;
-
 }
+.header__col-nav {}
+.header__col-account {}
+
 .col-nav {}
 .col-account {}
 

@@ -1,0 +1,50 @@
+
+// TEMPLATE
+.title-h3 {
+    font: bold $title-size-h3 / 1 $montserrat-family;
+    color: $dark-shade-100;
+}
+
+.reward-description {
+    @extend .text;
+    line-height: 2.4rem;   
+}
+
+
+.nav__nested-block {} 
+.nested-block {}
+.nested-block__title {
+    @extend .title-h3;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+}
+.nested-block__list {
+    margin-top: 2.1rem;
+}
+.nested-block__item {
+    @extend .text;
+    line-height: 1.7rem;
+    margin-top: 2rem;
+}
+.nested-block__text {
+    @extend .reward-description;
+}
+.input-wrapper {
+    position: relative;
+    max-width: 26rem;
+    &::after {
+        content: '';
+        cursor: pointer;
+        position: absolute;
+        display: block;
+        background: center / contain no-repeat url('../images/arrow-forward.svg');
+        width: 2.2rem;
+        height: 2.2rem;
+
+        right: 5%;
+        top: 28%;
+    }
+    .nested-block__email {
+        width: 26rem;
+    }
+}

@@ -25,14 +25,12 @@
 }
 .dropdown-geometry {
     @extend .template-geometry;
-    @extend .template-small-width; 
 }
 
 // LIST
 .dropdown-list {
     z-index: 10;
     border: .1rem solid $dark-shade-25;
-    @extend .template-small-width;
 }
 .dropdown-item {
     @extend .dropdown-item-geometry;

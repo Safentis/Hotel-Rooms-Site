@@ -29,24 +29,14 @@
 // INPUT GEOMRTY
 // LABEL GEOMRTY
 .template-geometry {
-    display: flex;
-    flex-direction: column;
     padding: 1.3rem 1.5rem;
     border-radius: .4rem;
     height: $input-height-44;
-    margin-top: .5rem;
 }
 .template-label-geometry {
     margin-bottom: .5rem;
 }
 
-// WIDTH & HEIGHT
-.template-small-width {
-    width: $input-width-15;
-}
-.template-large-width {
-    width: $input-width-32;
-}
 
 // EXTENDS CLASSES USES THIS TEMPLATE
 // LABEL
@@ -63,7 +53,6 @@
 }
 .input-geometry {
     @extend .template-geometry;
-    @extend .template-large-width; 
 }
 
 // EFFECT 

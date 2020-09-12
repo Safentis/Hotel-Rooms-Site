@@ -1,11 +1,10 @@
 header(class="header")
     div(class="header__inner container")
-        div(class="col-logo")
+        div(class="header__col-logo")
             div(class="block-logo")
                 a(class="logo" href="#" title="Logo")
                     img(class="logo__img" src="../../images/logo.svg" alt="logo")
-        div(class="col-nav")
-            div(class="block-nav")
-                include ./nav/nav.pug
-        div(class="col-account")
+        div(class="header__col-nav")
+            include ./nav/nav.pug
+        div(class="header__col-account")
             include ./account/account.pug

@@ -33,6 +33,13 @@ $gradient-reg-button: #8BA4F9;
 }
 
 .account-login-on {
-    @extend .link;
+    @extend .text;
     text-transform: capitalize;
+}
+.account-login-on-line {
+    display: flex;
+    align-items: center;
+    border-left: .1rem solid $dark-shade-5;
+    padding-left: 2rem;
+    height: 3rem;
 }
