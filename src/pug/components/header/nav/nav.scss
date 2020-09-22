@@ -50,9 +50,10 @@ $bg-color-button: #fff;
     position: absolute;
     align-self: center;
     top: 2.5rem;
+    left: 0.5rem;
 }
 .nested__item {
-
+    line-height: 4rem;
 }
 .nested__link {
     @extend .nav__link;

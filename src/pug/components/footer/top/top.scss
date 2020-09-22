@@ -1,0 +1,67 @@
+// FOOTER TOP ROW
+.footer__top-row {
+    display: flex;
+    flex-wrap: wrap;
+    .footer__col-logo {
+        flex: 26rem 0 0;
+    }
+    .footer__col-navigation {
+        flex: 1 0 0;
+        margin-left: 4rem;        
+    }
+}
+
+// COL-LOGO
+.reward-description {
+    @extend .text;
+    line-height: 2.4rem;   
+}
+
+// COL-NAVIGATION
+.nav__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.nav__nested-block {}
+.nested-block {}
+.nested-subscribe {
+    max-width: 26rem;
+}
+.nested-block__title {
+    @extend .title-h3;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+}
+.nested-block__list {
+    margin-top: 2.1rem;
+}
+.nested-block__item {
+    line-height: 1.7rem;
+    margin-top: 2rem;
+}
+.nested-block__link {
+    @extend .text;
+}
+.nested-block__text {
+    @extend .reward-description;
+}
+.input-wrapper {
+    position: relative;
+    max-width: 26rem;
+    &::after {
+        content: '';
+        cursor: pointer;
+        position: absolute;
+        display: block;
+        background: center / contain no-repeat url('../images/arrow-forward.svg');
+        width: 2.2rem;
+        height: 2.2rem;
+
+        right: 5%;
+        top: 28%;
+    }
+    .nested-block__email {
+        width: 26rem;
+    }
+}

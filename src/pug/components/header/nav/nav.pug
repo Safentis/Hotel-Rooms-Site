@@ -2,48 +2,35 @@
 - var buttonArrow = "icon-arrow"
 
 //- NESTED LIST
+//- 1 arg = []; 2 arg = className for example - dropdown_hide
 mixin nestedList(value, classHide = '')
     ul(class=`nested ${classHide}`)
-        li(class="nested__item")
-            a(class="nested__link", href="#") #{value}
+        each item in value
+            li(class="nested__item")
+                a(class="nested__link", href="#") #{item}
 
-//- BUTTON
-mixin button(text, classActive = "")
-    li(class="nav__item header__item")
-        button(
-            class=`nav__button-drop ${buttonArrow} ${classActive}`, 
-            data-dropdown="dropdown", 
-            type="button"
-        ) #{text}
-        +nestedList('TEXT', 'dropdown_hide')
-
-//- ITEM
-mixin item(text, classActive = "")
-    li(class="nav__item header__item")
-        a(class=`nav__link ${classActive}`, href="#") 
-            | #{text}
-
-mixin navItem(type, active, text)
-    case type
-        when "item" 
-            if active == "true"
-                +item(text, linkActive)
-            if active == "false"
-                +item(text)
-        when "button"
-            if active == "true"
-                +button(text, linkActive)
-            if active == "false"
-                +button(text)
-        default 
-            p. 
+mixin button(text, array)
+    button(
+        class=`nav__button-drop ${buttonArrow}`, 
+        data-dropdown="dropdown",
+        type="button"
+    )
+        | #{text}
+    +nestedList(array, 'dropdown_hide')
 
 div(class="block-nav")
     nav(class="nav")
         ul(class="nav__list")
-            //- (type="button or link", "active link or not active", "text") 
-            +navItem("item", "true", "О нас") 
-            +navItem("button", "false", "Услуги")
-            +navItem("item", "false", "Вакансии")
-            +navItem("item", "false", "Новости")
-            +navItem("button", "false", "Соглашение")
+            li(class="nav__item header__item")
+                a(class=`nav__link ${linkActive}`, href="#") 
+                    | О нас
+            li(class="nav__item header__item")
+                +button('Услуги', ['Example', 'Example', 'Example'])
+            li(class="nav__item header__item")
+                a(class=`nav__link`, href="#") 
+                    | Вакансии
+            li(class="nav__item header__item")
+                a(class=`nav__link`, href="#") 
+                    | Новости
+            li(class="nav__item header__item")
+                +button('Соглашение', ['Example', 'Example', 'Example'])
