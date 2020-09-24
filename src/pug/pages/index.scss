@@ -1,2 +1,13 @@
 @import '../components/header/header.scss';
 @import '../components/footer/footer.scss';
+
+.homescreen {
+    background: center / cover no-repeat url('../images/landing-page/landing-page-bg.jpg');
+}
+.main {
+    // height: 83.0rem;
+    padding: 7rem 0 38.6rem 0;
+}
+.main__inner {
+
+}

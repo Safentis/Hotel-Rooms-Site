@@ -1,0 +1,22 @@
+//- label(for="entry") Въезд
+//- input(id="entry", type="text", placeholder="ДД.ММ.ГГГГ")
+
+//- label(for="departure") Выезд
+//- input(id="departure", type="text", placeholder="ДД.ММ.ГГГГ")
+
+div(class="date-picker", id="date-picker")
+    div(class="date-picker__header", id="date-picker-head")
+    img(
+        class="date-picker__arrow arrow-left", 
+        data-left="left",
+        src="./images/arrow-left.svg",
+        alt="arrow left"
+    ) 
+    img(
+        class="date-picker__arrow arrow-right",
+        data-right="right",
+        src="./images/arrow-right.svg",
+        alt="arrow right"
+    )
+    table(class="date-picker__table")
+        tbody(class="date-picker__body", id="date-picker-body")
