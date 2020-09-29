@@ -11,3 +11,46 @@
 .main__inner {
 
 }
+
+.title-h1 {
+    font: bold $title-size-h1 / 1 $quicksand-family !important;
+    color: $title-color-h1;
+}
+.title-h2 {
+    font: 700 $title-size-h2 / 1 $quicksand-family !important;
+    color: $title-color-h2;
+}
+
+.rooms-card {
+    background-color: #fff;
+    padding: 4rem 3rem 3rem 3rem;
+    max-width: 38rem;
+}
+.rooms-card__inner {
+    display: flex;
+    flex-direction: column;
+}
+.rooms-card__form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.calendar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    .calendar-label {
+        width: 15rem;
+    }
+}
+.rooms-card-label {
+    margin-top: 2.056rem;
+}
+.form__button {
+    @extend .account-registration;
+    padding: 1.4rem 2.2rem 1.5rem 1.8rem;
+    margin-top: 3.1rem;
+    text-transform: uppercase;
+}

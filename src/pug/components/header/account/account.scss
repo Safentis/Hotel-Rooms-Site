@@ -4,11 +4,11 @@ $gradient-reg-button: #8BA4F9;
 // * * * * * * * * * * * * * *
 // TEMPLATE FOR ACCOUNT BUTTON
 
-.button-in {
+.button {
     cursor: pointer;
     font: bold $title-size-h3 / 1 $montserrat-family;
 }
-.button-in-geometry {
+.button-geometry {
     outline: none;
     border-radius: 2.2rem;
     padding: .9rem 2rem 1rem 2rem;
@@ -19,14 +19,14 @@ $gradient-reg-button: #8BA4F9;
     align-items: center;
 }
 .account-in {
-    @extend .button-in, .button-in-geometry;
+    @extend .button, .button-geometry;
     background-color: $bg-color-button;
     border: .1rem solid $purple;
     margin: 0 2rem 0 0;
     color: $purple;
 }
 .account-registration {
-    @extend .button-in, .button-in-geometry;
+    @extend .button, .button-geometry;
     background: linear-gradient(180deg, $purple 0%, $gradient-reg-button 100%);
     border: .1rem solid $color-reg-button;
     color: $color-reg-button;

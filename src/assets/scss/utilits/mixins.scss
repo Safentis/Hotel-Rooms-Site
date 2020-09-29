@@ -25,4 +25,5 @@
     $path: '../images/select-arrow.svg'
     ) {
     background: $position / $size $repeat url($path);
+    background-color: #fff;
 }

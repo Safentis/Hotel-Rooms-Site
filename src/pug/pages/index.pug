@@ -1,15 +1,55 @@
 extends ../layout/layout.pug
 
+//- сделать mixin для input
+
+mixin calendarInput(id, text, plc)
+    label(class="label label-geometry-150x44", for=`${id}`) 
+        | #{text}
+        input(
+            class="input input-geometry-150x44", 
+            type="text", 
+            id=`${id}`, 
+            placeholder=`${plc}`, 
+            readonly
+        )
+
+mixin calendar()
+    div(class="calendar-wrapper")
+        +calendarInput('entry', 'Прибытие', 'ДД.ММ.ГГГГ')
+        +calendarInput('departure', 'Выезд', 'ДД.ММ.ГГГГ')
+        include ../includes/calendar/calendar.pug
+
+mixin guestDropdown()
+    label(class="rooms-card-label label label-geometry-320x44", for="dropdown-guests") 
+        | Гости
+        input(
+            class="input input-geometry-320x44", 
+            placeholder="Сколько гостей?", 
+            data-dropdown="dropdown",
+            id="dropdown-guests",
+            type="text", 
+            readonly
+        )
+        ul(class="dropdown-list dropdown_hide")
+            each item in ['Взрослые', 'Дети', 'Младенцы']
+                li(class="dropdown-item") #{item}
+            div(class="dropdown-buttons buttons")
+                button(class="button-main button-clear", type="button") очистить
+                button(class="button-main button-apply", type="button") применить
+
 block content
     main(class="main homescreen")
         div(class="main__inner container")
-            //- include ../includes/date-picker/date-picker.pug
-            div(class="rooms-card")
+            section(class="rooms-card")
                 div(class="rooms-card__inner")
-                    div(class="block-title")
-                        h1
-                            | Найдём номера под ваши пожелания
-                    div(class="block-form")
-            div(class="rooms-description")
-                p(class="rooms-description__text")
-                    | Лучшие номера для вашей работы, отдыха и просто вдохновения
+                    div(class="rooms-card__title")
+                        h1(class="title-h1")
+                            | Найдём номера под<br> ваши пожелания
+                    form(class="rooms-card__form", method="POST")                    
+                        +calendar
+                        +guestDropdown
+                        input(class="form__button", type="button", value="Подобрать номер")
+
+            //- div(class="rooms-description")
+            //-     p(class="rooms-description__text")
+            //-         | Лучшие номера для вашей работы, отдыха и просто вдохновения

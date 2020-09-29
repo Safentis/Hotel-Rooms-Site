@@ -1,0 +1,117 @@
+$main-white-color: #fff;
+
+%font-bold-cells {
+    font: bold 1.2rem / 1 $montserrat-family;
+}
+%font-normal-cells {
+    font: normal 1.2rem / 1 $montserrat-family;
+}
+
+.calendar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    max-width: 32rem;
+    padding: 2rem;
+    border: 1px solid $dark-shade-25;
+    box-shadow: 0 .1rem .2rem;
+    border-radius: .4rem;
+    background-color: $main-white-color;
+
+    position: absolute;
+    top: 105%;
+}
+.calendar_off {
+    display: none;
+}
+.calendar__header {
+    .calendar__month-title {
+        @extend .title-h2;
+        text-align: center;
+    }
+}
+.calendar__table {
+    border-collapse: collapse;
+    margin: 3rem 0 0 0;
+    .calendar__body {
+    
+    }
+}
+
+// WEEK NAMES CELLS
+.week-names {
+    
+    .week-names__item {
+        @extend %font-bold-cells;
+        text-transform: capitalize;
+        color: $purple;
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+// TABLE BODY CELLS
+.main-cell-color,
+.other-cell-color {
+    @extend %font-normal-cells;
+    cursor: pointer;
+    text-align: center;
+    max-width: 4rem;
+    height: 4rem;
+}
+.main-cell-color {
+    color: $dark-shade-50;
+}
+.other-cell-color {
+    color: $dark-shade-25;
+}
+
+// ARROWS BUTTONS
+.calendar__arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 2.3rem;
+} 
+.arrow-left { left: 2rem; }
+.arrow-right { right: 2rem; }
+
+// BUTTONS
+.calendar__buttons {
+    margin-top: 2rem;
+} 
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.button-main {
+    cursor: pointer;
+    font: bold 1.2rem / 1 $montserrat-family;
+    outline: none;
+    border: none;
+    background-color: inherit;
+    text-transform: uppercase;
+    padding: .1rem 0;
+}
+.button-clear {
+    color: $dark-shade-50;
+}
+.button-apply {
+    color: $purple;
+}
+
+// CLASSES ACTIVE
+.calendar_active-cell,
+.calendar_curent-date {
+    border-radius: 2.2rem;
+    color: $main-white-color !important;
+}
+.calendar_active-cell {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+.calendar_curent-date {
+    background: linear-gradient(180deg, $green-light 0%, $turquoise 100%);
+}
+.data-picker_active-between {
+    background: linear-gradient(180deg, rgba($color: #BC9CFF, $alpha: 0.25) 0%, rgba($color: #8BA4F9, $alpha: 0.25) 100%);
+}

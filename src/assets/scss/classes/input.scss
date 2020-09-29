@@ -34,7 +34,7 @@
     height: $input-height-44;
 }
 .template-label-geometry {
-    margin-bottom: .5rem;
+    // margin-bottom: .544rem;
 }
 
 
@@ -44,15 +44,34 @@
     @extend .template-label; 
 }
 .label-geometry {
-    @extend .template-label-geometry;
+    // @extend .template-label-geometry;
+}
+.label-geometry-150x44 {
+    // @extend .template-label-geometry;
+    width: 15rem;
+}
+.label-geometry-320x44 {
+    // @extend .template-label-geometry;
+    width: 32rem;
 }
 
 // INPUT
 .input {
     @extend .template-input;
+    margin-top: .544rem;
 }
 .input-geometry {
     @extend .template-geometry;
+}
+.input-geometry-150x44 {
+    @extend .template-geometry;
+    @include arrowField(90% 50%, 15% 18%);
+    width: 15rem;
+}
+.input-geometry-320x44 {
+    @extend .template-geometry;
+    @include arrowField(100% 50%, 15% 18%);
+    width: 32rem;
 }
 
 // EFFECT 
