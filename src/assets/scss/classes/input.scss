@@ -65,13 +65,21 @@
 }
 .input-geometry-150x44 {
     @extend .template-geometry;
-    @include arrowField(90% 50%, 15% 18%);
     width: 15rem;
+}
+.input-geometry-dropdown-150x44 {
+    @extend .input-geometry-150x44;
+    @include arrowField(90% 50%, 15% 18%);
+    cursor: pointer;
 }
 .input-geometry-320x44 {
     @extend .template-geometry;
+    // width: 32rem;
+}
+.input-geometry-dropdown-320x44 {
+    @extend .input-geometry-320x44;
     @include arrowField(100% 50%, 15% 18%);
-    width: 32rem;
+    cursor: pointer;
 }
 
 // EFFECT 

@@ -1,16 +1,17 @@
 block variables
-    - var title = "index"
+    - var title = 'Главная страница'
     - var kw = "index"
     - var dc = "index description"
 
 <!DOCTYPE html>
 html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(name="keywords", content="#{kw}")
-        meta(name="description", content="#{dc}")
-        title #{title}
+    block head
+        head
+            meta(charset="UTF-8")
+            title Главная страница
+            meta(name="viewport", content="width=device-width, initial-scale=1.0")
+            meta(name="keywords", content=`номера, о нас, услуги`)
+            meta(name="description", content="Бронирование номеров на любой вкус. Найдём номера под ваши пожелания")
     body
         block header
             include ../components/header/header.pug

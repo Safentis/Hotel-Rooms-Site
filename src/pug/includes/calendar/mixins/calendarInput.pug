@@ -1,0 +1,10 @@
+mixin calendarInput(id, text, plc)
+    label(class="label label-geometry-150x44", for=`${id}`) 
+        | #{text}
+        input(
+            class="input input-geometry-dropdown-150x44 dropdown_placeholder input_hover", 
+            type="text", 
+            id=`${id}`, 
+            placeholder=`${plc}`, 
+            readonly
+        )

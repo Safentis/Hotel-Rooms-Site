@@ -6,11 +6,17 @@ $main-white-color: #fff;
 %font-normal-cells {
     font: normal 1.2rem / 1 $montserrat-family;
 }
-
+.calendar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+}
 .calendar {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    flex-wrap: wrap;
     
     max-width: 32rem;
     padding: 2rem;
@@ -21,6 +27,8 @@ $main-white-color: #fff;
 
     position: absolute;
     top: 105%;
+    background-color: $main-white-color;
+    z-index: 100;
 }
 .calendar_off {
     display: none;
@@ -84,22 +92,6 @@ $main-white-color: #fff;
     display: flex;
     justify-content: space-between;
 }
-.button-main {
-    cursor: pointer;
-    font: bold 1.2rem / 1 $montserrat-family;
-    outline: none;
-    border: none;
-    background-color: inherit;
-    text-transform: uppercase;
-    padding: .1rem 0;
-}
-.button-clear {
-    color: $dark-shade-50;
-}
-.button-apply {
-    color: $purple;
-}
-
 // CLASSES ACTIVE
 .calendar_active-cell,
 .calendar_curent-date {

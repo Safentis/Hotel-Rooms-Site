@@ -1,7 +1,7 @@
 mixin navItem(title, array)
     li(class="nav__item")
         div(class="nav__nested-block nested-block")
-            h3(class="nested-block__title") #{title}
+            h2(class="nested-block__title") #{title}
             ul(class="nested-block__list")
                 each item in array
                     li(class="nested-block__item")
@@ -21,7 +21,7 @@ div(class="footer__top-row container")
                 +navItem('Служба поддержки', ['Соглашения', 'Сообщества', 'Связь с нами'])
                 li(class="nav__item")
                     div(class="nav__nested-block nested-block nested-subscribe")
-                        h3(class="nested-block__title") 
+                        h2(class="nested-block__title") 
                             | Подписка
                         p(class="nested-block__text")
                             | Получайте специальные предложения и новости сервиса

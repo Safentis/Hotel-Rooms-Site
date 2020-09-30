@@ -2,30 +2,25 @@
 @import '../components/footer/footer.scss';
 
 .homescreen {
-    background: center / cover no-repeat url('../images/landing-page/landing-page-bg.jpg');
+    // background: center / cover no-repeat url('../images/landing-page/landing-page-bg.jpg');
 }
 .main {
     // height: 83.0rem;
-    padding: 7rem 0 38.6rem 0;
+    padding: 7rem 0 1.8rem 0;
 }
 .main__inner {
 
 }
-
-.title-h1 {
-    font: bold $title-size-h1 / 1 $quicksand-family !important;
-    color: $title-color-h1;
-}
-.title-h2 {
-    font: 700 $title-size-h2 / 1 $quicksand-family !important;
-    color: $title-color-h2;
-}
-
 .rooms-card {
-    background-color: #fff;
+    background: #FFFFFF;
+    border: 1px solid $dark-shade-12;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 2.5rem $dark-shade-25;
+    border-radius: .4rem;
     padding: 4rem 3rem 3rem 3rem;
     max-width: 38rem;
 }
+// переделать
 .rooms-card__inner {
     display: flex;
     flex-direction: column;
@@ -33,24 +28,39 @@
 .rooms-card__form {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     margin-top: 2rem;
-}
-.calendar-wrapper {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    position: relative;
-    .calendar-label {
-        width: 15rem;
-    }
 }
 .rooms-card-label {
     margin-top: 2.056rem;
 }
+
 .form__button {
     @extend .account-registration;
-    padding: 1.4rem 2.2rem 1.5rem 1.8rem;
+    position: relative;
     margin-top: 3.1rem;
+    padding: 1.4rem 2.2rem 1.5rem 1.8rem;
     text-transform: uppercase;
+    &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        background: center / contain no-repeat url('../images/arrow-right-button.svg');
+        width: 1.8rem;
+        height: 1.8rem;
+        top: 30%;
+        right: 4.95%;
+    }
+}
+
+.rooms-description {
+    width: 29.7rem;
+    margin-top: 32rem;
+    margin-left: auto;
+    text-align: right;
+    .rooms-description__text {
+        color: $dark-shade-75;
+        line-height: 2.4rem;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
 }

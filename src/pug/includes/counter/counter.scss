@@ -1,0 +1,41 @@
+.counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.counter__minus,
+.counter__plus {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    width: 3rem;
+    height: 2.9rem;
+
+    border: .1rem solid $dark-shade-25;
+    color: $dark-shade-25;
+}
+.counter__minus {
+    
+}
+.counter__value {
+    @extend .title-h3;
+    width: 3.2rem;
+    text-align: center;
+}
+.counter__plus {
+    
+    padding-top: .2rem;
+}
+.minus,
+.plus {
+    font: normal 1.8rem / 1 $montserrat-family;
+    line-height: 2.2rem;
+}
+.control_view_grey {
+    border: .1rem solid $dark-shade-12;
+    color: $dark-shade-12;
+}

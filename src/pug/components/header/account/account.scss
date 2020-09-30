@@ -4,15 +4,6 @@ $gradient-reg-button: #8BA4F9;
 // * * * * * * * * * * * * * *
 // TEMPLATE FOR ACCOUNT BUTTON
 
-.button {
-    cursor: pointer;
-    font: bold $title-size-h3 / 1 $montserrat-family;
-}
-.button-geometry {
-    outline: none;
-    border-radius: 2.2rem;
-    padding: .9rem 2rem 1rem 2rem;
-}
 
 .block-account {
     display: flex;

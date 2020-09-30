@@ -1,0 +1,20 @@
+.title-h1 {
+    font: bold $title-size-h1 / 1 $quicksand-family !important;
+    color: $title-color-h1;
+}
+.title-h2 {
+    font: 700 $title-size-h2 / 1 $quicksand-family !important;
+    color: $title-color-h2;
+}
+.title-h3 {
+    font: bold $title-size-h3 / 1 $montserrat-family;
+    color: $dark-shade-100;
+}
+.text {
+    color: $dark-shade-50;
+    font: normal $text-body-size / 1 $montserrat-family;
+}
+.text-active {
+    color: $dark-shade-75;
+    font: bold $text-body-size / 1 $montserrat-family;
+}

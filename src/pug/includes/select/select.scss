@@ -1,0 +1,64 @@
+// DROPDOWN 320X44
+.dropdown-label-320x44 {
+    @extend .label;
+    @extend .label-geometry-320x44;
+}
+.dropdown-input-320x44 {
+    @extend .input;
+    @extend .input-geometry-dropdown-320x44;
+    border-radius: .4rem .4rem 0 0;
+    width: 100%;
+    min-width: 20rem;
+}
+
+.dropdown-wrapper {
+    position: relative;
+    margin-top: 2rem;
+}
+
+// NEWSTED LIST
+.dropdown-list {
+    width: 100%;
+    min-width: 20rem;
+    top: 100%;
+    position: absolute;
+    border-radius: 0 0 .4rem .4rem;
+    border: 1px solid $dark-shade-25;
+    background: #FFFFFF;
+    z-index: 50;
+}
+.dropdown-list-not-buttons {
+    padding: .7rem .7rem 1.3rem 1.5rem;
+    @extend .dropdown-list;
+}
+.dropdown-list-with-buttons {
+    padding: .7rem .7rem .8rem 1.5rem;
+    @extend .dropdown-list;
+}
+.dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    line-height: 1.5rem;
+}
+.dropdown-item__text {
+    @extend .title-h3;
+}
+
+// DROPDOWN BUTTONS
+.dropdown-buttons {
+    margin-top: 1.9rem;
+}
+
+// DROPDOWN VIEW
+.dropdown_placeholder {
+    &::placeholder {
+        color: $dark-shade-75;
+    }
+}
+
+// BUTTON CLEARE EFFECT
+.button-cleare_hide {
+    visibility: hidden;
+}

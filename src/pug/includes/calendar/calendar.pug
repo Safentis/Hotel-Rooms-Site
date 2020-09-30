@@ -1,21 +1,26 @@
-div(class="calendar calendar_off", id="calendar")
-    div(class="calendar__header", id="calendar-head")
-    img(
-        class="calendar__arrow arrow-left", 
-        data-arrow="left",
-        src="./images/calendar/arrow-left.svg",
-        alt="date previous"
-    ) 
-    img(
-        class="calendar__arrow arrow-right",
-        data-arrow="right",
-        src="./images/calendar/arrow-right.svg",
-        alt="date next"
-    )
-    table(class="calendar__table")
-        tbody(class="calendar__body", id="calendar-body")
-    div(class="calendar__buttons buttons")
-        button(class="button-main button-clear", type="button", data-button="cleare-pick") 
-            | Очистить
-        button(class="button-main button-apply", type="button" data-button="apply-pick") 
-            | Применить
+include ./mixins/calendarInput.pug
+
+div(class="calendar-wrapper")
+    +calendarInput('entry', 'Прибытие', 'ДД.ММ.ГГГГ')
+    +calendarInput('departure', 'Выезд', 'ДД.ММ.ГГГГ')
+    div(class="calendar calendar_off", id="calendar")
+        div(class="calendar__header", id="calendar-head")
+        img(
+            class="calendar__arrow arrow-left", 
+            data-arrow="left",
+            src="./images/calendar/arrow-left.svg",
+            alt="date previous"
+        ) 
+        img(
+            class="calendar__arrow arrow-right",
+            data-arrow="right",
+            src="./images/calendar/arrow-right.svg",
+            alt="date next"
+        )
+        table(class="calendar__table")
+            tbody(class="calendar__body", id="calendar-body")
+        div(class="calendar__buttons buttons")
+            button(class="button-pick button-clear", type="button", data-button="cleare-pick") 
+                | Очистить
+            button(class="button-pick button-apply", type="button" data-button="apply-pick") 
+                | Применить

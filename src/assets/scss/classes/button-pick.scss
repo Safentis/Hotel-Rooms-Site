@@ -1,0 +1,15 @@
+.button-pick {
+    cursor: pointer;
+    @extend .title-h3;
+    outline: none;
+    border: none;
+    background-color: inherit;
+    text-transform: uppercase;
+    padding: .1rem 0;
+}
+.button-clear {
+    color: $dark-shade-50;
+}
+.button-apply {
+    color: $purple;
+}
