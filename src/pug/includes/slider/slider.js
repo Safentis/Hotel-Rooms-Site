@@ -8,6 +8,9 @@ function slideEnable({target}) {
         elem.classList.remove(sliderElemRemove);
         elem.closest('.slide').classList.add(sliderAdd);
         elem.closest('.slide').classList.remove(sliderRemove);
+
+        const slide = target.classList.contains('.slide') || target.closest('.slide');
+              slide.dataset.value = bool;
     }
     const slideElem = (element) => {
         const elem = element || target.children[0];

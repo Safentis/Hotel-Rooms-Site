@@ -2,23 +2,23 @@
 @import '../components/footer/footer.scss';
 
 .homescreen {
-    // background: center / cover no-repeat url('../images/landing-page/landing-page-bg.jpg');
+    background: center / cover no-repeat url('../images/index-bg/index-bg.jpg');
 }
 .main {
-    // height: 83.0rem;
     padding: 7rem 0 1.8rem 0;
 }
 .main__inner {
 
 }
-.rooms-card {
+.card {
     background: #FFFFFF;
     border: 1px solid $dark-shade-12;
-    box-sizing: border-box;
-    box-shadow: 0px 0px 2.5rem $dark-shade-25;
     border-radius: .4rem;
     padding: 4rem 3rem 3rem 3rem;
     max-width: 38rem;
+}
+.rooms-card {
+    box-shadow: 0px 0px 2.5rem $dark-shade-25;
 }
 // переделать
 .rooms-card__inner {
@@ -36,6 +36,8 @@
 
 .form__button {
     @extend .account-registration;
+    width: 100%;
+    display: block;
     position: relative;
     margin-top: 3.1rem;
     padding: 1.4rem 2.2rem 1.5rem 1.8rem;
@@ -44,7 +46,7 @@
         content: '';
         position: absolute;
         display: block;
-        background: center / contain no-repeat url('../images/arrow-right-button.svg');
+        background: center / contain no-repeat url('../images/form-button/arrow-right-button.svg');
         width: 1.8rem;
         height: 1.8rem;
         top: 30%;

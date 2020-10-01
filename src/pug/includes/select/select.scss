@@ -24,15 +24,16 @@
     position: absolute;
     border-radius: 0 0 .4rem .4rem;
     border: 1px solid $dark-shade-25;
+    border-top: none;
     background: #FFFFFF;
     z-index: 50;
 }
 .dropdown-list-not-buttons {
-    padding: .7rem .7rem 1.3rem 1.5rem;
+    padding: 0rem .7rem .8rem 1.5rem;
     @extend .dropdown-list;
 }
 .dropdown-list-with-buttons {
-    padding: .7rem .7rem .8rem 1.5rem;
+    padding: 0rem .7rem 1.3rem 1.5rem;
     @extend .dropdown-list;
 }
 .dropdown-item {
@@ -41,9 +42,12 @@
     align-items: center;
     text-transform: uppercase;
     line-height: 1.5rem;
+    margin-top: .7rem;
 }
 .dropdown-item__text {
     @extend .title-h3;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 // DROPDOWN BUTTONS

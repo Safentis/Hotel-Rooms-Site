@@ -3,6 +3,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require("imagemin-webpack");
 
 const PATHS = {
     src: path.resolve(__dirname, 'src'),
@@ -64,11 +65,34 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
-                loader: 'file-loader',
-                options: {
-                    name: `images/[name].[ext]`,
-                    publicPath: `../`,
-                }
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: `images/[name].[ext]`,
+                            publicPath: `../`,
+                        }
+                    },
+                    {
+                        loader: ImageminPlugin.loader,
+                        options: {
+                            bail: false,
+                            cache: false,
+                            imageminOptions: {
+                                plugins: [
+                                    ["pngquant", { quality: [0.5, 0.5] }],
+                                    ["mozjpeg", { quality: 50, progressive: true }],
+                                    ["gifsicle", { interlaced: true, optimizationLevel: 3 }],
+                                    ["svgo", {
+                                        plugins: [
+                                            { removeViewBox: false }
+                                        ]
+                                    }]
+                                ]
+                            }
+                        }
+                    }
+                ]
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,

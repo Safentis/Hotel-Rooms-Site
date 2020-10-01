@@ -1,0 +1,37 @@
+extends ../layout/layout.pug
+include ../includes/input/input.pug
+include ../includes/slider/slider.pug
+
+block head
+    head
+        meta(charset="UTF-8")
+        title Регистрация
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="keywords", content=`регистрация, уже есть аккаунт на Toxin, Toxin`)
+        meta(name="description", content="Регистрация на сайте по броированию номеров, быстро и удобно.")
+
+block content
+    main(class="main registration-scrin")
+        div(class="main__inner container")
+            section(class="card")
+                div(class="card__inner")
+                    div(class="card__title")
+                        h1(class="title-h1")
+                            | Регистрация аккаунта
+                    form(class="card__form form", action="POST")
+                        +input(false, 'text', 'firstName', 'Имя')
+                        +input(false, 'text', 'lastName', 'Фамилия')
+                        +inputRadio()
+                        +input(true, 'text', 'birthdayDay', 'ДД.ММ.ГГГГ', 'Дата рождения')
+                        +input(true, 'text', 'loginFirstName', 'Имя', 'Данные для входа в сервис')
+                        +input(false, 'text', 'LoginLastName', 'Фамилия')
+                        p
+                            +slider()
+                            | Получать спецпредложения
+                        button(class="form__button", type="submit")
+                            | Перейти к оплате
+                        div
+                            p
+                                | Уже есть аккаунт на Toxin
+                            a(class="account-in")
+                                | Войти

@@ -309,8 +309,12 @@ class Events extends Controls {
 }
 
 
-const render = new CalendarRender();
-render.calendarViewRender(new Date().getFullYear(), new Date().getMonth());
-
-const events = new Events();
-document.addEventListener('click', events);
+document.addEventListener("DOMContentLoaded", () => {
+    if (document.title === 'Бронирование номеров') {
+        const render = new CalendarRender();
+        render.calendarViewRender(new Date().getFullYear(), new Date().getMonth());
+        
+        const events = new Events();
+        document.addEventListener('click', events);
+    }
+});

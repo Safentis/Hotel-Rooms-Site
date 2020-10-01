@@ -8,6 +8,7 @@ function dropdownMenu() {
     }
     
     const dropdownSetValue = ({target}) => {
+        if (!target.closest('dropdownWrapper')) return;
         const listValue = target.dataset.value; 
         
         if (!listValue) return;

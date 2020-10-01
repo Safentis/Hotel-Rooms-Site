@@ -33,9 +33,6 @@
     border-radius: .4rem;
     height: $input-height-44;
 }
-.template-label-geometry {
-    // margin-bottom: .544rem;
-}
 
 
 // EXTENDS CLASSES USES THIS TEMPLATE
@@ -43,25 +40,21 @@
 .label {
     @extend .template-label; 
 }
-.label-geometry {
-    // @extend .template-label-geometry;
-}
 .label-geometry-150x44 {
-    // @extend .template-label-geometry;
     width: 15rem;
 }
 .label-geometry-320x44 {
-    // @extend .template-label-geometry;
     width: 32rem;
 }
 
 // INPUT
 .input {
     @extend .template-input;
-    margin-top: .544rem;
 }
 .input-geometry {
     @extend .template-geometry;
+    margin-top: .544rem;
+    width: 100%;
 }
 .input-geometry-150x44 {
     @extend .template-geometry;

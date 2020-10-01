@@ -2,10 +2,7 @@
 // если не равен то убрать
 
 class Counter {
-    constructor() {
-        this.counterValues = 0;
-    }
-    counter(elem, symbol) {
+    counter(elem, symbol, target) {
         let count = +elem.dataset.integer;
         let counterHTML = elem.querySelector('.counter__value');
         
@@ -13,13 +10,11 @@ class Counter {
             case 'plus':
                 count += 1;
                 elem.dataset.integer = count;
-                this.counterValues++;
                 this.setCountInHTML(counterHTML, count);
             break;
             case 'minus':
                 count -= 1;
                 elem.dataset.integer = count;
-                this.counterValues--;
                 this.setCountInHTML(counterHTML, count);
             break;
             default:
@@ -28,6 +23,9 @@ class Counter {
     }
     setCountInHTML(counterHTML, count) {
         counterHTML.textContent = count;
+    }
+    setEffectInButtons() {
+
     }
 }
 class ButtonsCounter {
@@ -45,7 +43,6 @@ class ButtonsCounter {
         const { input, allCountHTML, allDatasetInteger, ul } = this.findElements(target);
 
         input.value = '';
-
         allCountHTML.forEach(count => count.textContent = '0');
         allDatasetInteger.forEach(ul => ul.dataset.integer = '0');
 
@@ -53,13 +50,13 @@ class ButtonsCounter {
     }
     toApplyCounter(target) {
         const { input, allCountHTML, allDatasetInteger, cleare, ul } = this.findElements(target);
-        let intagers = 0;
+        let peoples = 0;
         
         allDatasetInteger.forEach(elem => {
-            intagers += +elem.dataset.integer
+            peoples += +elem.dataset.integer
         });
         
-        input.value = intagers;
+        input.value = peoples;
         cleare.classList.remove('button-cleare_hide');
         ul.classList.add('dropdown_hide');
     }
@@ -72,16 +69,17 @@ class EventsCounter {
     onClick({target}) {
         if (!target.dataset.count) return;
             const elem = target.closest('ul[data-integer]');
+            const count = +elem.dataset.integer;
                 
         switch(target.dataset.count) {
             case 'plus':
-                if (+elem.dataset.integer !== 99) {
-                    counter.counter(elem, 'plus')
+                if (count < 5) {
+                    counter.counter(elem, 'plus', target);
                 }
             break;
             case 'minus':
-                if (+elem.dataset.integer !== 0) {
-                    counter.counter(elem, 'minus');
+                if (count !== 0) {
+                    counter.counter(elem, 'minus', target);
                 }
             break;
             case 'clear':
