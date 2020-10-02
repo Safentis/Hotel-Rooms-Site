@@ -1,8 +1,10 @@
 @import './text.scss';
 @import './button.scss';
 @import './button-pick.scss';
-@import '../../../pug/includes/input/input.scss';
+@import './input.scss';
+
 @import '../../../pug/includes/select/select.scss';
 @import '../../../pug/includes/slider/slider.scss';
 @import '../../../pug/includes/calendar/calendar.scss';
 @import '../../../pug/includes/counter/counter.scss';
+@import '../../../pug/includes/radio/radio.scss';

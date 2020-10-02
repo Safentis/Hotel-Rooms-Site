@@ -1,4 +1,5 @@
-//-  dropdown_hide
+include ../counter/counter.pug
+
 block variables
     -var classLabel = "dropdown-label-320x44"
     -var classInput = "dropdown-input-320x44 dropdown_placeholder input_hover"
@@ -27,9 +28,15 @@ div(class="dropdown-wrapper")
             each item in ['Взрослые', 'Дети', 'Младенцы']
                 li(class=`${classItem}`)
                     p(class="dropdown-item__text") #{item}
-                    include ../counter/counter.pug
+                    +counter()
             block buttons
                 li()
                     div(class=`${classButtons}`)
-                        button(class=`${classButtonClear} button-cleare_hide`, type="button", data-count="clear") очистить
-                        button(class=`${classButtonApply}`, type="button", data-count="apply") применить
+                        button(class=`${classButtonClear} button-cleare_hide`,
+                            type="button", 
+                            data-count="clear"
+                        ) очистить
+                        button(class=`${classButtonApply}`, 
+                            type="button", 
+                            data-count="apply"
+                        ) применить

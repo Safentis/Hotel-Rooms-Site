@@ -1,20 +1,32 @@
-include ./mixins/calendarInput.pug
-
 div(class="calendar-wrapper")
-    +calendarInput('entry', 'Прибытие', 'ДД.ММ.ГГГГ')
-    +calendarInput('departure', 'Выезд', 'ДД.ММ.ГГГГ')
+    label(class="label label-geometry-150x44", for='entry') 
+        | Прибытие
+        input(
+            class="input input-geometry-dropdown-150x44 dropdown_placeholder input_hover", 
+            type="text", 
+            id='entry', 
+            placeholder='ДД.ММ.ГГГГ', 
+            readonly
+        )
+    label(class="label label-geometry-150x44", for='departure') 
+        | Выезд
+        input(
+            class="input input-geometry-dropdown-150x44 dropdown_placeholder input_hover", 
+            type="text", 
+            id='departure', 
+            placeholder='ДД.ММ.ГГГГ', 
+            readonly
+        )
     div(class="calendar calendar_off", id="calendar")
         div(class="calendar__header", id="calendar-head")
-        img(
-            class="calendar__arrow arrow-left", 
+        img(class="calendar__arrow arrow-left", 
             data-arrow="left",
-            src="./images/calendar/arrow-left.svg",
+            src="./images/arrow-left.svg",
             alt="date previous"
         ) 
-        img(
-            class="calendar__arrow arrow-right",
+        img(class="calendar__arrow arrow-right",
             data-arrow="right",
-            src="./images/calendar/arrow-right.svg",
+            src="./images/arrow-right.svg",
             alt="date next"
         )
         table(class="calendar__table")

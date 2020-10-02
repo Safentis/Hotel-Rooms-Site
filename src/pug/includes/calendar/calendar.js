@@ -1,7 +1,5 @@
 class Calendar {
     constructor() {
-        this.datePickerBody = document.getElementById('calendar-body');
-        this.datePickerHead = document.getElementById('calendar-head');
         this.entry = document.getElementById('entry');
         this.departure = document.getElementById('departure');
         this.calendar = document.getElementById('calendar');
@@ -64,16 +62,17 @@ class Calendar {
         return document.querySelectorAll('td');
     }
 }
-class CalendarRender extends Calendar {
+class CalendarRender {
     constructor() {
-        super();
+        this.datePickerBody = document.getElementById('calendar-body') || '';
+        this.datePickerHead = document.getElementById('calendar-head') || '';
     }
     calendarViewRender(year, month) {
         const date = new Date(year, month);
-        const days = this.getAllMonthDays(year, month);
-        const { curentDay, curentMonth, curentYear } = this.getFullCurentDate();
+        const days = calendarActions.getAllMonthDays(year, month);
+        const { curentDay, curentMonth, curentYear } = calendarActions.getFullCurentDate();
 
-        let prevMonth = this.getAllMonthDays(year, month - 1) - this.getCurentWeekDay(date);
+        let prevMonth = calendarActions.getAllMonthDays(year, month - 1) - calendarActions.getCurentWeekDay(date);
         let table = `
             <tr class="week-names">
                 <th class="week-names__item">пн</th>
@@ -86,10 +85,10 @@ class CalendarRender extends Calendar {
             </tr>
             <tr>
         `;
-        
-        for (let i = 0; i < this.getCurentWeekDay(date); i++) {
+
+        for (let i = 0; i < calendarActions.getCurentWeekDay(date); i++) {
             let prevMonthDate = new Date(year, month - 1, ++prevMonth).toLocaleDateString();
-            if (this.getCurentMonthDay() === prevMonthDate) {
+            if (calendarActions.getCurentMonthDay() === prevMonthDate) {
                 table += `
                     <td class="other-cell-color calendar_curent-date" 
                         data-entry="false" 
@@ -135,19 +134,19 @@ class CalendarRender extends Calendar {
                     </td>
                 `;
             }
-            if (this.getCurentWeekDay(date) % 7 == 6) {
+            if (calendarActions.getCurentWeekDay(date) % 7 == 6) {
                 table += `
                     <tr></tr>
                 `;
             }
             date.setDate(date.getDate() + 1);
         }
-        if (this.getCurentWeekDay(date) != 0) {
+        if (calendarActions.getCurentWeekDay(date) != 0) {
             let count = 1;
     
-            for (let i = this.getCurentWeekDay(date); i < 7; i++) {
+            for (let i = calendarActions.getCurentWeekDay(date); i < 7; i++) {
                 let nextMonthDate = new Date(year, month + 1, count).toLocaleDateString();
-                if (this.getCurentMonthDay() === nextMonthDate) {
+                if (calendarActions.getCurentMonthDay() === nextMonthDate) {
                     table += `
                         <td class="other-cell-color calendar_curent-date" 
                             data-entry="false" 
@@ -173,14 +172,13 @@ class CalendarRender extends Calendar {
         }
         this.datePickerHead.innerHTML = `
             <h2 class="calendar__month-title">
-                ${this.allMonths[month]} ${year}
+                ${calendarActions.allMonths[month]} ${year}
             </h2>
         `;
         this.datePickerBody.innerHTML = table;
     }
 }
-
-class Controls extends CalendarRender {
+class CalendarActions extends Calendar {
     constructor() {
         super();
         this.curentMonth = new Date().getMonth();
@@ -193,7 +191,7 @@ class Controls extends CalendarRender {
         }
 
         this.curentMonth--;
-        this.calendarViewRender(this.curentYear, this.curentMonth);
+        calendarRender.calendarViewRender(this.curentYear, this.curentMonth);
     }
     arrowRightCalendarScroll() {
         if (this.curentMonth === 11) {
@@ -202,7 +200,7 @@ class Controls extends CalendarRender {
         }
 
         this.curentMonth++;
-        this.calendarViewRender(this.curentYear, this.curentMonth);
+        calendarRender.calendarViewRender(this.curentYear, this.curentMonth);
     }
     createDate(elem, target) {
         this.valuesForInput[elem] = target.dataset.date;
@@ -263,11 +261,7 @@ class Controls extends CalendarRender {
         this.calendar.classList.toggle('calendar_off');
     }
 }
-
-class Events extends Controls {
-    constructor() {
-        super();
-    }
+class Events {
     handleEvent(e) {
         let method = 'on' + e.type[0].toUpperCase() + e.type.slice(1);
         this[method](e);
@@ -277,31 +271,31 @@ class Events extends Controls {
         const target = e.target;
         
         if (attr.entry === 'false') {
-            this.createDate('entry', target);
+            calendarActions.createDate('entry', target);
         } 
         else if (
             attr.departure === 'false' && 
             !target.classList.contains('calendar_active-cell')
         ) {
-            this.createDate('departure', target);
-            this.calcLineBetweenCells();
+            calendarActions.createDate('departure', target);
+            calendarActions.calcLineBetweenCells();
         } 
 
 
         if (target.id === 'entry' || target.id === 'departure') {
-            this.viewDatePicker();
+            calendarActions.viewDatePicker();
         }
         if (attr.arrow === 'left') {
-            this.arrowLeftCalendarScroll();
+            calendarActions.arrowLeftCalendarScroll();
         }
         if (attr.arrow === 'right') {
-            this.arrowRightCalendarScroll();
+            calendarActions.arrowRightCalendarScroll();
         }
         if (attr.button === 'apply-pick') {
-            this.toApplyButton(e);
+            calendarActions.toApplyButton(e);
         }
         if (attr.button === 'cleare-pick') {
-            this.toCleareButton(e);
+            calendarActions.toCleareButton(e);
         }
 
         return;
@@ -309,12 +303,12 @@ class Events extends Controls {
 }
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    if (document.title === 'Бронирование номеров') {
-        const render = new CalendarRender();
-        render.calendarViewRender(new Date().getFullYear(), new Date().getMonth());
-        
-        const events = new Events();
-        document.addEventListener('click', events);
-    }
-});
+const calendarActions = new CalendarActions();
+const calendarRender = new CalendarRender();
+const events = new Events();
+
+document.addEventListener('click', events);
+calendarRender.calendarViewRender(
+    new Date().getFullYear(), 
+    new Date().getMonth()
+);

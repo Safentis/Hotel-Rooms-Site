@@ -69,16 +69,15 @@ class EventsCounter {
     onClick({target}) {
         if (!target.dataset.count) return;
             const elem = target.closest('ul[data-integer]');
-            const count = +elem.dataset.integer;
                 
         switch(target.dataset.count) {
             case 'plus':
-                if (count < 5) {
+                if (+elem.dataset.integer < 5) {
                     counter.counter(elem, 'plus', target);
                 }
             break;
             case 'minus':
-                if (count !== 0) {
+                if (+elem.dataset.integer !== 0) {
                     counter.counter(elem, 'minus', target);
                 }
             break;

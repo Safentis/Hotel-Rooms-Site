@@ -1,0 +1,31 @@
+extends ../layout/layout.pug
+
+block head
+    head
+        meta(charset="UTF-8")
+        title Вход в аккаунт
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="keywords", content=`Вход в аккаунт, имя, фамилия`)
+        meta(name="description", content="Вход в аккаунт Toxin")
+
+block content
+    main(class="main login-screen")
+        div(class="main__inner container")
+            section(class="card login-card")
+                div(class="card__inner")
+                    div(class="card__header")
+                        h2(class="title-h2") 
+                            | Войти
+                    form(class="card__form form", method="POST")
+                        label(class="label label_opacity-0", for="firstName") Имя
+                        input(class="input input-geometry input-margin-20 input_hover", id="firstName", type="text" placeholder="Имя")
+                        label(class="label label_opacity-0", for="lastName") Фамилия
+                        input(class="input input-geometry input-margin-10 input_hover", id="lastName", type="text" placeholder="Фамилия")
+                        button(class="form__button button-go-pay", type="submit")
+                            | Войти
+                        div(class="block-login")
+                            p(class="account-text") Уже есть аккаунт на Toxin
+                            a(class="account-in", href="./login.html") Войти
+
+                    
+

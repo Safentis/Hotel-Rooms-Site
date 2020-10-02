@@ -1,0 +1,33 @@
+.radio-button {
+    display: flex;
+    margin-right: 2rem;
+}
+.label-radio {
+    order: 2;   
+    display: inline-flex;
+}
+.input-radio {
+    order: 1;
+    position: absolute;
+    opacity: 0;
+    width: 2rem;
+    height: 2rem;
+    z-index: -1;
+}
+.input-radio + .label-radio {
+    &::before {
+        content: '';
+        display: block;
+        height: 2rem;
+        width: 2rem;
+        margin-right: 1rem;
+        border-radius: 50%;
+        border: .1rem solid $purple;
+    }
+}
+.input-radio:checked + .label-radio {
+    &::before {
+        content: '';
+        background: center / 75% 75% no-repeat url('../images/circle.svg');
+    }
+}

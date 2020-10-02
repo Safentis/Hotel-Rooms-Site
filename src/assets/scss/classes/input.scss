@@ -75,7 +75,20 @@
     cursor: pointer;
 }
 
+.label-margin-20,
+.input-margin-20 {
+    margin-top: 2rem;
+}
+.input-margin-10 {
+    margin-top: 1rem;
+}
+
 // EFFECT 
 .input_hover {
     @extend .template-hover;
+}
+.label_opacity-0 {
+    opacity: 0; 
+    z-index: -5; 
+    position: absolute;
 }

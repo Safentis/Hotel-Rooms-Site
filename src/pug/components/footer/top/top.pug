@@ -1,15 +1,8 @@
-mixin navItem(title, array)
-    li(class="nav__item")
-        div(class="nav__nested-block nested-block")
-            h2(class="nested-block__title") #{title}
-            ul(class="nested-block__list")
-                each item in array
-                    li(class="nested-block__item")
-                        a(class="nested-block__link" href="#") #{item}
+include ./mixin/nav-item.pug
 
 div(class="footer__top-row container")
     div(class="footer__col-logo")
-        a(class="logo" href="#" title="Logo")
+        a(class="logo" href="./index.html" title="Logo")
             img(class="logo__img" src="../../images/logo.svg" alt="logo")
         p(class="reward-description")
             | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
@@ -21,11 +14,12 @@ div(class="footer__top-row container")
                 +navItem('Служба поддержки', ['Соглашения', 'Сообщества', 'Связь с нами'])
                 li(class="nav__item")
                     div(class="nav__nested-block nested-block nested-subscribe")
-                        label(class="nested-block__title", for="email") 
+                        h2(class="nested-block__title", for="email") 
                             | Подписка
                         p(class="nested-block__text")
                             | Получайте специальные предложения и новости сервиса
                         div(class="input-wrapper")
+                            label(class="label label_opacity-0", for="email") Подписка
                             input(class="nested-block__email input input-geometry input_hover", 
                                 type="email", 
                                 placeholder="Email", 

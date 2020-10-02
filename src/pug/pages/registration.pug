@@ -1,5 +1,4 @@
 extends ../layout/layout.pug
-include ../includes/input/input.pug
 include ../includes/slider/slider.pug
 
 block head
@@ -13,25 +12,38 @@ block head
 block content
     main(class="main registration-scrin")
         div(class="main__inner container")
-            section(class="card")
+            section(class="card registration-card")
                 div(class="card__inner")
                     div(class="card__title")
                         h1(class="title-h1")
                             | Регистрация аккаунта
                     form(class="card__form form", action="POST")
-                        +input(false, 'text', 'firstName', 'Имя')
-                        +input(false, 'text', 'lastName', 'Фамилия')
-                        +inputRadio()
-                        +input(true, 'text', 'birthdayDay', 'ДД.ММ.ГГГГ', 'Дата рождения')
-                        +input(true, 'text', 'loginFirstName', 'Имя', 'Данные для входа в сервис')
-                        +input(false, 'text', 'LoginLastName', 'Фамилия')
-                        p
+                        label(class="label label_opacity-0", for="firstName") Имя
+                        input(class="input input-geometry input-margin-20 input_hover", id="firstName", type="text" placeholder="Имя")
+                        label(class="label label_opacity-0", for="lastName") Фамилия
+                        input(class="input input-geometry input-margin-10 input_hover", id="lastName", type="text" placeholder="Фамилия")
+                        //- RADIO
+                        div(class="radio-buttons input-margin-10")
+                            div(class="radio-button")
+                                input(class="input-radio", type="radio", id="male", name="sex", value="male", checked)
+                                label(class="text label-radio", for="male") Мужчина
+                            div(class="radio-button")
+                                input(class="input-radio", type="radio", id="female", name="sex", value="female")
+                                label(class="text label-radio", for="female") Женщина
+                        //- BIRTHDAY
+                        label(class="label label-margin-20", for="birthdayDay") Дата рождения
+                        input(class="input input-geometry input_hover", id="birthdayDay", type="text" placeholder="ДД.ММ.ГГГГ")
+                        //- lOGIN DATA
+                        label(class="label label-margin-20", for="loginFirstName") Данные для входа в сервис
+                        input(class="input input-geometry input_hover", id="loginFirstName", type="text" placeholder="Имя")
+                        label(class="label label_opacity-0", for="LoginLastName") Фамилия
+                        input(class="input input-geometry input-margin-10 input_hover", id="LoginLastName", type="text" placeholder="Фамилия")
+                        //- SLIDER
+                        div(class="form-text text")
                             +slider()
-                            | Получать спецпредложения
-                        button(class="form__button", type="submit")
+                            span(class="form-text__margin") Получать спецпредложения
+                        button(class="form__button button-go-pay", type="submit")
                             | Перейти к оплате
-                        div
-                            p
-                                | Уже есть аккаунт на Toxin
-                            a(class="account-in")
-                                | Войти
+                        div(class="block-login")
+                            p(class="account-text") Уже есть аккаунт на Toxin
+                            a(class="account-in", href="./login.html") Войти

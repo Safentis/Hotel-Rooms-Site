@@ -12,14 +12,17 @@ $gradient-reg-button: #8BA4F9;
 .account-in {
     @extend .button, .button-geometry;
     background-color: $bg-color-button;
-    border: .1rem solid $purple;
-    margin: 0 2rem 0 0;
+    border: .2rem solid $purple;
+    text-transform: uppercase;
     color: $purple;
+}
+.account-in-geometry {
+    margin: 0 2rem 0 0;
 }
 .account-registration {
     @extend .button, .button-geometry;
     background: linear-gradient(180deg, $purple 0%, $gradient-reg-button 100%);
-    border: .1rem solid $color-reg-button;
+    border: .2rem solid $color-reg-button; 
     color: $color-reg-button;
 }
 

@@ -42,14 +42,11 @@ $main-white-color: #fff;
 .calendar__table {
     border-collapse: collapse;
     margin: 3rem 0 0 0;
-    .calendar__body {
-    
-    }
+    .calendar__body {}
 }
 
 // WEEK NAMES CELLS
 .week-names {
-    
     .week-names__item {
         @extend %font-bold-cells;
         text-transform: capitalize;
@@ -92,6 +89,7 @@ $main-white-color: #fff;
     display: flex;
     justify-content: space-between;
 }
+
 // CLASSES ACTIVE
 .calendar_active-cell,
 .calendar_curent-date {
@@ -99,11 +97,21 @@ $main-white-color: #fff;
     color: $main-white-color !important;
 }
 .calendar_active-cell {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    background: linear-gradient(
+        180deg, 
+        #BC9CFF 0%, #8BA4F9 100%
+    );
 }
 .calendar_curent-date {
-    background: linear-gradient(180deg, $green-light 0%, $turquoise 100%);
+    background: linear-gradient(
+        180deg, 
+        $green-light 0%, $turquoise 100%
+    );
 }
 .data-picker_active-between {
-    background: linear-gradient(180deg, rgba($color: #BC9CFF, $alpha: 0.25) 0%, rgba($color: #8BA4F9, $alpha: 0.25) 100%);
+    background: linear-gradient(
+        180deg,
+        rgba($color: #BC9CFF, $alpha: 0.25) 0%, 
+        rgba($color: #8BA4F9, $alpha: 0.25) 100%
+    );
 }
