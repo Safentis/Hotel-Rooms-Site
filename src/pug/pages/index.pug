@@ -3,26 +3,43 @@ extends ../layout/layout.pug
 block head
     head
         meta(charset="UTF-8")
-        title Бронирование номеров
+        title title
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(name="keywords", content=`номера, о нас, услуги`)
-        meta(name="description", content="Бронирование номеров на любой вкус. Найдём номера под ваши пожелания.")
+        meta(name="keywords", content="")
+        meta(name="description", content="")
 
 block content
-    main(class="main homescreen")
+    main(class="main")
         div(class="main__inner container")
-            section(class="card card_effect")
-                div(class="card__inner")
-                    div(class="card__title")
-                        h1(class="title-h1")
-                            | Найдём номера под<br> ваши пожелания
-                    form(class="card__form form form-margin", method="POST")
-                        include ../includes/calendar/calendar.pug
-                        include ../includes/select/select.pug
-                        button(class="form__button form__button-geometry", type="submit") 
-                            | Подобрать номер
-            div(class="rooms-description")
-                p(class="rooms-description__text text")
-                    | Лучшие номера для вашей работы,
-                    | отдыха и просто вдохновения
-            
+            div(class="col-images")
+                div(class="main-image")
+                    img(class="room-photo", 
+                        src="./images/details-first-photo.jpg", 
+                        alt="main image room", 
+                        width="981px", 
+                        height="485"
+                    )
+                div(class="stack-image")
+                    img(class="room-photo", 
+                        src="./images/details-second-photo.jpg", 
+                        alt="column image room", 
+                        width="461px", 
+                        height="243"
+                    )
+                    img(class="room-photo", 
+                        src="./images/details-third-photo.jpg", 
+                        alt="column image room", 
+                        width="461px", 
+                        height="243"
+                    )
+            div(class="col-description")
+                div(class="left-sub-col")
+                    div(class="block-wrapper-top ")
+                        include ../components/details-rooms-info/details-rooms-info.pug
+                        include ../components/details-rooms-impression/details-rooms-impression.pug
+                    div(class="block-wrapper-middle")
+                        div(class="room-callbacks") 3
+                    div(class="block-wrapper-bottom")
+                        div(class="room-rules") 4
+                        div(class="room-previous") 5
+                div(class="right-sub-col")

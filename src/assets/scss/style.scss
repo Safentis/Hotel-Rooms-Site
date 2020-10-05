@@ -5,6 +5,11 @@
 @import './utilits/mixins.scss';
 @import './classes/classes.scss';
 
+
+@import '../../pug/components/header/header.scss';
+@import '../../pug/components/footer/footer.scss';
+
 @import '../../pug/pages/index.scss';
 @import '../../pug/pages/registration.scss';
 @import '../../pug/pages/login.scss';
+@import '../../pug/pages/details.scss';

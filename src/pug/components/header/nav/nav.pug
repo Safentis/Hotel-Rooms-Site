@@ -1,36 +1,24 @@
+include ./mixin/button.pug
+
 - var linkActive = "nav__link_active"
 - var buttonArrow = "icon-arrow"
-
-//- NESTED LIST
-//- 1 arg = []; 2 arg = className for example - dropdown_hide
-mixin nestedList(value, classHide = '')
-    ul(class=`nested ${classHide}`)
-        each item in value
-            li(class="nested__item")
-                a(class="nested__link", href="#") #{item}
-
-mixin button(text, array)
-    button(
-        class=`nav__button-drop ${buttonArrow}`, 
-        data-dropdown="dropdown",
-        type="button"
-    )
-        | #{text}
-    +nestedList(array, 'dropdown_hide')
 
 div(class="block-nav")
     nav(class="nav")
         ul(class="nav__list")
             li(class="nav__item header__item")
-                a(class=`nav__link ${linkActive}`, href="#") 
-                    | О нас
+                a(class=`nav__link ${linkActive}`, href="#") О нас
             li(class="nav__item header__item")
-                +button('Услуги', ['Example', 'Example', 'Example'])
+                +button(
+                    'Услуги', 
+                    ['Example', 'Example', 'Example']
+                )
             li(class="nav__item header__item")
-                a(class=`nav__link`, href="#") 
-                    | Вакансии
+                a(class=`nav__link`, href="#") Вакансии
             li(class="nav__item header__item")
-                a(class=`nav__link`, href="#") 
-                    | Новости
+                a(class=`nav__link`, href="#") Новости
             li(class="nav__item header__item")
-                +button('Соглашение', ['Example', 'Example', 'Example'])
+                +button(
+                    'Соглашение', 
+                    ['Example', 'Example', 'Example']
+                )

@@ -1,0 +1,28 @@
+extends ../layout/layout.pug
+
+block head
+    head
+        meta(charset="UTF-8")
+        title Бронирование номеров
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="keywords", content=`номера, о нас, услуги`)
+        meta(name="description", content="Бронирование номеров на любой вкус. Найдём номера под ваши пожелания.")
+
+block content
+    main(class="main homescreen")
+        div(class="main__inner container")
+            section(class="card card_effect")
+                div(class="card__inner")
+                    div(class="card__title")
+                        h1(class="title-h1")
+                            | Найдём номера под<br> ваши пожелания
+                    form(class="card__form form form-margin", method="POST")
+                        include ../includes/calendar/calendar.pug
+                        include ../includes/select/select.pug
+                        button(class="form__button form__button-geometry", type="submit") 
+                            | Подобрать номер
+            div(class="rooms-description")
+                p(class="rooms-description__text text")
+                    | Лучшие номера для вашей работы,
+                    | отдыха и просто вдохновения
+            

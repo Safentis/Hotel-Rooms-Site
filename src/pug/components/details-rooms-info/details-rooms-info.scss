@@ -1,0 +1,21 @@
+.room-details {
+    width: 28rem;
+}
+.room-details__item {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    &:nth-of-type(1n+2) {
+        border-top: .1rem solid rgba(31, 32, 65, 0.1);
+    }
+}
+.room-details__text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    p {
+        margin-block-start: 0;
+        margin-block-end: 0;
+        line-height: 2.4rem;
+    }
+}

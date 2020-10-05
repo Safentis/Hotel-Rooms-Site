@@ -1,0 +1,16 @@
+//- NESTED LIST
+//- 1 arg = []; 2 arg = className for example - dropdown_hide
+mixin nestedList(value, classHide = '')
+    ul(class=`nested ${classHide}`)
+        each item in value
+            li(class="nested__item")
+                a(class="nested__link", href="#") #{item}
+
+mixin button(text, array)
+    button(
+        class=`nav__button-drop ${buttonArrow}`, 
+        data-dropdown="dropdown",
+        type="button"
+    )
+        | #{text}
+    +nestedList(array, 'dropdown_hide')

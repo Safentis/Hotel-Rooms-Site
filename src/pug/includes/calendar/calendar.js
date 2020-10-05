@@ -307,8 +307,9 @@ const calendarActions = new CalendarActions();
 const calendarRender = new CalendarRender();
 const events = new Events();
 
-document.addEventListener('click', events);
 calendarRender.calendarViewRender(
     new Date().getFullYear(), 
     new Date().getMonth()
 );
+
+document.addEventListener('click', events);
