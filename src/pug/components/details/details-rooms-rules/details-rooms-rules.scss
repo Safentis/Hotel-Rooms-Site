@@ -1,0 +1,23 @@
+.room-rules {
+    position: relative;
+    max-width: 29.1rem;
+}
+.room-rules__title {
+    @extend .title-h2;
+    margin-left: 2rem;
+}
+.room-rules__list {
+    margin-top: 2rem;
+}
+.room-rules__item {
+    @extend .text;
+    display: flex;
+    align-items: center;
+    line-height: 2.4rem;
+    margin-top: 1rem;
+
+    @include listStyle($dark-shade-25);
+    &::before {
+        left: -2rem;  
+    }
+}

@@ -1,8 +1,12 @@
-@import '../components/details-rooms-info/details-rooms-info.scss';
-@import '../components/details-rooms-impression/details-rooms-impression.scss';
+@import '../components/details/details-rooms-info/details-rooms-info.scss';
+@import '../components/details/details-rooms-impression/details-rooms-impression.scss';
+@import '../components/details/details-rooms-callbacks/details-rooms-callbacks.scss';
+@import '../components/details/details-rooms-rules/details-rooms-rules.scss';
+@import '../components/details/details-rooms-cancel/details-rooms-cancel.scss';
 
 .col-images {
     display: flex;
+    
     .main-image {
         
     }
@@ -12,5 +16,31 @@
     }
     .room-photo {
         max-width: 100%;
+    }
+}
+.col-description {
+    display: flex;
+    padding: 7rem 0;
+    .block-wrapper-top {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .block-wrapper-middle {
+        margin-top: 1rem;
+    }
+    .block-wrapper-bottom {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 3rem;
+    }
+}
+
+
+.left-sub-col {
+    // max-width: 71.1rem;
+}
+.right-sub-col {
+    .card-calc {
+        margin: 0 auto;
     }
 }

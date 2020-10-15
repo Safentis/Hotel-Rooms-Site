@@ -1,0 +1,12 @@
+.room-cancel {
+    margin-left: 7rem;
+    max-width: 34.1rem;
+}
+.room-cancel__title {
+    @extend .title-h2;
+}
+.room-cancel__text {
+    @extend .text;
+    line-height: 2.4rem;
+    word-wrap: break-word;
+}

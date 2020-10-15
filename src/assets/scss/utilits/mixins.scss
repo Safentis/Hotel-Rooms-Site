@@ -27,3 +27,15 @@
     background: $position / $size $repeat url($path);
     background-color: #fff;
 }
+@mixin listStyle($color) {
+    &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        margin-right: .5rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background: $color;
+    }
+}

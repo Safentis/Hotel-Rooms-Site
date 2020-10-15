@@ -23,6 +23,7 @@ $gradient-reg-button: #8BA4F9;
     @extend .button, .button-geometry;
     background: linear-gradient(180deg, $purple 0%, $gradient-reg-button 100%);
     border: .2rem solid $color-reg-button; 
+    text-transform: uppercase;
     color: $color-reg-button;
 }
 

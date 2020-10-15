@@ -34,12 +34,14 @@ block content
                     )
             div(class="col-description")
                 div(class="left-sub-col")
-                    div(class="block-wrapper-top ")
-                        include ../components/details-rooms-info/details-rooms-info.pug
-                        include ../components/details-rooms-impression/details-rooms-impression.pug
+                    div(class="block-wrapper-top")
+                        include ../components/details/details-rooms-info/details-rooms-info.pug
+                        include ../components/details/details-rooms-impression/details-rooms-impression.pug
                     div(class="block-wrapper-middle")
-                        div(class="room-callbacks") 3
+                        include ../components/details/details-rooms-callbacks/details-rooms-callbacks.pug
                     div(class="block-wrapper-bottom")
-                        div(class="room-rules") 4
-                        div(class="room-previous") 5
+                        include ../components/details/details-rooms-rules/details-rooms-rules.pug
+                        include ../components/details/details-rooms-cancel/details-rooms-cancel.pug
                 div(class="right-sub-col")
+                    section(class="card card-calc")
+                        div(class="card__inner")
