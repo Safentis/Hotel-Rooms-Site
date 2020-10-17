@@ -56,7 +56,7 @@ class ButtonsCounter {
             peoples += +elem.dataset.integer
         });
         
-        input.value = peoples;
+        input.value = peoples + ' ' + 'гостя';
         cleare.classList.remove('button-cleare_hide');
         ul.classList.add('dropdown_hide');
     }

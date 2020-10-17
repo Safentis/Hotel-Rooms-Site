@@ -1,10 +1,10 @@
 .room-rules {
     position: relative;
     max-width: 29.1rem;
+    margin-left: 2rem;
 }
 .room-rules__title {
     @extend .title-h2;
-    margin-left: 2rem;
 }
 .room-rules__list {
     margin-top: 2rem;

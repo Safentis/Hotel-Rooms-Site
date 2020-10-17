@@ -5,10 +5,6 @@
     .footer__col-logo {
         flex: 26rem 0 0;
     }
-    .footer__col-navigation {
-        flex: 1 0 0;
-        margin-left: 4rem;        
-    }
 }
 
 // COL-LOGO
@@ -18,6 +14,10 @@
 }
 
 // COL-NAVIGATION
+.nav {
+    flex: 1 0 0;
+    margin-left: 4rem;     
+}
 .nav__list {
     display: flex;
     justify-content: space-between;

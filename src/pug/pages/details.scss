@@ -3,44 +3,44 @@
 @import '../components/details/details-rooms-callbacks/details-rooms-callbacks.scss';
 @import '../components/details/details-rooms-rules/details-rooms-rules.scss';
 @import '../components/details/details-rooms-cancel/details-rooms-cancel.scss';
+@import '../components/details/details-card/details-card.scss';
 
 .col-images {
     display: flex;
+    justify-content: center;
+}
+.main-image {
     
-    .main-image {
-        
-    }
-    .stack-image {
-        display: flex;
-        flex-direction: column;
-    }
-    .room-photo {
-        max-width: 100%;
-    }
+}
+.stack-image {
+    display: flex;
+    flex-direction: column;
+}
+.room-photo {
+    max-width: 100%;
 }
 .col-description {
     display: flex;
+    flex-wrap: wrap;
     padding: 7rem 0;
-    .block-wrapper-top {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .block-wrapper-middle {
-        margin-top: 1rem;
-    }
-    .block-wrapper-bottom {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: 3rem;
-    }
+}
+.block-wrapper-top {
+    display: flex;
+    flex-wrap: wrap;
+}
+.block-wrapper-middle {
+    margin-top: 1rem;
+}
+.block-wrapper-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3rem;
 }
 
 
 .left-sub-col {
-    // max-width: 71.1rem;
+    max-width: 71.2rem;
 }
 .right-sub-col {
-    .card-calc {
-        margin: 0 auto;
-    }
+    flex: 1 0 0;
 }

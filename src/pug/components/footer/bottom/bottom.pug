@@ -1,17 +1,17 @@
 mixin socialIcon(path, alt, title)
-    a(class="social-icon" href="#")
-        img(
-            class="social-icon__image" 
-            src=`${path}`, 
-            alt=`${alt}`, 
-            title=`${title}`
-        )
+    li
+        a(class="social-icon" href="#")
+            img(
+                class="social-icon__image" 
+                src=`${path}`, 
+                alt=`${alt}`, 
+                title=`${title}`
+            )
 
 div(class="footer__bottom-row container")
-    div(class="footer__copyright-block")
-        p(class="copyright")
-            | Copyright © 2018 Toxin отель. Все права зачищены.
-    div(class="footer__socials-block")
+    p(class="copyright")
+        | Copyright © 2018 Toxin отель. Все права зачищены.
+    ul(class="footer__socials-block")
         +socialIcon(
             './images/twitter.svg', 
             'twitter', 

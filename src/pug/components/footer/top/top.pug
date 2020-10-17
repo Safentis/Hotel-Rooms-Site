@@ -6,22 +6,21 @@ div(class="footer__top-row container")
             img(class="logo__img", src="./images/logo.svg", alt="Toxin", title="Toxin")
         p(class="reward-description")
             | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-    div(class="footer__col-navigation")
-        nav(class="nav")
-            ul(class="nav__list")
-                +navItem('Навигация', ['О нас', 'Новости', 'Служба поддержки', 'Услуги'])
-                +navItem('О нас', ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'])
-                +navItem('Служба поддержки', ['Соглашения', 'Сообщества', 'Связь с нами'])
-                li(class="nav__item")
-                    div(class="nav__nested-block nested-block nested-subscribe")
-                        h2(class="nested-block__title", for="email") 
-                            | Подписка
-                        p(class="nested-block__text")
-                            | Получайте специальные предложения и новости сервиса
-                        div(class="input-wrapper")
-                            label(class="label label_opacity-0", for="email") Подписка
-                            input(class="nested-block__email input input-geometry input_hover", 
-                                type="email", 
-                                placeholder="Email", 
-                                id="email"
-                            )
+    nav(class="nav")
+        ul(class="nav__list")
+            +navItem('Навигация', ['О нас', 'Новости', 'Служба поддержки', 'Услуги'])
+            +navItem('О нас', ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'])
+            +navItem('Служба поддержки', ['Соглашения', 'Сообщества', 'Связь с нами'])
+            li(class="nav__item")
+                div(class="nav__nested-block nested-block nested-subscribe")
+                    h2(class="nested-block__title", for="email") 
+                        | Подписка
+                    p(class="nested-block__text")
+                        | Получайте специальные предложения и новости сервиса
+                    div(class="input-wrapper")
+                        label(class="label label_opacity-0", for="email") Подписка
+                        input(class="nested-block__email input input-geometry input_hover", 
+                            type="email", 
+                            placeholder="Email", 
+                            id="email"
+                        )

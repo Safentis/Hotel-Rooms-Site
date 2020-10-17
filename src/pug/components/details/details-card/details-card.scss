@@ -1,0 +1,100 @@
+.card-calc {
+    margin-left: auto;
+}
+.card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.room,
+.price {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+.room__sign {
+    @extend .text;
+    font-weight: 700;
+    color: $dark-shade-100;
+}
+.room__number {
+    @extend .title-h1;
+    margin: 0 .5rem;
+}
+.room__name {
+    @extend .title-h3;
+    text-transform: uppercase;
+    color: $purple;
+}
+.price__number {
+    @extend .text;
+    font-weight: bold;
+    margin-right: .25rem;
+}
+.price__text {
+    @extend .title-h3;
+    font-weight: normal;
+    color: $dark-shade-50;
+}
+
+// CONDITIONS
+.conditions {
+    margin-top: 2.56rem;
+}
+.conditions__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    & > span:nth-of-type(1n+1) {
+        max-width: 21.4rem;
+    }
+}
+.conditions__service {
+    @extend .text;
+    color: $dark-shade-75;
+    line-height: 2.4rem;
+}
+.info-icon {
+    position: relative;
+    &::before {
+        content: 'i';
+        cursor: pointer;
+        border-radius: 50%;
+        border: .1rem solid $dark-shade-25;
+        color: $dark-shade-25;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        right: -2.5rem;
+    }
+}
+
+// FINAL COST
+.total-price {
+    @extend .title-h2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.total-price__text {
+    min-width: 5.9rem;
+}
+.total-price__line {
+    border-bottom: .1rem dotted $dark-shade-25;
+    margin-bottom: .35rem;
+    width: 55%;
+    height: .1rem;
+}
+.total-price__number {
+    display: flex;
+    justify-content: flex-end;
+    min-width: 7.8rem;
+}
+
+.button-reservation {
+    margin-top: 2rem;
+}

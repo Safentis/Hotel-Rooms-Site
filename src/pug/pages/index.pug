@@ -3,36 +3,36 @@ extends ../layout/layout.pug
 block head
     head
         meta(charset="UTF-8")
-        title title
+        title Описание номера
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(name="keywords", content="")
-        meta(name="description", content="")
+        meta(name="keywords", content="Сведения о номере, Впечатления от номера, Отзывы посетителей номера, Правила, Отмена")
+        meta(name="description", content="Сведения о номере")
 
 block content
     main(class="main")
-        div(class="main__inner container")
+        div(class="main__inner")
             div(class="col-images")
                 div(class="main-image")
-                    img(class="room-photo", 
+                    img(class="room-photo main-image", 
                         src="./images/details-first-photo.jpg", 
                         alt="main image room", 
                         width="981px", 
-                        height="485"
+                        height="485px"
                     )
                 div(class="stack-image")
                     img(class="room-photo", 
                         src="./images/details-second-photo.jpg", 
                         alt="column image room", 
                         width="461px", 
-                        height="243"
+                        height="243px"
                     )
                     img(class="room-photo", 
                         src="./images/details-third-photo.jpg", 
                         alt="column image room", 
                         width="461px", 
-                        height="243"
+                        height="243px"
                     )
-            div(class="col-description")
+            div(class="col-description container")
                 div(class="left-sub-col")
                     div(class="block-wrapper-top")
                         include ../components/details/details-rooms-info/details-rooms-info.pug
@@ -43,5 +43,5 @@ block content
                         include ../components/details/details-rooms-rules/details-rooms-rules.pug
                         include ../components/details/details-rooms-cancel/details-rooms-cancel.pug
                 div(class="right-sub-col")
-                    section(class="card card-calc")
-                        div(class="card__inner")
+                    include ../components/details/details-card/details-card.pug
+                    

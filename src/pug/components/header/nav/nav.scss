@@ -45,7 +45,7 @@ $bg-color-button: #fff;
     line-height: 4rem;
 }
 .nested__link {
-    @extend .nav__link;
+    @extend .text;
 }
 
 // ICON ARROW
