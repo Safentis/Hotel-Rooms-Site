@@ -17,19 +17,20 @@ block content
                     div(class="card__title")
                         h1(class="title-h1")
                             | Регистрация аккаунта
-                    form(class="card__form form", action="POST")
-                        label(class="label label_opacity-0", for="firstName") Имя
-                        input(class="input input-geometry input-margin-20 input_hover", 
-                            id="firstName", 
-                            type="text", 
-                            placeholder="Имя"
-                        )
-                        label(class="label label_opacity-0", for="lastName") Фамилия
-                        input(class="input input-geometry input-margin-10 input_hover", 
-                            id="lastName", 
-                            type="text", 
-                            placeholder="Фамилия"
-                        )
+                    form(class="card__form form", action="POST", name="registration", id="registration")
+                        fieldset(class="label", form="registration")
+                            label(class="label label_opacity-0", for="firstName") Имя
+                            input(class="input input-geometry input-margin-20 input_hover", 
+                                id="firstName", 
+                                type="text", 
+                                placeholder="Имя"
+                            )
+                            label(class="label label_opacity-0", for="lastName") Фамилия
+                            input(class="input input-geometry input-margin-10 input_hover", 
+                                id="lastName", 
+                                type="text", 
+                                placeholder="Фамилия"
+                            )
                         //- RADIO
                         div(class="radio-buttons input-margin-10")
                             div(class="radio-button")
@@ -57,18 +58,18 @@ block content
                             placeholder="ДД.ММ.ГГГГ"
                         )
                         //- lOGIN DATA
-                        label(class="label label-margin-20", for="loginFirstName") Данные для входа в сервис
-                        input(class="input input-geometry input_hover", 
-                            id="loginFirstName", 
-                            type="text", 
-                            placeholder="Имя"
-                        )
-                        label(class="label label_opacity-0", for="LoginLastName") Фамилия
-                        input(class="input input-geometry input-margin-10 input_hover", 
-                            id="LoginLastName", 
-                            type="text", 
-                            placeholder="Фамилия"
-                        )
+                        fieldset(class="label label-margin-20", form="registration") Данные для входа в сервис
+                            input(class="input input-geometry input_hover", 
+                                id="loginFirstName", 
+                                type="text", 
+                                placeholder="Имя"
+                            )
+                            label(class="label label_opacity-0", for="LoginLastName") Фамилия
+                            input(class="input input-geometry input-margin-10 input_hover", 
+                                id="LoginLastName", 
+                                type="text", 
+                                placeholder="Фамилия"
+                            )
                         //- SLIDER
                         div(class="form-text text")
                             +slider()

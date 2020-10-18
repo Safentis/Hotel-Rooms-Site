@@ -2,12 +2,6 @@
     background: center / cover no-repeat url('../images/index-bg.jpg');
     padding: 7rem 0 1.8rem 0;
 }
-.main {
-    
-}
-.main__inner {
-
-}
 .card {
     background: #FFFFFF;
     border: 1px solid $dark-shade-12;
@@ -26,9 +20,6 @@
     display: flex;
     flex-direction: column;
 }
-.form {
-
-}
 .form-margin {
     margin-top: 2rem;
 }
@@ -40,9 +31,11 @@
 .form__button {
     @extend .account-registration;
     width: 100%;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    padding: 1.4rem 2.2rem 1.5rem 1.8rem;
+    padding: 1.2rem 2.2rem 1.3rem 1.8rem;
     text-transform: uppercase;
     &::after {
         content: '';
@@ -55,19 +48,21 @@
         right: 4.95%;
     }
 }
+.form__button-create {
+    padding: 1.2rem 2.2rem 1.3rem 1.8rem;
+}
 .form__button-geometry {
     margin-top: 3.1rem;
 }
-
 .rooms-description {
     width: 29.7rem;
     margin-top: 32rem;
     margin-left: auto;
     text-align: right;
-    .rooms-description__text {
-        color: $dark-shade-75;
-        line-height: 2.4rem;
-        margin-block-start: 0;
-        margin-block-end: 0;
-    }
+}
+.rooms-description__text {
+    color: $dark-shade-75;
+    line-height: 2.4rem;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }

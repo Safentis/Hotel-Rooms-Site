@@ -17,8 +17,10 @@ block content
                         h1(class="title-h1")
                             | Найдём номера под<br> ваши пожелания
                     form(class="card__form form form-margin", method="POST")
-                        include ../includes/calendar/calendar.pug
-                        include ../includes/select/select.pug
+                        div(class="calendar-wrapper")
+                            include ../includes/calendar/calendar.pug
+                        div(class="dropdown-wrapper")
+                            include ../includes/select/select.pug
                         button(class="form__button form__button-geometry", type="submit") 
                             | Подобрать номер
             div(class="rooms-description")

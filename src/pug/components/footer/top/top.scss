@@ -10,7 +10,7 @@
 // COL-LOGO
 .reward-description {
     @extend .text;
-    line-height: 2.4rem;   
+    margin-top: 2rem;
 }
 
 // COL-NAVIGATION
@@ -45,6 +45,8 @@
 }
 .nested-block__text {
     @extend .reward-description;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 .input-wrapper {
     position: relative;

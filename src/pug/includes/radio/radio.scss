@@ -28,6 +28,7 @@
 .input-radio:checked + .label-radio {
     &::before {
         content: '';
-        background: center / 75% 75% no-repeat url('../images/circle.svg');
+        background: center / 100% 75% no-repeat url('../images/circle.svg');
+        text-align: center;
     }
 }

@@ -1,42 +1,28 @@
 include ../counter/counter.pug
 
-block variables
-    -var classLabel = "dropdown-label-320x44"
-    -var classInput = "dropdown-input-320x44 dropdown_placeholder input_hover"
-    -var classList = "dropdown-list-with-buttons dropdown_hide"
-    -var classItem = "dropdown-item"
-    -var classButtons = "dropdown-buttons buttons"
-    -var classButtonClear = "button-pick button-clear"
-    -var classButtonApply = "button-pick button-apply"
 
-    -var id = "dropdown-guests"
-    -var pls = "Сколько гостей?"
-
-div(class="dropdown-wrapper")
-    label(class=`${classLabel}`, for=`${id}`) 
-        | Гости
-    input(
-        class=`${classInput}`, 
-        placeholder=`${pls}`, 
-        data-dropdown="dropdown",
-        id=`${id}`,
-        type="text",
-        readonly
-    )
-    block list
-        ul(class=`${classList}`)
-            each item in ['Взрослые', 'Дети', 'Младенцы']
-                li(class=`${classItem}`)
-                    p(class="dropdown-item__text") #{item}
-                    +counter()
-            block buttons
-                li()
-                    div(class=`${classButtons}`)
-                        button(class=`${classButtonClear} button-cleare_hide`,
-                            type="button", 
-                            data-count="clear"
-                        ) очистить
-                        button(class=`${classButtonApply}`, 
-                            type="button", 
-                            data-count="apply"
-                        ) применить
+label(class="dropdown-label-320x44", for="dropdown-guests") 
+    | Гости
+input(
+    class="dropdown-input-320x44 dropdown_placeholder input_hover", 
+    placeholder="Сколько гостей?", 
+    data-dropdown="dropdown",
+    id="dropdown-guests",
+    type="text",
+    readonly
+)
+ul(class="dropdown-list-with-buttons dropdown_hide")
+    each item in ['Взрослые', 'Дети', 'Младенцы']
+        li(class="dropdown-item")
+            p(class="dropdown-item__text") #{item}
+            +counter()
+    li()
+        div(class="dropdown-buttons buttons")
+            button(class="button-pick button-clear button-cleare_hide",
+                type="button", 
+                data-count="clear"
+            ) очистить
+            button(class="button-pick button-apply", 
+                type="button", 
+                data-count="apply"
+            ) применить

@@ -14,26 +14,27 @@ block content
             section(class="card login-card")
                 div(class="card__inner")
                     div(class="card__header")
-                        h2(class="title-h2") 
+                        h2(class="title-h1") 
                             | Войти
                     form(class="card__form form", method="POST")
-                        label(class="label label_opacity-0", for="firstName") Имя
+                        label(class="label label_opacity-0", for="email") Email
                         input(class="input input-geometry input-margin-20 input_hover", 
-                            id="firstName", 
+                            id="email", 
                             type="text", 
-                            placeholder="Имя"
+                            placeholder="Email"
                         )
-                        label(class="label label_opacity-0", for="lastName") Фамилия
+                        label(class="label label_opacity-0", for="password") Пароль
                         input(class="input input-geometry input-margin-10 input_hover", 
-                            id="lastName", 
+                            id="password", 
                             type="text", 
-                            placeholder="Фамилия"
+                            placeholder="Пароль"
                         )
                         button(class="form__button button-go-pay", type="submit")
                             | Войти
                         div(class="block-login")
-                            p(class="account-text") Уже есть аккаунт на Toxin
-                            a(class="account-in", href="./login.html") Войти
+                            p(class="account-text") Нет аккаунта на Toxin?
+                            a(class="form__button-create account-in", href="./login.html") 
+                                | Создать
 
                     
 

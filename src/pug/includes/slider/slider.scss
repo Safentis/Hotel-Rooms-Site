@@ -1,5 +1,6 @@
 /* slide */
 .slide {
+    cursor: pointer;
     display: block;
     position: relative;
     width: 40px;
@@ -22,13 +23,10 @@
     border: 1px solid $dark-shade-25;
 }
 .slide__element_off {
-    left: 5%;
+    left: 10%;
     background-color: $dark-shade-25;
 }
 .slide__element_on {
-    right: 5%;
+    right: 10%;
     background: linear-gradient(180deg, $purple 0%, $blue-light 100%);
-}
-.slide:hover {
-    cursor: pointer;
 }

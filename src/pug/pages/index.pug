@@ -5,43 +5,91 @@ block head
         meta(charset="UTF-8")
         title Описание номера
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(name="keywords", content="Сведения о номере, Впечатления от номера, Отзывы посетителей номера, Правила, Отмена")
-        meta(name="description", content="Сведения о номере")
+        meta(name="keywords", content="Уют")
+        meta(name="description", content="Описание выбранного номера")
 
 block content
     main(class="main")
         div(class="main__inner")
-            div(class="col-images")
-                div(class="main-image")
-                    img(class="room-photo main-image", 
-                        src="./images/details-first-photo.jpg", 
-                        alt="main image room", 
-                        width="981px", 
-                        height="485px"
-                    )
-                div(class="stack-image")
-                    img(class="room-photo", 
-                        src="./images/details-second-photo.jpg", 
-                        alt="column image room", 
-                        width="461px", 
-                        height="243px"
-                    )
-                    img(class="room-photo", 
-                        src="./images/details-third-photo.jpg", 
-                        alt="column image room", 
-                        width="461px", 
-                        height="243px"
-                    )
-            div(class="col-description container")
-                div(class="left-sub-col")
-                    div(class="block-wrapper-top")
-                        include ../components/details/details-rooms-info/details-rooms-info.pug
-                        include ../components/details/details-rooms-impression/details-rooms-impression.pug
-                    div(class="block-wrapper-middle")
-                        include ../components/details/details-rooms-callbacks/details-rooms-callbacks.pug
-                    div(class="block-wrapper-bottom")
-                        include ../components/details/details-rooms-rules/details-rooms-rules.pug
-                        include ../components/details/details-rooms-cancel/details-rooms-cancel.pug
-                div(class="right-sub-col")
-                    include ../components/details/details-card/details-card.pug
-                    
+            div(class="room-photos")
+                img(class="room-photos__main", src="./images/details-first-photo.jpg", alt="first photo", width="981px", height="485px")
+                div(class="room-photos__sub")
+                    img(class="room-photos__sub-small", src="./images/details-second-photo.jpg", alt="second photo", width="461px", height="243px")
+                    img(class="room-photos__sub-small", src="./images/details-third-photo.jpg", alt="third photo", width="461px", height="243px")
+            div(class="room-info container")
+                div(class="room-info__row-top")
+                    section(class="room-details")
+                        h2(class="room-details__title title-h2")
+                            | Сведения о номере
+                        ul(class="room-details__list")
+                            li(class="details")
+                                img(class="details__image", src="./images/details-smile-face-icon.svg", alt="smile face")
+                                section(class="details__content")
+                                    h3(class="details__title text-active") Комфорт
+                                    p(class="details__text text") Шумопоглощающие стены
+                            li(class="details")
+                                img(class="details__image", src="./images/details-factory-icon.svg", alt="big house")
+                                section(class="details__content")
+                                    h3(class="details__title text-active") Удобство
+                                    p(class="details__text text") Окно в каждой из спален
+                            li(class="details")
+                                img(class="details__image", src="./images/details-fire-icon.svg", alt="burn")
+                                section(class="details__content")
+                                    h3(class="details__title text-active") Уют
+                                    p(class="details__text text") Номер оснащён камином
+                    section(class="room-impression")
+                        h2(class="room-impression__title title-h2")
+                            | Впечатления от номера
+                        div(class="room-impression__content")
+                            p(class="diagram")
+                                span(class="diagram__count") 260
+                                span(class="diagram__text") голосов
+                            ul(class="impression")
+                                li(class="impression__item text") Великолепно
+                                li(class="impression__item text") Хорошо
+                                li(class="impression__item text") Удовлетворительно
+                                li(class="impression__item text") Разочарован
+                div(class="room-info__row-middle")
+                    section(class="")
+                        h2(class="title-h2") Отзывы посетителей номера
+                        ul(class="")
+                            li
+                                div(class="")
+                                    img(class="", src="./images/details-avatar-male.png", alt="avatar icon", width="48px", height="48px")
+                                    span(class="")
+                                        span(class="")
+                                section(class="")
+                                    h3(class="text-active") Мурад Сафронов
+                                    p(class="text") 5 дней назад
+                                    p(class="text text-lh")
+                                        | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. 
+                                        | И стены, действительно, шумоподавляющие. 
+                                        | Выкрикивал комплименты повару — никто не жаловался из соседей.
+                            li
+                                div(class="")
+                                    img(class="", src="./images/details-avatar-female.png", alt="avatar icon", width="48px", height="48px")
+                                    span(class="")
+                                        span(class="")
+                                section(class="")
+                                    h3(class="text-active") Патрисия Стёклышева
+                                    p(class="text text-lh") недулю назад
+                                    p(class="text")
+                                        | Обслуживание на высоте! Всё аккуратно, чисто. 
+                                        | Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент
+                div(class="room-info__row-bottom")
+                    section(class="rules")
+                        h2(class="rules__title title-h2")
+                            | Правила
+                        ul(class="rules__list")
+                            li(class="rules__item text")
+                                | Нельзя с питомцами
+                            li(class="rules__item text")
+                                | Без вечеринок и мероприятий
+                            li(class="rules__item text")
+                                | Время прибытия — после 13:00, а выезд до 12:00
+                    section(class="cancel")
+                        h2(class="cancel__title title-h2")
+                            | Отмена
+                        p(class="cancel__text text text-lh")
+                            | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. 
+                            | до прибытия вы получите полный возврат за вычетом сбора за услуги.

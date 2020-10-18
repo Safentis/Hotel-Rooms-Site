@@ -18,3 +18,14 @@
     color: $dark-shade-75;
     font: bold $text-body-size / 1 $montserrat-family;
 }
+.text-purple {
+    @extend .title-h3;
+    color: $purple;
+}
+.text-grey {
+    @extend .title-h3;
+    color: $dark-shade-50;
+}
+.text-lh {
+    line-height: 2.4rem;
+}
