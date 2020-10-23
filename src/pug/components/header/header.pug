@@ -1,6 +1,26 @@
 header(class="header")
     div(class="header__inner container")
-        a(class="header__col-logo logo", href="index.html")
-            img(class="logo__img", src="./images/logo.svg", alt="Toxin", title="Toxin")
-        include ./nav/nav.pug
-        include ./account/account.pug
+        a(class="logo", href="index.html")
+            img(src="./images/logo.svg", alt="Toxin", width="106px", height="40px", title="Toxin")
+        nav(class="header__nav")
+            ul(class="header__nav-list")
+                li(class="header__nav-item")
+                    a(class="header__nav-link text_active", href="#")
+                        | О нас
+                li(class="header__nav-item header__nav-nested")
+                    a(class="header__nav-link text", href="#")
+                        | Услуги
+                li(class="header__nav-item")
+                    a(class="header__nav-link text", href="#")
+                        | Вакансии
+                li(class="header__nav-item")
+                    a(class="header__nav-link text", href="#")
+                        | Новости
+                li(class="header__nav-item header__nav-nested")
+                    a(class="header__nav-link text", href="#")
+                        | Соглашения
+        div(class="account")
+            a(class="account__button-in button-in", href="login.html")
+                | Войти
+            a(class="account__button-reg button-registration", href="registration.html")
+                | зарегистрироваться

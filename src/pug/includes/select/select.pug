@@ -1,28 +1,17 @@
 include ../counter/counter.pug
 
-
-label(class="dropdown-label-320x44", for="dropdown-guests") 
-    | Гости
-input(
-    class="dropdown-input-320x44 dropdown_placeholder input_hover", 
-    placeholder="Сколько гостей?", 
-    data-dropdown="dropdown",
-    id="dropdown-guests",
-    type="text",
-    readonly
-)
-ul(class="dropdown-list-with-buttons dropdown_hide")
+ul(class="dropdown_hide")
     each item in ['Взрослые', 'Дети', 'Младенцы']
-        li(class="dropdown-item")
-            p(class="dropdown-item__text") #{item}
+        li(class="")
+            span(class="title-h3") #{item}
             +counter()
-    li()
-        div(class="dropdown-buttons buttons")
-            button(class="button-pick button-clear button-cleare_hide",
+    li
+        div(class="")
+            button(class="button-cleare_hide",
                 type="button", 
                 data-count="clear"
             ) очистить
-            button(class="button-pick button-apply", 
+            button(class="", 
                 type="button", 
                 data-count="apply"
             ) применить

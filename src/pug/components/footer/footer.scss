@@ -1,12 +1,57 @@
-// TEMPLATE
 .footer__top {
-    padding: 10rem 0;
-    border-top: .1rem solid $color-horizontal-line;
-    border-bottom: .1rem solid $color-horizontal-line;
+    border-top: .1rem solid $dark-shade-1;
+    border-bottom: .1rem solid $dark-shade-1;
 }
-.footer__bottom {
+.footer__top-inner {
+    display: flex;
+    padding: 10rem 0;
+}
+.footer__logo-wrapper {
+    max-width: 26rem;
+    margin-right: 4rem;
+}
+.logo-text {
+    margin-top: 2rem;
+}
+.footer__nav {
+    display: block;
+    width: 100%;
+}
+.footer__nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.email {
+    width: 26rem;
+}
+.email__title,
+.nested__title {
+    text-transform: uppercase;
+}
+.nested__item,
+.email__item {
+    margin-top: 2.1rem;
+    & > a {
+        line-height: 1.8rem;
+    }
+}
+.email__input {
+    margin: 0;
+    padding-right: 4rem;
+}
+.subscribe {
+    position: relative;
+    @include arrowInputAndButtons('../images/arrow-forward.svg');
+}
+.footer__botom-inner {
+    display: flex;
+    justify-content: space-between;
     padding: 2.3rem 0;
 }
-
-@import './top/top.scss';
-@import './bottom/bottom.scss';
+.socials {
+    display: flex;
+}
+.socials__item {
+    margin-left: 2rem;
+}

@@ -1,0 +1,15 @@
+//- LIST_ITEM
+mixin footerListItem(title, arr)
+    li(class="footer__nav-item nested")
+        h2(class="nested__title title-h3")
+            | #{title}
+        ul(class="nested__list")
+            each item in arr 
+                li(class="nested__item")
+                    a(class="nested__link text", href="#")
+                        | #{item}
+//- SOCIALS
+mixin footerSocialItem(type)
+    li(class="socials__item")
+        a(class="socials__link", href="#")
+            img(src=`./images/${type}.svg`, alt=`${type}`, width="24px", height="24px", title=`Мы в ${type}`)

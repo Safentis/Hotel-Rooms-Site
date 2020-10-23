@@ -1,6 +1,6 @@
-mixin slider()
+mixin slider(cls)
     span(
-        class="slide slide_off", 
+        class=`slide slide_off ${cls}`, 
         data-slider="slider",
         data-value="false"
     )

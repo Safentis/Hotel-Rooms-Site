@@ -3,38 +3,38 @@ extends ../layout/layout.pug
 block head
     head
         meta(charset="UTF-8")
-        title Вход в аккаунт
+        title Войти в личный кабинет
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(name="keywords", content=`Вход в аккаунт, имя, фамилия`)
-        meta(name="description", content="Вход в аккаунт Toxin")
+        meta(name="keywords", content="Toxin, О нас, Услуги, Войти")
+        meta(name="description", content="Здесь Вы сможете подобрать номер на любой вкус")
 
 block content
-    main(class="main login-screen")
+    main(class="main login-page")
         div(class="main__inner container")
-            section(class="card login-card")
-                div(class="card__inner")
-                    div(class="card__header")
-                        h2(class="title-h1") 
-                            | Войти
-                    form(class="card__form form", method="POST")
-                        label(class="label label_opacity-0", for="email") Email
-                        input(class="input input-geometry input-margin-20 input_hover", 
-                            id="email", 
-                            type="text", 
-                            placeholder="Email"
-                        )
-                        label(class="label label_opacity-0", for="password") Пароль
-                        input(class="input input-geometry input-margin-10 input_hover", 
-                            id="password", 
-                            type="text", 
-                            placeholder="Пароль"
-                        )
-                        button(class="form__button button-go-pay", type="submit")
-                            | Войти
-                        div(class="block-login")
-                            p(class="account-text") Нет аккаунта на Toxin?
-                            a(class="form__button-create account-in", href="./login.html") 
-                                | Создать
-
-                    
-
+            section(class="card card-login")
+                h1(class="card__title title-h1")
+                    | Войти
+                form(class="form", method="POST", id="login", name="login")
+                    label(class="label label-opacity-0", for="email") 
+                        | Email
+                    input(
+                        class="input input_hover mrg-top-20", 
+                        id="email", 
+                        type="email", 
+                        placeholder="Email",
+                    )
+                    label(class="label label-opacity-0", for="password") 
+                        | Пароль
+                    input(
+                        class="input input_hover mrg-top-10", 
+                        id="password", 
+                        type="password", 
+                        placeholder="Пароль",
+                    )
+                    button(class="button-form-large mrg-top-20", type="submit", for="login")
+                        | Войти
+                div(class="block-login mrg-top-30")
+                    p(class="text")
+                        | Нет аккаунта на Toxin?
+                    a(class="button-form-login", href="#")
+                        | Создать

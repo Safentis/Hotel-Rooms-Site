@@ -1,27 +1,38 @@
-@import './nav/nav.scss';
-@import './account/account.scss';
-
 .header {
-    max-width: 100%;
+    padding: 1.5rem;
 }
 .header__inner {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin: 1.5rem auto;
 }
-.header__col-logo {
+.logo {
+    display: block;
     margin-right: auto;
 }
-.header__col-nav {}
-.header__col-account {}
-
-.col-nav {}
-.col-account {}
-
-.logo {
-    
-    .logo__img {
-        
+.header__nav-list {
+    display: flex;
+}
+.header__nav-item {
+    margin-right: 2rem;
+}
+.header__nav-nested {
+    display: flex;
+    align-items: center;
+    &::after {
+        content: '';
+        cursor: pointer;
+        display: block;
+        margin-left: .5rem;
+        background: center / contain no-repeat url("../images/select-arrow.svg");
+        width: 1.4rem;
+        height: 1.4rem;
     }
+}
+.account {
+    display: flex;
+    align-items: center;
+}
+.account__button-in {
+    margin-right: 2rem;
 }

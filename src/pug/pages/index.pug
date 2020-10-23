@@ -1,95 +1,162 @@
 extends ../layout/layout.pug
 
+mixin detailsItem(text, exposition, icon)
+    li(class="item-info")
+        div(class=`item-info__icon ${icon} mrg-right-10`)
+        p(class="item-info__text text")
+            span(class="text_active") #{text} 
+            span(class="item-info__exposition") #{exposition}
+
 block head
     head
         meta(charset="UTF-8")
-        title Описание номера
+        title Детали номера
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(name="keywords", content="Уют")
-        meta(name="description", content="Описание выбранного номера")
+        meta(name="keywords", content="Поиск номеров, подобрать номера")
+        meta(name="description", content="Здесь Вы сможете подобрать номер на любой вкус")
 
 block content
-    main(class="main")
+    main(class="main details-page")
         div(class="main__inner")
-            div(class="room-photos")
-                img(class="room-photos__main", src="./images/details-first-photo.jpg", alt="first photo", width="981px", height="485px")
-                div(class="room-photos__sub")
-                    img(class="room-photos__sub-small", src="./images/details-second-photo.jpg", alt="second photo", width="461px", height="243px")
-                    img(class="room-photos__sub-small", src="./images/details-third-photo.jpg", alt="third photo", width="461px", height="243px")
-            div(class="room-info container")
-                div(class="room-info__row-top")
-                    section(class="room-details")
-                        h2(class="room-details__title title-h2")
-                            | Сведения о номере
-                        ul(class="room-details__list")
-                            li(class="details")
-                                img(class="details__image", src="./images/details-smile-face-icon.svg", alt="smile face")
-                                section(class="details__content")
-                                    h3(class="details__title text-active") Комфорт
-                                    p(class="details__text text") Шумопоглощающие стены
-                            li(class="details")
-                                img(class="details__image", src="./images/details-factory-icon.svg", alt="big house")
-                                section(class="details__content")
-                                    h3(class="details__title text-active") Удобство
-                                    p(class="details__text text") Окно в каждой из спален
-                            li(class="details")
-                                img(class="details__image", src="./images/details-fire-icon.svg", alt="burn")
-                                section(class="details__content")
-                                    h3(class="details__title text-active") Уют
-                                    p(class="details__text text") Номер оснащён камином
-                    section(class="room-impression")
-                        h2(class="room-impression__title title-h2")
-                            | Впечатления от номера
-                        div(class="room-impression__content")
-                            p(class="diagram")
-                                span(class="diagram__count") 260
-                                span(class="diagram__text") голосов
-                            ul(class="impression")
-                                li(class="impression__item text") Великолепно
-                                li(class="impression__item text") Хорошо
-                                li(class="impression__item text") Удовлетворительно
-                                li(class="impression__item text") Разочарован
-                div(class="room-info__row-middle")
-                    section(class="")
-                        h2(class="title-h2") Отзывы посетителей номера
-                        ul(class="")
-                            li
-                                div(class="")
-                                    img(class="", src="./images/details-avatar-male.png", alt="avatar icon", width="48px", height="48px")
-                                    span(class="")
-                                        span(class="")
-                                section(class="")
-                                    h3(class="text-active") Мурад Сафронов
-                                    p(class="text") 5 дней назад
-                                    p(class="text text-lh")
-                                        | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. 
-                                        | И стены, действительно, шумоподавляющие. 
-                                        | Выкрикивал комплименты повару — никто не жаловался из соседей.
-                            li
-                                div(class="")
-                                    img(class="", src="./images/details-avatar-female.png", alt="avatar icon", width="48px", height="48px")
-                                    span(class="")
-                                        span(class="")
-                                section(class="")
-                                    h3(class="text-active") Патрисия Стёклышева
-                                    p(class="text text-lh") недулю назад
-                                    p(class="text")
-                                        | Обслуживание на высоте! Всё аккуратно, чисто. 
-                                        | Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент
-                div(class="room-info__row-bottom")
-                    section(class="rules")
-                        h2(class="rules__title title-h2")
-                            | Правила
-                        ul(class="rules__list")
-                            li(class="rules__item text")
-                                | Нельзя с питомцами
-                            li(class="rules__item text")
-                                | Без вечеринок и мероприятий
-                            li(class="rules__item text")
-                                | Время прибытия — после 13:00, а выезд до 12:00
-                    section(class="cancel")
-                        h2(class="cancel__title title-h2")
-                            | Отмена
-                        p(class="cancel__text text text-lh")
-                            | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. 
-                            | до прибытия вы получите полный возврат за вычетом сбора за услуги.
+            div(class="images")
+                img(class="images__main", src="./images/details-first-photo.jpg", alt="Фото номера", width="981px", height="485px")
+                img(class="images__top-photo", src="./images/details-second-photo.jpg", alt="Фото номера", width="461px", height="243px")
+                img(class="images__bottom-photo", src="./images/details-third-photo.jpg", alt="Фото номера", width="461px", height="243px")
+            div(class="room container")
+                div(class="room__col-description")
+                    div(class="room__top")
+                        section(class="details")
+                            h2(class="details__title title-h2") Сведения о номере
+                            ul(class="details__list")
+                                +detailsItem('Комфорт', 'Шумопоглощающие стены', 'smile')
+                                +detailsItem('Удобство', 'Окно в каждой из спален', 'home')
+                                +detailsItem('Уют', 'Номер оснащён камином', 'fire')
+                        section(class="impression impression-margin")
+                            h2(class="impression__title title-h2") Впечатления от номера
+                            div(class="impression__content mrg-top-20")
+                                div(class="diagram mrg-right-20")
+                                    span(class="diagram__voices")
+                                        | 260 
+                                    span(class="diagram__text")
+                                        | голосов 
+                                ul(class="impression__list")
+                                    li(class="impression__item text")
+                                        | Великолепно
+                                    li(class="impression__item text")
+                                        | Хорошо
+                                    li(class="impression__item text")
+                                        | Удовлетворительно
+                                    li(class="impression__item text")
+                                        | Разочарован
+                    div(class="room__middle mrg-top-20")
+                        section(class="comments")
+                            div(class="comments__header")
+                                h2(class="comments__title title-h2") Отзывы посетителей номера
+                                p(class="comments__text text") 2 отзыва
+                            ul(class="comments__list")
+                                li(class="comment mrg-top-20") 
+                                    div(class="user mrg-right-10")
+                                        img(class="user__avatar", src="./images/details-avatar-male.png", alt="Photo", title="Мурад Сарафанов")
+                                        button(class="button-like_on mrg-top-10")
+                                            | 12
+                                    div(class="comment__body")
+                                        p(class="user__details text")
+                                            span(class="user__name text_active")
+                                                | Мурад Сарафанов
+                                            span(class="user__visit")
+                                                | 5 дней назад
+                                        blockquote(class="comment__text text mrg-top-10")
+                                            p
+                                                | Великолепный матрас на кровати в основной спальне! 
+                                                | А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. 
+                                                | Выкрикивал комплименты повару — никто не жаловался из соседей.
+                                li(class="comment mrg-top-20")
+                                    div(class="user mrg-right-10")
+                                        img(class="user__avatar", src="./images/details-avatar-female.png", alt="Photo", title="Патрисия Стёклышева")
+                                        button(class="button-like_off mrg-top-10")
+                                            | 2
+                                    div(class="comment__body")
+                                        p(class="user__details text")
+                                            span(class="user__name text_active")
+                                                | Патрисия Стёклышева
+                                            span(class="user__visit")
+                                                | Неделю назад
+                                        blockquote(class="comment__text text mrg-top-10")
+                                            p
+                                                | Обслуживание на высоте! Всё аккуратно, чисто. 
+                                                | Завтраки в номер советую заказать, 
+                                                | каждый день новое блюдо и десерт как комплимент
+                    div(class="room__bottom mrg-top-40")
+                        section(class="rules")
+                            h2(class="rules__title title-h2") Правила
+                            ul(class="rules__list text")
+                                li(class="rules__item mrg-top-20")
+                                    | Нельзя с питомцами
+                                li(class="rules__item mrg-top-10")
+                                    | Без вечеринок и мероприятий
+                                li(class="rules__item mrg-top-10")
+                                    | Время прибытия — после 13:00,
+                                    | а выезд до 12:00
+                        section(class="cancel cancel-margin")
+                            h2(class="cancel__title title-h2") Отмена
+                            p(class="cancel__text text mrg-top-20")
+                                | Бесплатная отмена в течение 48 ч. 
+                                | После этого при отмене не позднее чем за 5 дн. 
+                                | до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                div(class="room__col-form")
+                    form(class="card card-room", method="POST", name="room-number", id="room-number")
+                        div(class="card__header")
+                            p(class="number")
+                                span(class="number__sign") № 
+                                span(class="number__int title-h1") 888
+                                span(class="number__text text_purple") люкс
+                            p(class="cost")
+                                span(class="cost__int text_active") 9 990₽ 
+                                span(class="cost__text text") в сутки
+                        div(class="calendar-wrapper mrg-top-20")
+                            label(class="label", for="arrival")
+                                | прибытие
+                                input(class="input-calendar input_hover", 
+                                    id="arrival", 
+                                    type="text", 
+                                    name="arrival", 
+                                    placeholder="ДД.ММ.ГГГГ", 
+                                    readonly
+                                )
+                            label(class="label", for="departure")
+                                | выезд
+                                input(class="input-calendar input_hover", 
+                                    id="departure", 
+                                    type="text", 
+                                    name="departure", 
+                                    placeholder="ДД.ММ.ГГГГ", 
+                                    readonly
+                                )
+                            include ../includes/calendar/calendar.pug
+                        label(class="label mrg-top-20", for="select-guests") 
+                            | Гости
+                        input(
+                            class="input-select input_hover", 
+                            id="select-guests", 
+                            type="text", 
+                            data-dropdown="dropdown", 
+                            placeholder="Сколько гостей",
+                            readonly
+                        )
+                        include ../includes/select/select.pug
+                        ul(class="options mrg-top-20")
+                            li(class="options__item text")
+                                span(class="options__service") 9 990₽ х 4 суток
+                                span 39 960₽
+                            li(class="options__item text mrg-top-10")
+                                span(class="options__service options__details") Сбор за услуги: скидка 2 179₽
+                                span 0₽
+                            li(class="options__item text mrg-top-10")
+                                span(class="options__service options__details") Сбор за дополнительные услуги
+                                span 300₽
+                        p(class="final-price title-h2 mrg-top-30")
+                            span(class="final-price__text") Итого
+                            span(class="final-price__underscore")
+                            span(class="final-price__int") 38 081₽
+                        a(class="button-form-large mrg-top-20")
+                            | забронировать

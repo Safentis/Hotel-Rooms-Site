@@ -1,41 +1,14 @@
-.registration-scrin {
-    background: center / cover no-repeat url('../images/registration-bg.jpg');
+.registration-page {
+    background: center / cover no-repeat url('../../assets/images/registration-bg.jpg');
     padding: 1.9rem 0;
 }
-
-// CARD
-.registration-card {
+.card-registration {
     margin: 0 auto;
 }
-.radio-buttons {
-    display: flex;
-    justify-content: flex-start;
-    
-}
-.form-text {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    color: $dark-shade-75;
-    margin-top: 2rem;
-    .form-text__margin {
-        margin-left: 1rem;
-    }
-}
-.button-go-pay {
-    margin-top: 2rem;
-}
-.block-login {
+.special-offer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
-    margin-top: 3rem;
 }
-.account-text {
-    font: normal $text-body-size / 1 $montserrat-family;
-    line-height: 1.8rem;
-    color: #000;
-    margin-block-start: 0;
-    margin-block-end: 0;
+.special-offer__text {
+    line-height: 1.5rem;
 }

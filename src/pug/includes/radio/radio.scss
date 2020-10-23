@@ -5,6 +5,7 @@
 .label-radio {
     order: 2;   
     display: inline-flex;
+    cursor: pointer;
 }
 .input-radio {
     order: 1;
@@ -13,6 +14,7 @@
     width: 2rem;
     height: 2rem;
     z-index: -1;
+    cursor: pointer;
 }
 .input-radio + .label-radio {
     &::before {

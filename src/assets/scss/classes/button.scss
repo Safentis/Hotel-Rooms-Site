@@ -1,9 +1,60 @@
+// BUTTON
 .button {
-    cursor: pointer;
-    font: bold $title-size-h3 / 1 $montserrat-family;
-}
-.button-geometry {
-    outline: none;
+    @extend .title-h3;
     border-radius: 2.2rem;
-    padding: .8rem 2rem .9rem 2rem;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+}
+
+// BUTTON_LOGIN-AND-BUTTON_REGISTRATION
+.button-in {
+    @extend .button;
+    border: .25rem solid $purple;
+    color: $purple;
+    padding: .73rem 2rem .73rem 2rem;
+}
+.button-registration {
+    @extend .button;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: #fff;
+    padding: .9rem 2rem 1rem 2rem;
+    width: 100%;
+}
+
+// BUTTONS_FORM
+.button-form-large {
+    @extend .button-registration;
+    @include arrowInputAndButtons('../images/arrow-right-button.svg');
+    display: block;
+    padding: 1.5rem 2.2rem 1.5rem 2.2rem;
+    position: relative;
+    text-align: center;
+    line-height: 1.5rem;
+    min-width: 15rem;
+    border: none;
+}
+.button-form-login {
+    @extend .button-in;
+    padding: 1.25rem 2rem 1.25rem 2rem;
+}
+
+// BUTTONS_LIKE
+.button-like {
+    @extend .slide;
+    @extend .title-h3;
+    line-height: 1.219rem;
+    font-weight: normal;
+    outline: none;
+    min-width: 4rem;
+}
+.button-like_on {
+    @extend .button-like;
+    @extend .slide_on;
+    color: $purple;
+}
+.button-like_off {
+    @extend .button-like;
+    @extend .slide_off;
+    color: $dark-shade-25;
 }

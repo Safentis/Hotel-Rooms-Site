@@ -1,7 +1,13 @@
-.login-screen {
-    background: url('../images/registration-bg.jpg');
+.login-page {
     padding: 17.2rem 0;
+    background: center / cover no-repeat url("../../assets/images/registration-bg.jpg");
 }
-.login-card {
+.card-login {
     margin: 0 auto;
+}
+.block-login {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }

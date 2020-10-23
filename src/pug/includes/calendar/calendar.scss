@@ -9,74 +9,75 @@ $main-white-color: #fff;
 .calendar-wrapper {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     position: relative;
+    flex-wrap: wrap;
 }
 .calendar {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    
-    max-width: 32rem;
-    padding: 2rem;
-    border: 1px solid $dark-shade-25;
-    box-shadow: 0 .1rem .2rem;
-    border-radius: .4rem;
-    background-color: $main-white-color;
-
     position: absolute;
-    top: 105%;
-    background-color: $main-white-color;
-    z-index: 100;
+    // display: flex;
+    // justify-content: center;
+    // flex-direction: column;
+    // flex-wrap: wrap;
+    
+    // max-width: 32rem;
+    // padding: 2rem;
+    // border: 1px solid $dark-shade-25;
+    // box-shadow: 0 .1rem .2rem;
+    // border-radius: .4rem;
+    // background-color: $main-white-color;
+
+    // position: absolute;
+    // top: 105%;
+    // background-color: $main-white-color;
+    // z-index: 100;
 }
 .calendar_off {
     display: none;
 }
 .calendar__header {
     .calendar__month-title {
-        @extend .title-h2;
+        // @extend .title-h2;
         text-align: center;
     }
 }
 .calendar__table {
-    border-collapse: collapse;
-    margin: 3rem 0 0 0;
+    // border-collapse: collapse;
+    // margin: 3rem 0 0 0;
     .calendar__body {}
 }
 
 // WEEK NAMES CELLS
 .week-names {
     .week-names__item {
-        @extend %font-bold-cells;
-        text-transform: capitalize;
-        color: $purple;
-        width: 4rem;
-        height: 4rem;
+        // @extend %font-bold-cells;
+        // text-transform: capitalize;
+        // color: $purple;
+        // width: 4rem;
+        // height: 4rem;
     }
 }
 
 // TABLE BODY CELLS
 .main-cell-color,
 .other-cell-color {
-    @extend %font-normal-cells;
-    cursor: pointer;
-    text-align: center;
-    max-width: 4rem;
-    height: 4rem;
+    // @extend %font-normal-cells;
+    // cursor: pointer;
+    // text-align: center;
+    // max-width: 4rem;
+    // height: 4rem;
 }
 .main-cell-color {
-    color: $dark-shade-50;
+    // color: $dark-shade-50;
 }
 .other-cell-color {
-    color: $dark-shade-25;
+    // color: $dark-shade-25;
 }
 
 // ARROWS BUTTONS
 .calendar__arrow {
     cursor: pointer;
-    position: absolute;
-    top: 2.3rem;
+    // position: absolute;
+    // top: 2.3rem;
 } 
 .arrow-left { left: 2rem; }
 .arrow-right { right: 2rem; }

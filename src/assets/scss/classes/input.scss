@@ -1,97 +1,57 @@
-// * * * * * * * * * * * * *
-// INPUT
-// LABEL
-.template-label {
-    color: $dark-shade-100;
-    text-transform: uppercase;
-    font: bold $title-size-h3 / 1 $montserrat-family;
-}
-.template-input {
-    outline: none;
-    color: $dark-shade-25;
-    border: .1rem solid $dark-shade-25;
-    font: normal $text-body-size / 1 $montserrat-family;
+
+// INPUT_CLASSES
+.input {
+    @extend .text;
+    background-color: #fff;
+    border-radius: .4rem;
+    border: 1px solid $dark-shade-25;
+    width: 100%;
+    margin-top: .5rem;
+    min-width: 15rem;
+    height: 4.4rem;
+    padding: 1.3rem 1.5rem;
     &::placeholder {
         color: $dark-shade-25;
     }
 }
-.template-hover {
-    &:focus,
-    &:hover {
-        border: .1rem solid $dark-shade-50;
+.input-select,
+.input-calendar {
+    cursor: pointer;
+    &::placeholder {
         color: $dark-shade-75;
+    }
+}
+.input-calendar {
+    @extend .input;
+    @include arrowField(92% 50%);
+    max-width: 15rem;
+}
+.input-select {
+    @extend .input;
+    @include arrowField(101% 50%);
+}
+
+// EFFECT_CLASS 
+.input_hover {
+    &:hover,
+    &:focus {
+        outline: none;
+        border: .1rem solid $dark-shade-50;
         &::placeholder {
             color: $dark-shade-75;
         }
     }
 }
 
-// INPUT GEOMRTY
-// LABEL GEOMRTY
-.template-geometry {
-    padding: 1.3rem 1.5rem;
-    border-radius: .4rem;
-    height: $input-height-44;
-}
-
-
-// EXTENDS CLASSES USES THIS TEMPLATE
-// LABEL
+// LABEL_CLASS
 .label {
-    @extend .template-label; 
+    @extend .title-h3;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
 }
-.label-geometry-150x44 {
-    width: 15rem;
-}
-.label-geometry-320x44 {
-    width: 32rem;
-}
-
-// INPUT
-.input {
-    @extend .template-input;
-}
-.input-geometry {
-    @extend .template-geometry;
-    margin-top: .544rem;
-    width: 100%;
-}
-.input-geometry-150x44 {
-    @extend .template-geometry;
-    width: 15rem;
-}
-.input-geometry-dropdown-150x44 {
-    @extend .input-geometry-150x44;
-    @include arrowField(90% 50%, 15% 18%);
-    cursor: pointer;
-    margin-top: .5rem;
-}
-.input-geometry-320x44 {
-    @extend .template-geometry;
-    // width: 32rem;
-}
-.input-geometry-dropdown-320x44 {
-    @extend .input-geometry-320x44;
-    @include arrowField(100% 50%, 15% 18%);
-    cursor: pointer;
-    margin-top: .5rem;
-}
-
-.label-margin-20,
-.input-margin-20 {
-    margin-top: 2rem;
-}
-.label-margin-10,
-.input-margin-10 {
-    margin-top: 1rem;
-}
-
-// EFFECT 
-.input_hover {
-    @extend .template-hover;
-}
-.label_opacity-0 {
-    opacity: 0; 
-    z-index: -5; 
+.label-opacity-0 {
     position: absolute;
+    opacity: 0;
+    z-index: -1;
 }

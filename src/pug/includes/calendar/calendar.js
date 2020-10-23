@@ -1,6 +1,6 @@
 class Calendar {
     constructor() {
-        this.entry = document.getElementById('entry');
+        this.entry = document.getElementById('arrival');
         this.departure = document.getElementById('departure');
         this.calendar = document.getElementById('calendar');
         this.allMonths = [
@@ -282,7 +282,7 @@ class Events {
         } 
 
 
-        if (target.id === 'entry' || target.id === 'departure') {
+        if (target.id === 'arrival' || target.id === 'departure') {
             calendarActions.viewDatePicker();
         }
         if (attr.arrow === 'left') {

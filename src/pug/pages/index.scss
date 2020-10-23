@@ -1,68 +1,38 @@
-.homescreen {
-    background: center / cover no-repeat url('../images/index-bg.jpg');
+.index-page {
+    background: center / cover no-repeat url('../../assets/images/index-bg.jpg');
     padding: 7rem 0 1.8rem 0;
 }
-.card {
-    background: #FFFFFF;
-    border: 1px solid $dark-shade-12;
-    border-radius: .4rem;
-    padding: 4rem 3rem 3rem 3rem;
-    max-width: 38rem;
-}
-.card_effect {
-    box-shadow: 0px 0px 2.5rem $dark-shade-25;
-}
-.card__inner {
-    display: flex;
-    flex-direction: column;
-}
-.card__form {
-    display: flex;
-    flex-direction: column;
-}
-.form-margin {
-    margin-top: 2rem;
-}
-
-// переделать
-.rooms-card-label {
-    margin-top: 2.056rem;
-}
-.form__button {
-    @extend .account-registration;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 1.2rem 2.2rem 1.3rem 1.8rem;
-    text-transform: uppercase;
-    &::after {
-        content: '';
-        position: absolute;
-        display: block;
-        background: center / contain no-repeat url('../images/arrow-right-button.svg');
-        width: 1.8rem;
-        height: 1.8rem;
-        top: 30%;
-        right: 4.95%;
-    }
-}
-.form__button-create {
-    padding: 1.2rem 2.2rem 1.3rem 1.8rem;
-}
-.form__button-geometry {
-    margin-top: 3.1rem;
-}
-.rooms-description {
-    width: 29.7rem;
-    margin-top: 32rem;
+.main__text {
+    display: block;
     margin-left: auto;
+    margin-top: 32rem;
+    max-width: 29.7rem;
     text-align: right;
 }
-.rooms-description__text {
-    color: $dark-shade-75;
-    line-height: 2.4rem;
-    margin-block-start: 0;
-    margin-block-end: 0;
+.card {
+    max-width: 38rem;
+    padding: 4rem 3rem 3rem 3rem;
+    background: #fff;
+    border: .1rem solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.2);
+    border-radius: .4rem;
+}
+
+.mrg-top-10 {
+    margin-top: 1rem;
+}
+.mrg-right-10 {
+    margin-right: 1rem;
+}
+.mrg-top-20 {
+    margin-top: 2rem;
+}
+.mrg-right-20 {
+    margin-right: 2rem;
+}
+.mrg-top-30 {
+    margin-top: 3rem;
+}
+.mrg-top-40 {
+    margin-top: 4rem;
 }

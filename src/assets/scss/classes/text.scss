@@ -1,31 +1,30 @@
 .title-h1 {
-    font: bold $title-size-h1 / 1 $quicksand-family;
-    color: $title-color-h1;
+    font: bold 2.4rem / 1 'Quicksand', sans-serif;
+    color: $dark-shade-100;
+    line-height: 3rem;
 }
 .title-h2 {
-    font: bold $title-size-h2 / 1 $quicksand-family;
-    color: $title-color-h2;
+    font: bold 1.9rem / 1 'Quicksand', sans-serif;
+    color: $dark-shade-100;
+    line-height: 2.4rem;
 }
 .title-h3 {
-    font: bold $title-size-h3 / 1 $montserrat-family;
+    font: bold 1.2rem / 1 'Montserrat', sans-serif;
     color: $dark-shade-100;
+    line-height: 1.5rem;
 }
 .text {
+    font: normal 1.4rem / 1 'Montserrat', sans-serif;
     color: $dark-shade-50;
-    font: normal $text-body-size / 1 $montserrat-family;
+    line-height: 2.4rem;
 }
-.text-active {
+.text_active {
+    font: bold 1.4rem / 1 'Montserrat', sans-serif;
     color: $dark-shade-75;
-    font: bold $text-body-size / 1 $montserrat-family;
+    line-height: 2.4rem;
 }
-.text-purple {
+.text_purple {
     @extend .title-h3;
     color: $purple;
-}
-.text-grey {
-    @extend .title-h3;
-    color: $dark-shade-50;
-}
-.text-lh {
-    line-height: 2.4rem;
+    text-transform: uppercase;
 }

@@ -12,10 +12,9 @@ function dropdownMenu() {
         const listValue = target.dataset.value; 
         
         if (!listValue) return;
-        const itemValue = listValue;
         const list = target.closest('ul');
         
-        list.previousElementSibling.value = itemValue;
+        list.previousElementSibling.value = listValue;
     }
 
     document.addEventListener('click', dropdownToggle);
