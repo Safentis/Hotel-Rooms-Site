@@ -1,5 +1,3 @@
-$main-white-color: #fff;
-
 %font-bold-cells {
     font: bold 1.2rem / 1 $montserrat-family;
 }
@@ -13,74 +11,82 @@ $main-white-color: #fff;
     flex-wrap: wrap;
 }
 .calendar {
+    background-color: #fff;
+    border: 1px solid $dark-shade-25;
+    border-radius: .4rem;
+    box-shadow: 0 .1rem .2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 32rem;
     position: absolute;
-    // display: flex;
-    // justify-content: center;
-    // flex-direction: column;
-    // flex-wrap: wrap;
-    
-    // max-width: 32rem;
-    // padding: 2rem;
-    // border: 1px solid $dark-shade-25;
-    // box-shadow: 0 .1rem .2rem;
-    // border-radius: .4rem;
-    // background-color: $main-white-color;
-
-    // position: absolute;
-    // top: 105%;
-    // background-color: $main-white-color;
-    // z-index: 100;
+    padding: 2rem;
+    top: 107%;
+    z-index: 2;
 }
 .calendar_off {
     display: none;
 }
 .calendar__header {
-    .calendar__month-title {
-        // @extend .title-h2;
-        text-align: center;
-    }
+
+}
+.calendar__month-title {
+    @extend .title-h2;
+    text-align: center;
 }
 .calendar__table {
-    // border-collapse: collapse;
-    // margin: 3rem 0 0 0;
+    border-collapse: collapse;
+    margin: 3rem 0 0 0;
     .calendar__body {}
 }
 
 // WEEK NAMES CELLS
 .week-names {
     .week-names__item {
-        // @extend %font-bold-cells;
-        // text-transform: capitalize;
-        // color: $purple;
-        // width: 4rem;
-        // height: 4rem;
+        @extend %font-bold-cells;
+        text-transform: capitalize;
+        color: $purple;
+        width: 4rem;
+        height: 4rem;
     }
 }
 
 // TABLE BODY CELLS
 .main-cell-color,
 .other-cell-color {
-    // @extend %font-normal-cells;
-    // cursor: pointer;
-    // text-align: center;
-    // max-width: 4rem;
-    // height: 4rem;
+    @extend %font-normal-cells;
+    cursor: pointer;
+    text-align: center;
+    max-width: 4rem;
+    height: 4rem;
 }
 .main-cell-color {
-    // color: $dark-shade-50;
+    color: $dark-shade-50;
 }
 .other-cell-color {
-    // color: $dark-shade-25;
+    color: $dark-shade-25;
 }
 
 // ARROWS BUTTONS
 .calendar__arrow {
     cursor: pointer;
-    // position: absolute;
-    // top: 2.3rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 2rem;
+    height: 2.4rem;
+    width: 2.4rem;
 } 
-.arrow-left { left: 2rem; }
-.arrow-right { right: 2rem; }
+.arrow-left { 
+    left: 2rem; 
+    background-image: url('../images/arrow-left.svg');
+}
+.arrow-right { 
+    right: 2rem; 
+    background-image: url('../images/arrow-right.svg');
+}
 
 // BUTTONS
 .calendar__buttons {
@@ -92,22 +98,11 @@ $main-white-color: #fff;
 }
 
 // CLASSES ACTIVE
-.calendar_active-cell,
-.calendar_curent-date {
-    border-radius: 2.2rem;
-    color: $main-white-color !important;
-}
 .calendar_active-cell {
-    background: linear-gradient(
-        180deg, 
-        #BC9CFF 0%, #8BA4F9 100%
-    );
+    @extend .button-circle_pirple;
 }
 .calendar_curent-date {
-    background: linear-gradient(
-        180deg, 
-        $green-light 0%, $turquoise 100%
-    );
+    @extend .button-circle_green;
 }
 .data-picker_active-between {
     background: linear-gradient(
@@ -115,4 +110,7 @@ $main-white-color: #fff;
         rgba($color: #BC9CFF, $alpha: 0.25) 0%, 
         rgba($color: #8BA4F9, $alpha: 0.25) 100%
     );
+}
+.data-picker_active-entry {
+    
 }

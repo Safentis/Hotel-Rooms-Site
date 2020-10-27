@@ -10,29 +10,10 @@
     text-align: right;
 }
 .card {
-    max-width: 38rem;
-    padding: 4rem 3rem 3rem 3rem;
     background: #fff;
     border: .1rem solid rgba(0, 0, 0, 0.12);
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.2);
     border-radius: .4rem;
-}
-
-.mrg-top-10 {
-    margin-top: 1rem;
-}
-.mrg-right-10 {
-    margin-right: 1rem;
-}
-.mrg-top-20 {
-    margin-top: 2rem;
-}
-.mrg-right-20 {
-    margin-right: 2rem;
-}
-.mrg-top-30 {
-    margin-top: 3rem;
-}
-.mrg-top-40 {
-    margin-top: 4rem;
+    max-width: 38rem;
+    padding: 4rem 3rem 3rem 3rem;
 }

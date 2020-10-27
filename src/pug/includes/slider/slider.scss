@@ -11,10 +11,10 @@
 .slide__element {
     display: block;
     position: absolute;
-    top: 13.5%;
+    top: 12%;
     border-radius: 50%;
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 1.35rem;
+    height: 1.35rem;
 }
 .slide_on {
     border: .1rem solid $purple;
@@ -29,4 +29,7 @@
 .slide__element_on {
     right: 8%;
     background: linear-gradient(180deg, $purple 0%, $blue-light 100%);
+}
+.next-element-color {
+    color: $purple;
 }

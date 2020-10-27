@@ -1,0 +1,30 @@
+include ../../includes/calendar/calendar.pug
+include ../../includes/select/select.pug
+
+form(class="card card-room", method="POST", name="room-number", id="room-number")
+    div(class="card__header")
+        p(class="number")
+            span(class="number__sign") № 
+            span(class="number__int title-h1") 888
+            span(class="number__text text_purple") люкс
+        p(class="cost")
+            span(class="cost__int text_active") 9 990₽ 
+            span(class="cost__text text") в сутки
+    +calendar()
+    +select()
+    ul(class="options mrg-top-20")
+        li(class="options__item text")
+            span(class="options__service") 9 990₽ х 4 суток
+            span 39 960₽
+        li(class="options__item text mrg-top-10")
+            span(class="options__service options__details") Сбор за услуги: скидка 2 179₽
+            span 0₽
+        li(class="options__item text mrg-top-10")
+            span(class="options__service options__details") Сбор за дополнительные услуги
+            span 300₽
+    p(class="final-price title-h2 mrg-top-30")
+        span(class="final-price__text") Итого
+        span(class="final-price__underscore")
+        span(class="final-price__int") 38 081₽
+    a(class="button-form-large mrg-top-20", href="#")
+        | забронировать

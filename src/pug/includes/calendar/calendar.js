@@ -203,6 +203,38 @@ class CalendarActions extends Calendar {
         calendarRender.calendarViewRender(this.curentYear, this.curentMonth);
     }
     createDate(elem, target) {
+        const dateBoolArray = [];
+        const dateEntry = target.dataset.date.split('.');
+        const dateToday = new Date().toLocaleDateString().split('.');
+
+        dateEntry.map((item, i) => {
+            if (+item > +dateToday[i]) {
+                dateBoolArray.push(true);
+            }
+            if (+item === +dateToday[i]) {
+                dateBoolArray.push(true);
+            } else {
+                dateBoolArray.push(false);
+            }
+        });
+
+        if (
+            (
+                dateBoolArray[0] === true && dateBoolArray[1] === false && 
+                dateBoolArray[2] === false && dateBoolArray[3] === true
+            ) 
+                || 
+            (
+                dateBoolArray[0] === false && dateBoolArray[1] === true && 
+                dateBoolArray[2] === true
+            )
+                ||
+            (
+                dateBoolArray[0] === false && dateBoolArray[1] === false && 
+                dateBoolArray[2] === true
+            )
+        ) return;
+
         this.valuesForInput[elem] = target.dataset.date;
         this.getAllCells().forEach(item => {
             item.dataset[elem] = true;
@@ -225,11 +257,11 @@ class CalendarActions extends Calendar {
                 item.classList.add('data-picker_active-between');
             }
             // Доделать уголки
-            // if (i === nums[0]) {
+            // if (i === betweenNumbers[0]) {
             //     item.classList.add('data-picker_active-entry');
             // }
-            // if (i === nums[1]) {
-
+            // if (i === betweenNumbers[1]) {
+            //     item.classList.add('data-picker_active-entry');
             // }
         });
     }

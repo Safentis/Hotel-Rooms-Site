@@ -29,6 +29,8 @@
 .input-select {
     @extend .input;
     @include arrowField(101% 50%);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 // EFFECT_CLASS 

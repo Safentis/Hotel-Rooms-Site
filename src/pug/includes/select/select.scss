@@ -1,11 +1,35 @@
 .select-wrapper {
     position: relative;
 }
+.guest-list {
+    background-color: #fff;
+    border: .1rem solid $dark-shade-25;
+    border-top: none;
+    width: 100%;
+    padding: .7rem .7rem 1.3rem 1.3rem;
+    position: absolute;
+    z-index: 1;
+}
+.guest-list__item,
+.guest-list__buttons {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.guest-list__item {
+    margin-top: .7rem;
+}
+.guest-list__category {
+    @extend .title-h3;
+    text-transform: uppercase;
+}
+.guest-list__buttons {
+    margin-top: 2rem;
+}
+
 .dropdown_hide {
     display: none;
-} 
-
-// BUTTON CLEARE EFFECT
-.button-cleare_hide {
+}
+.button-clear_hide {
     visibility: hidden;
 }

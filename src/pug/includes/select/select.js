@@ -1,24 +1,14 @@
 function dropdownMenu() {
-    
-    const dropdownToggle = ({target}) => {
-        if (!target.dataset.dropdown) return;
-
-        const listIltems = target.nextElementSibling;
-        listIltems.classList.toggle('dropdown_hide');
-    }
-    
-    const dropdownSetValue = ({target}) => {
-        if (!target.closest('dropdownWrapper')) return;
-        const listValue = target.dataset.value; 
+  
+    const toggle = ({target}) => {
+        let attr = target.dataset.dropdown;
         
-        if (!listValue) return;
-        const list = target.closest('ul');
-        
-        list.previousElementSibling.value = listValue;
+        if (!attr) return;
+        let elem = target.nextElementSibling;
+        elem.classList.toggle('dropdown_hide');
     }
 
-    document.addEventListener('click', dropdownToggle);
-    document.addEventListener('click', dropdownSetValue);
+    document.addEventListener('click', toggle);
 }
 
 dropdownMenu();

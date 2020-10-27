@@ -9,32 +9,30 @@ block head
         meta(name="description", content="Здесь Вы сможете подобрать номер на любой вкус")
 
 block content
-    main(class="main login-page")
-        div(class="main__inner container")
+    main(class="login login-page")
+        div(class="login__inner container")
             section(class="card card-login")
                 h1(class="card__title title-h1")
                     | Войти
                 form(class="form", method="POST", id="login", name="login")
-                    label(class="label label-opacity-0", for="email") 
-                        | Email
-                    input(
-                        class="input input_hover mrg-top-20", 
+                    label(class="label label-opacity-0", for="email") Email
+                    input(class="input input_hover mrg-top-20", 
                         id="email", 
                         type="email", 
                         placeholder="Email",
                     )
-                    label(class="label label-opacity-0", for="password") 
-                        | Пароль
-                    input(
-                        class="input input_hover mrg-top-10", 
+                    label(class="label label-opacity-0", for="password") Пароль
+                    input(class="input input_hover mrg-top-10", 
                         id="password", 
                         type="password", 
                         placeholder="Пароль",
                     )
-                    button(class="button-form-large mrg-top-20", type="submit", for="login")
-                        | Войти
+                    button(class="button-form-large mrg-top-20", 
+                        type="submit", 
+                        for="login"
+                    ) Войти
                 div(class="block-login mrg-top-30")
                     p(class="text")
                         | Нет аккаунта на Toxin?
-                    a(class="button-form-login", href="#")
+                    a(class="button-form-login", href="registration.html")
                         | Создать

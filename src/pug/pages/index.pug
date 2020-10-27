@@ -1,162 +1,97 @@
 extends ../layout/layout.pug
+include ../includes/chamber/chamber.pug
+include ../includes/select/select.pug
 
-mixin detailsItem(text, exposition, icon)
-    li(class="item-info")
-        div(class=`item-info__icon ${icon} mrg-right-10`)
-        p(class="item-info__text text")
-            span(class="text_active") #{text} 
-            span(class="item-info__exposition") #{exposition}
 
 block head
     head
         meta(charset="UTF-8")
-        title Детали номера
+        title Поиск номеров
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(name="keywords", content="Поиск номеров, подобрать номера")
         meta(name="description", content="Здесь Вы сможете подобрать номер на любой вкус")
 
 block content
-    main(class="main details-page")
-        div(class="main__inner")
-            div(class="images")
-                img(class="images__main", src="./images/details-first-photo.jpg", alt="Фото номера", width="981px", height="485px")
-                img(class="images__top-photo", src="./images/details-second-photo.jpg", alt="Фото номера", width="461px", height="243px")
-                img(class="images__bottom-photo", src="./images/details-third-photo.jpg", alt="Фото номера", width="461px", height="243px")
-            div(class="room container")
-                div(class="room__col-description")
-                    div(class="room__top")
-                        section(class="details")
-                            h2(class="details__title title-h2") Сведения о номере
-                            ul(class="details__list")
-                                +detailsItem('Комфорт', 'Шумопоглощающие стены', 'smile')
-                                +detailsItem('Удобство', 'Окно в каждой из спален', 'home')
-                                +detailsItem('Уют', 'Номер оснащён камином', 'fire')
-                        section(class="impression impression-margin")
-                            h2(class="impression__title title-h2") Впечатления от номера
-                            div(class="impression__content mrg-top-20")
-                                div(class="diagram mrg-right-20")
-                                    span(class="diagram__voices")
-                                        | 260 
-                                    span(class="diagram__text")
-                                        | голосов 
-                                ul(class="impression__list")
-                                    li(class="impression__item text")
-                                        | Великолепно
-                                    li(class="impression__item text")
-                                        | Хорошо
-                                    li(class="impression__item text")
-                                        | Удовлетворительно
-                                    li(class="impression__item text")
-                                        | Разочарован
-                    div(class="room__middle mrg-top-20")
-                        section(class="comments")
-                            div(class="comments__header")
-                                h2(class="comments__title title-h2") Отзывы посетителей номера
-                                p(class="comments__text text") 2 отзыва
-                            ul(class="comments__list")
-                                li(class="comment mrg-top-20") 
-                                    div(class="user mrg-right-10")
-                                        img(class="user__avatar", src="./images/details-avatar-male.png", alt="Photo", title="Мурад Сарафанов")
-                                        button(class="button-like_on mrg-top-10")
-                                            | 12
-                                    div(class="comment__body")
-                                        p(class="user__details text")
-                                            span(class="user__name text_active")
-                                                | Мурад Сарафанов
-                                            span(class="user__visit")
-                                                | 5 дней назад
-                                        blockquote(class="comment__text text mrg-top-10")
-                                            p
-                                                | Великолепный матрас на кровати в основной спальне! 
-                                                | А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. 
-                                                | Выкрикивал комплименты повару — никто не жаловался из соседей.
-                                li(class="comment mrg-top-20")
-                                    div(class="user mrg-right-10")
-                                        img(class="user__avatar", src="./images/details-avatar-female.png", alt="Photo", title="Патрисия Стёклышева")
-                                        button(class="button-like_off mrg-top-10")
-                                            | 2
-                                    div(class="comment__body")
-                                        p(class="user__details text")
-                                            span(class="user__name text_active")
-                                                | Патрисия Стёклышева
-                                            span(class="user__visit")
-                                                | Неделю назад
-                                        blockquote(class="comment__text text mrg-top-10")
-                                            p
-                                                | Обслуживание на высоте! Всё аккуратно, чисто. 
-                                                | Завтраки в номер советую заказать, 
-                                                | каждый день новое блюдо и десерт как комплимент
-                    div(class="room__bottom mrg-top-40")
-                        section(class="rules")
-                            h2(class="rules__title title-h2") Правила
-                            ul(class="rules__list text")
-                                li(class="rules__item mrg-top-20")
-                                    | Нельзя с питомцами
-                                li(class="rules__item mrg-top-10")
-                                    | Без вечеринок и мероприятий
-                                li(class="rules__item mrg-top-10")
-                                    | Время прибытия — после 13:00,
-                                    | а выезд до 12:00
-                        section(class="cancel cancel-margin")
-                            h2(class="cancel__title title-h2") Отмена
-                            p(class="cancel__text text mrg-top-20")
-                                | Бесплатная отмена в течение 48 ч. 
-                                | После этого при отмене не позднее чем за 5 дн. 
-                                | до прибытия вы получите полный возврат за вычетом сбора за услуги.
-                div(class="room__col-form")
-                    form(class="card card-room", method="POST", name="room-number", id="room-number")
-                        div(class="card__header")
-                            p(class="number")
-                                span(class="number__sign") № 
-                                span(class="number__int title-h1") 888
-                                span(class="number__text text_purple") люкс
-                            p(class="cost")
-                                span(class="cost__int text_active") 9 990₽ 
-                                span(class="cost__text text") в сутки
-                        div(class="calendar-wrapper mrg-top-20")
-                            label(class="label", for="arrival")
-                                | прибытие
-                                input(class="input-calendar input_hover", 
-                                    id="arrival", 
-                                    type="text", 
-                                    name="arrival", 
-                                    placeholder="ДД.ММ.ГГГГ", 
-                                    readonly
-                                )
-                            label(class="label", for="departure")
-                                | выезд
-                                input(class="input-calendar input_hover", 
-                                    id="departure", 
-                                    type="text", 
-                                    name="departure", 
-                                    placeholder="ДД.ММ.ГГГГ", 
-                                    readonly
-                                )
-                            include ../includes/calendar/calendar.pug
-                        label(class="label mrg-top-20", for="select-guests") 
-                            | Гости
-                        input(
-                            class="input-select input_hover", 
-                            id="select-guests", 
-                            type="text", 
-                            data-dropdown="dropdown", 
-                            placeholder="Сколько гостей",
-                            readonly
-                        )
-                        include ../includes/select/select.pug
-                        ul(class="options mrg-top-20")
-                            li(class="options__item text")
-                                span(class="options__service") 9 990₽ х 4 суток
-                                span 39 960₽
-                            li(class="options__item text mrg-top-10")
-                                span(class="options__service options__details") Сбор за услуги: скидка 2 179₽
-                                span 0₽
-                            li(class="options__item text mrg-top-10")
-                                span(class="options__service options__details") Сбор за дополнительные услуги
-                                span 300₽
-                        p(class="final-price title-h2 mrg-top-30")
-                            span(class="final-price__text") Итого
-                            span(class="final-price__underscore")
-                            span(class="final-price__int") 38 081₽
-                        a(class="button-form-large mrg-top-20")
-                            | забронировать
+    div(class="filters-wrapper container")
+        aside(class="filters")
+            label(class="label", for="arrival-date") 
+                | Даты пребывания в отеле
+            input(class="input-select input_hover", 
+                id="arrival-date", 
+                type="text", 
+                placeholder="19 авг - 23 авг",
+                readonly
+            )
+            +select()
+            include ../includes/range/range.pug
+        main(class="rooms")
+            div(class="rooms__inner")
+                h1(class="rooms__title title-h1")
+                    | Номера, которые мы для вас подобрали
+                div(class="chambers mrg-top-20")
+                    //- chamber [колличество звёзд], отзывы, номер комнаты, тип комнаты(люкс), цена, путь до картинки
+                    +chamber(
+                        ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-painted'],
+                        145, 888, 'люкс', 9900, './images/chamber-image-one.jpg'
+                    )
+                    +chamber(
+                        ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-empty'],
+                        65, 840, '', 9900, './images/chamber-image-two.jpg'
+                    )
+                    +chamber(
+                        ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
+                        35, 980, '', 8500, './images/chamber-image-three.jpg'
+                    )
+                    +chamber(
+                        ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-painted'],
+                        19, 856, '', 7300, './images/chamber-image-fhour.jpg'
+                    )
+                    +chamber(
+                        ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-empty'],
+                        44, 740, '', 6000, './images/chamber-image-five.jpg'
+                    )
+                    +chamber(
+                        ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
+                        56, 982, '', 5800, './images/chamber-image-six.jpg'
+                    )
+                    +chamber(
+                        ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-painted'],
+                        45, 678, '', 5500, './images/chamber-image-seven.jpg'
+                    )
+                    +chamber(
+                        ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-empty'],
+                        39, 450, '', 5300, './images/chamber-image-eight.jpg'
+                    )
+                    +chamber(
+                        ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
+                        77, 350, '', 5000, './images/chamber-image-nine.jpg'
+                    )
+                    +chamber(
+                        ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-painted'],
+                        25, 666, '', 5000, './images/chamber-image-ten.jpg'
+                    )
+                    +chamber(
+                        ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
+                        35, 444, '', 5000, './images/chamber-image-eleven.jpg'
+                    )
+                    +chamber(
+                        ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
+                        55, 352, '', 5000, './images/chamber-image-twelwe.jpg'
+                    )
+                div(class="pagination mrg-top-40")
+                    div(class="pagination__inner")
+                        div(class="pagination__controlls")
+                            ul(class="pagination__list")
+                                li(class="pagination__item")
+                                    a(class="pagination__link button-circle_pirple", href="#") 1
+                                li(class="pagination__item")
+                                    a(class="pagination__link", href="#") 2
+                                li(class="pagination__item")
+                                    a(class="pagination__link", href="#") 3
+                                li(class="pagination__item")
+                                    a(class="pagination__link", href="#") ...
+                                li(class="pagination__item") 
+                                    a(class="pagination__link", href="#") 15
+                            a(class="pagination__next-button")
+                        p(class="pagination__text text mrg-top-10")
+                            | 1 – 12 из 100+ вариантов аренды

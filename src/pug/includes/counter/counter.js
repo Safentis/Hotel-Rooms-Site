@@ -1,6 +1,3 @@
-// доделать эффект + - если счётчик равен нулю добавить соответствующий класс
-// если не равен то убрать
-
 class Counter {
     counter(elem, symbol, target) {
         let count = +elem.dataset.integer;
@@ -10,11 +7,13 @@ class Counter {
             case 'plus':
                 count += 1;
                 elem.dataset.integer = count;
+                this.setEffectInButtons(count, elem);   
                 this.setCountInHTML(counterHTML, count);
             break;
             case 'minus':
                 count -= 1;
                 elem.dataset.integer = count;
+                this.setEffectInButtons(count, elem);
                 this.setCountInHTML(counterHTML, count);
             break;
             default:
@@ -24,8 +23,19 @@ class Counter {
     setCountInHTML(counterHTML, count) {
         counterHTML.textContent = count;
     }
-    setEffectInButtons() {
-
+    setEffectInButtons(count, elem) {
+        if (count > 0 && count < 5) {
+            elem.children[0].classList.remove('control_view_grey');
+            elem.children[2].classList.remove('control_view_grey');
+        }
+        if (count === 0) {
+            elem.children[0].classList.add('control_view_grey');
+            elem.children[2].classList.remove('control_view_grey');
+        }
+        if (count === 5) {
+            elem.children[0].classList.remove('control_view_grey');
+            elem.children[2].classList.add('control_view_grey');
+        }
     }
 }
 class ButtonsCounter {
@@ -35,29 +45,49 @@ class ButtonsCounter {
             input: ul.previousElementSibling,
             allCountHTML: ul.querySelectorAll('.counter__value'),
             allDatasetInteger: ul.querySelectorAll('ul[data-integer]'),
-            cleare: ul.querySelector('.button-clear'),
+            cleare: ul.querySelector('button[data-count="clear"]'),
             ul
         }
     }
     toClearCounter(target) {
         const { input, allCountHTML, allDatasetInteger, ul } = this.findElements(target);
-
+        
         input.value = '';
         allCountHTML.forEach(count => count.textContent = '0');
-        allDatasetInteger.forEach(ul => ul.dataset.integer = '0');
+        allDatasetInteger.forEach(ul => {
+            ul.dataset.integer = '0';
+            counter.setEffectInButtons(0, ul);
+        });
 
-        target.classList.add('button-cleare_hide');
+        target.classList.add('button-clear_hide');
     }
     toApplyCounter(target) {
         const { input, allCountHTML, allDatasetInteger, cleare, ul } = this.findElements(target);
         let peoples = 0;
-        
+        let peoplesType = '';
+
+
         allDatasetInteger.forEach(elem => {
-            peoples += +elem.dataset.integer
+            let count = +elem.dataset.integer;
+            peoples += count;
+            
+            if (count > 0) {
+                let type = elem.previousElementSibling.textContent.toLowerCase();
+                peoplesType += `${count} ${type}, `;
+            }
         });
         
-        input.value = peoples + ' ' + 'гостя';
-        cleare.classList.remove('button-cleare_hide');
+        if (peoples === 0) return;
+        
+        let inputValueString = `${peoples} гостя, ${peoplesType}`;
+
+        if (inputValueString.length > 10) {
+            inputValueString = inputValueString.split('').slice(0, 19).join('');
+            inputValueString += '...';
+        }
+
+        input.value = inputValueString;
+        cleare.classList.remove('button-clear_hide');
         ul.classList.add('dropdown_hide');
     }
 }
@@ -68,25 +98,25 @@ class EventsCounter {
     }
     onClick({target}) {
         if (!target.dataset.count) return;
-            const elem = target.closest('ul[data-integer]');
+        const elem = target.closest('ul[data-integer]');
                 
         switch(target.dataset.count) {
             case 'plus':
                 if (+elem.dataset.integer < 5) {
                     counter.counter(elem, 'plus', target);
                 }
-            break;
+                break;
             case 'minus':
                 if (+elem.dataset.integer !== 0) {
                     counter.counter(elem, 'minus', target);
                 }
-            break;
+                break;
             case 'clear':
                 buttonsCounter.toClearCounter(target);
-            break;
+                break;
             case 'apply':
                 buttonsCounter.toApplyCounter(target);
-            break;
+                break;
             default:
                 return;
         }

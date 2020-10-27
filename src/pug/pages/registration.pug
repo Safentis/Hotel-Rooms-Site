@@ -10,63 +10,54 @@ block head
         meta(name="description", content="Здесь Вы сможете подобрать номер на любой вкус")
 
 block content
-    main(class="main registration-page")
-        div(class="main__inner container")
+    main(class="registration registration-page")
+        div(class="registration__inner container")
             section(class="card card-registration")
-                h1(class="title-h1")
+                h1(class="card__title title-h1")
                     | Регистрация аккаунта
                 form(class="form", method="POST", id="registration", name="registration")
-                    label(class="label label-opacity-0", for="firstName") 
-                        | Имя
-                    input(
-                        class="input input_hover mrg-top-20", 
+                    label(class="label label-opacity-0", for="firstName") Имя
+                    input(class="input input_hover mrg-top-20", 
                         id="firstName", 
                         type="text", 
                         placeholder="Имя",
                     )
-                    label(class="label label-opacity-0", for="lastName") 
-                        | Фамилия
-                    input(
-                        class="input input_hover mrg-top-10", 
+                    label(class="label label-opacity-0", for="lastName") Фамилия
+                    input(class="input input_hover mrg-top-10", 
                         id="lastName", 
                         type="text", 
                         placeholder="Фамилия",
                     )
                     include ../includes/radio/radio.pug
-                    label(class="label mrg-top-20", for="birthday-date") 
-                        | дата рождения
-                    input(
-                        class="input input_hover", 
+                    label(class="label mrg-top-20", for="birthday-date") дата рождения
+                    input(class="input input_hover", 
                         id="birthday-date", 
                         type="text", 
                         placeholder="ДД.ММ.ГГГГ",
                     )
                     fieldset(class="label mrg-top-20", form="registration")
                         | данные для входа в сервис
-                        label(class="label label-opacity-0", for="email") 
-                            | Email
-                        input(
-                            class="input input_hover", 
-                            id="firstName", 
+                        label(class="label label-opacity-0", for="email") Email
+                        input(class="input input_hover", 
+                            id="email", 
                             type="email", 
                             placeholder="Email",
                         )
-                        label(class="label label-opacity-0", for="password") 
-                            | Пароль
-                        input(
-                            class="input input_hover mrg-top-10", 
+                        label(class="label label-opacity-0", for="password") Пароль
+                        input(class="input input_hover mrg-top-10", 
                             id="password", 
                             type="password", 
                             placeholder="Пароль",
                         )
-                    fieldset(class="special-offer mrg-top-10", form="registration")
+                    p(class="special-offer text mrg-top-10")
                         +slider('mrg-right-10')
-                        p(class="special-offer__text text")
-                            | Получать спецпредложения
-                    button(class="button-form-large mrg-top-20", type="submit", form="registration")
-                        | перейти к оплате
+                        span Получать спецпредложения
+                    button(class="button-form-large mrg-top-20", 
+                        type="submit", 
+                        form="registration"
+                    ) перейти к оплате
                     div(class="block-login mrg-top-30")
                         p(class="text")
                             | Уже есть аккаунт на Toxin
-                        a(class="button-form-login", href="#")
+                        a(class="button-form-login", href="login.html")
                             | Войти

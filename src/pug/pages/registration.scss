@@ -1,6 +1,8 @@
+.registration {
+    padding: 1.9rem 0;
+}
 .registration-page {
     background: center / cover no-repeat url('../../assets/images/registration-bg.jpg');
-    padding: 1.9rem 0;
 }
 .card-registration {
     margin: 0 auto;
@@ -8,7 +10,4 @@
 .special-offer {
     display: flex;
     align-items: center;
-}
-.special-offer__text {
-    line-height: 1.5rem;
 }

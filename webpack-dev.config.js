@@ -8,7 +8,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         devServer: {
             contentBase: `./dist`,
             compress: true,
-            port: 8080,
+            port: 8082,
             hot: true,
         },
         plugins: [

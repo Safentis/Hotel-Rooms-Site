@@ -1,0 +1,43 @@
+extends ../layout/layout.pug
+
+block head
+    head
+        meta(charset="UTF-8")
+        title Детали номера
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="keywords", content="Поиск номеров, подобрать номера")
+        meta(name="description", content="Здесь Вы сможете подобрать номер на любой вкус")
+
+block content
+    main(class="main details-page")
+        div(class="main__inner")
+            div(class="images")
+                img(class="images__main", src="./images/details-first-photo.jpg", alt="Фото номера", width="981px", height="485px")
+                img(class="images__top-photo", src="./images/details-second-photo.jpg", alt="Фото номера", width="461px", height="243px")
+                img(class="images__bottom-photo", src="./images/details-third-photo.jpg", alt="Фото номера", width="461px", height="243px")
+            div(class="room container")
+                div(class="room__col-description")
+                    div(class="room__top")
+                        include ../components/details/information.pug
+                        include ../components/details/impression.pug
+                    div(class="room__middle mrg-top-30")
+                       include ../components/details/commentary.pug
+                    div(class="room__bottom mrg-top-40")
+                        section(class="rules")
+                            h2(class="rules__title title-h2") Правила
+                            ul(class="rules__list text")
+                                li(class="rules__item mrg-top-20")
+                                    | Нельзя с питомцами
+                                li(class="rules__item mrg-top-10")
+                                    | Без вечеринок и мероприятий
+                                li(class="rules__item mrg-top-10")
+                                    | Время прибытия — после 13:00,
+                                    | а выезд до 12:00
+                        section(class="cancel cancel-margin")
+                            h2(class="cancel__title title-h2") Отмена
+                            p(class="cancel__text text mrg-top-20")
+                                | Бесплатная отмена в течение 48 ч. 
+                                | После этого при отмене не позднее чем за 5 дн. 
+                                | до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                div(class="room__col-form")
+                    include ../components/details/form.pug

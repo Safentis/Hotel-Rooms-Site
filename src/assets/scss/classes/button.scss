@@ -21,6 +21,12 @@
     padding: .9rem 2rem 1rem 2rem;
     width: 100%;
 }
+.button-in,
+.button-registration {
+    &:hover {
+        opacity: 0.5;
+    }
+}
 
 // BUTTONS_FORM
 .button-form-large {
@@ -57,4 +63,38 @@
     @extend .button-like;
     @extend .slide_off;
     color: $dark-shade-25;
+}
+
+// BUTTONS-SELECT 
+.button-clear,
+.button-apply {
+    @extend .text_purple;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    &:hover {
+        color: $dark-shade-50;
+    }
+}
+
+// BUTTONS-CALENDAR
+.button-circle_pirple,
+.button-circle_green {
+    @extend .title-h3;
+    border-radius: 2.2rem;
+    color: #fff !important;
+}
+
+.button-circle_pirple {
+    background: linear-gradient(
+        180deg, 
+        #BC9CFF 0%, #8BA4F9 100%
+    );
+}
+.button-circle_green {
+    background: linear-gradient(
+        180deg, 
+        $green-light 0%, $turquoise 100%
+    );
 }

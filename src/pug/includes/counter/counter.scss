@@ -1,41 +1,37 @@
 .counter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   min-width: 9.2rem;
 }
 .counter__minus,
 .counter__plus {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
     border-radius: 50%;
-    width: 3rem;
-    height: 2.9rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    min-width: 3rem;
+    min-height: 3rem;
+    line-height: 2.2rem;
+    font: normal 1.8rem / 1 'Montserrat', sans-serif;
 
-    border: .1rem solid $dark-shade-25;
-    color: $dark-shade-25;
 }
 .counter__minus {
-    
+    border: .1rem solid $dark-shade-50;
+    color: $dark-shade-25;
 }
 .counter__value {
-    // @extend .title-h3;
-    width: 3.2rem;
-    text-align: center;
+    @extend .title-h3;
 }
 .counter__plus {
-    
-    padding-top: .2rem;
+    border: .1rem solid $dark-shade-50;
+    color: $dark-shade-50;
 }
 .minus,
 .plus {
-    font: normal 1.8rem / 1 $montserrat-family;
-    line-height: 2.2rem;
+    
 }
 .control_view_grey {
-    border: .1rem solid $dark-shade-12;
-    color: $dark-shade-12;
+    border: .1rem solid $dark-shade-25 !important;
 }
