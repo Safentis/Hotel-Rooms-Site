@@ -66,7 +66,6 @@ class ButtonsCounter {
         let peoples = 0;
         let peoplesType = '';
 
-
         allDatasetInteger.forEach(elem => {
             let count = +elem.dataset.integer;
             peoples += count;
@@ -76,7 +75,7 @@ class ButtonsCounter {
                 peoplesType += `${count} ${type}, `;
             }
         });
-        
+
         if (peoples === 0) return;
         
         let inputValueString = `${peoples} гостя, ${peoplesType}`;

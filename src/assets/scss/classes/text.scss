@@ -28,3 +28,8 @@
     color: $purple;
     text-transform: uppercase;
 }
+.text_small {
+    font: normal 1.2rem / 1 'Montserrat', sans-serif;
+    color: $dark-shade-50;
+    line-height: 1.4rem;
+}

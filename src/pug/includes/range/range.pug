@@ -1,9 +1,11 @@
-label(class="label") 
-    span(class="label__name")
-        | диапазон цены
-    span(class="label__cost")
-        | 5 000₽ - 10 000₽
-div(class="range mrg-top-10")
-    div(class="boundary-point-right")
-    div(class="boundary-point-center")
-    div(class="boundary-point-left")
+mixin range()
+    label(class="range-lable label mrg-top-30") 
+        span(class="range-lable__name")
+            | диапазон цены
+        span(class="range-lable__cost")
+            | 5 000₽ - 10 000₽
+    div(class="range mrg-top-20")
+        div(class="boundary-point-right")
+        div(class="boundary-point-center")
+        div(class="boundary-point-left")
+    p(class="range-text mrg-top-20") Стоимость за сутки пребывания в номере

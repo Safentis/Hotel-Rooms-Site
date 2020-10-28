@@ -1,3 +1,15 @@
+.range-lable {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.range-text,
+.range-lable__cost {
+    @extend .text_small;    
+}
+
+
 .range {
     position: relative;
     max-width: 26.6rem;
@@ -20,7 +32,7 @@
     height: 1.4rem;
     top: -0.45rem;
 
-    z-index: 10;
+    z-index: 5;
 }
 .boundary-point-right {
     left: 2rem;

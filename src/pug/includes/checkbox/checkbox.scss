@@ -1,0 +1,24 @@
+.checkbox {
+    opacity: 0;
+    z-index: -1;
+    position: absolute;
+}
+.label-checkbox {
+    cursor: pointer;
+    background-color: #fff;
+    border: .1rem solid $dark-shade-25;
+    border-radius: .4rem;
+    display: block;
+    min-width: 2rem;
+    min-height: 2rem;
+    max-width: 2rem;
+    max-height: 2rem;
+}
+.checkbox:checked + .label-checkbox {
+    background: 70% 40% / 70% 70% no-repeat url('../images/checkbox-arrow.svg');
+    border: 1px solid $purple;
+}
+.checkboxes__item {
+    align-items: flex-start;
+    display: flex;
+}

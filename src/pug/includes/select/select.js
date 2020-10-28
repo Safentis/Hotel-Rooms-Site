@@ -4,7 +4,7 @@ function dropdownMenu() {
         let attr = target.dataset.dropdown;
         
         if (!attr) return;
-        let elem = target.nextElementSibling;
+        let elem = target.nextElementSibling || target.children[0];
         elem.classList.toggle('dropdown_hide');
     }
 

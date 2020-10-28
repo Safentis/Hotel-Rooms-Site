@@ -23,6 +23,7 @@
 }
 .button-in,
 .button-registration {
+    transition: .4s;
     &:hover {
         opacity: 0.5;
     }
@@ -69,10 +70,11 @@
 .button-clear,
 .button-apply {
     @extend .text_purple;
+    background-color: #fff;
+    border: none;
     cursor: pointer;
     outline: none;
-    border: none;
-    background-color: #fff;
+    transition: .4s;
     &:hover {
         color: $dark-shade-50;
     }

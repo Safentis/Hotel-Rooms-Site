@@ -13,6 +13,37 @@
 .rooms__title {
     margin-left: 6rem;
 }
+
+// CHECKBOXES
+.checkbox-select {
+    cursor: pointer;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        width: 2.4rem;
+        height: 2.4rem;
+        right: .6rem;
+        top: -.5rem;
+        @include arrowField(center center, 60% 60%);
+    }
+}
+.checkboxes__list {
+    margin-top: 1.656rem;
+}
+.checkboxes__item {
+    display: flex;
+}
+.checkboxes__content {
+    display: flex;
+    flex-direction: column;
+}
+.checkboxes__text {
+    text-transform: initial;
+    line-height: 1.8rem;
+}
+
+// CHAMBERS
 .chambers {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(27rem, 27rem));;
@@ -20,7 +51,6 @@
     grid-column-gap: 1.2rem;
     justify-content: end;
 }
-
 
 // PAGINATION
 .pagination {
