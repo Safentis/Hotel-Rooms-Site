@@ -1,6 +1,6 @@
-//- chamber [колличество звёзд], отзывы, номер комнаты, тип комнаты(люкс), цена, путь до картинки 
+//- chamber([колличество звёзд], отзывы, номер комнаты, тип комнаты(люкс), цена, путь до картинки) 
 mixin chamber(numberStars, callbackCount, numberInt, numberType, numberCost, src)
-    div(class="chamber")
+    div(class="chamber chamber-arrows")
         img(class="chamber__image", 
             src=`${src}`, 
             alt="Фото номера", 
@@ -23,3 +23,8 @@ mixin chamber(numberStars, callbackCount, numberInt, numberType, numberCost, src
                 p(class="callbacks")
                     span(class="callbacks__num text_active") #{callbackCount}
                     span(class="callbacks__text text") Отзывов
+        ul(class="dots")
+            li(class="dot dot_active")
+            li(class="dot")
+            li(class="dot")
+            li(class="dot")

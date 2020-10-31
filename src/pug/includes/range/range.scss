@@ -6,44 +6,37 @@
 }
 .range-text,
 .range-lable__cost {
-    @extend .text_small;    
+    @extend .text_small;
 }
-
-
 .range {
+    background-color: #fff;
+    border: .1rem solid $dark-shade-25;
+    border-radius: .3rem;
     position: relative;
     max-width: 26.6rem;
     height: .6rem;
-    background: #fff;
-    
-    border: .1rem solid $dark-shade-25;
-    border-radius: .3rem;
 }
-.boundary-point-right,
-.boundary-point-left {
+.range__right-point,
+.range__left-point {
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     border: .2rem solid #FFFFFF;
     border-radius: 1rem;
-    cursor: pointer;
-    display: block;
-
+    cursor: move;
     position: absolute;
     width: 1.4rem;
     height: 1.4rem;
     top: -0.45rem;
-
-    z-index: 5;
+    z-index: 1;
 }
-.boundary-point-right {
+.range__left-point {
     left: 2rem;
 }
-.boundary-point-center {
-    position: absolute;
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    width: 80%;
-    left: 10%;
-    height: .6rem;
-}
-.boundary-point-left {
+.range__right-point {
     right: 2rem;
+}
+.range__between {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    max-width: 200%;
+    width: auto;
+    height: .6rem;
 }

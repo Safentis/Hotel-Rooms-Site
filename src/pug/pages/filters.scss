@@ -18,15 +18,20 @@
 .checkbox-select {
     cursor: pointer;
     position: relative;
-    &::after {
-        content: '';
-        position: absolute;
-        width: 2.4rem;
-        height: 2.4rem;
-        right: .6rem;
-        top: -.5rem;
-        @include arrowField(center center, 60% 60%);
-    }
+}
+.checkbox-select__arrow {
+    content: '';
+    cursor: pointer;
+    position: absolute;
+    width: 2.4rem;
+    height: 2.4rem;
+    right: .6rem;
+    top: -.5rem;
+    transition: .2s;
+    @include arrowField(center center, 60% 60%);
+}
+.checkbox-select__arrow_rotate {
+    transform: rotate(180deg);
 }
 .checkboxes__list {
     margin-top: 1.656rem;
@@ -50,44 +55,4 @@
     grid-row-gap: 1.8rem;
     grid-column-gap: 1.2rem;
     justify-content: end;
-}
-
-// PAGINATION
-.pagination {
-    display: flex;
-    justify-content: center;
-}
-.pagination__inner {
-
-}
-.pagination__controlls,
-.pagination__list {
-    display: flex;
-}
-.pagination__link,
-.pagination__next-button {
-    align-items: center;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    width: 4rem;
-    height: 4rem;
-}
-.pagination__link {
-    font: 400 1.4rem / 1 'Montserrat', sans-serif;
-    color: $dark-shade-50;
-}
-.pagination__next-button {
-    @extend .button-circle_green;
-    position: relative;
-    &::before {
-        content: '';
-        background-image: url('../images/arrow-right-button.svg');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        position: absolute;
-        width: 2rem;
-        height: 2rem;
-    }
 }

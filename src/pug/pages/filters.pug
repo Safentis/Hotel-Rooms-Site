@@ -25,7 +25,7 @@ block content
                     readonly
                 )
                 +select()
-                +range()
+                +range('range')
                 fieldset(class="checkboxes label mrg-top-30", form="filters") 
                     | Правила дома
                     ul(class="checkboxes__list")
@@ -52,95 +52,79 @@ block content
                                 p(class="checkboxes__text text_active") Помощник для инвалидов
                                 p(class="checkboxes__text text_small") На 1 этаже вас встретит специалист  и проводит до номера.
                 +select('mrg-top-30', false)
-                fieldset(class="checkboxes checkbox-select label mrg-top-30", form="filters", data-dropdown="dropdown") 
-                    | Дополнительные удобства
-                    ul(class="checkboxes__list dropdown_hide")
-                        li(class="checkboxes__item mrg-top-10")
-                            +checkbox('breakfast', 'amenities')
-                            p(class="checkboxes__text text mrg-left-10") Завтрак
-                        li(class="checkboxes__item mrg-top-10")
-                            +checkbox('desk', 'amenities')
-                            p(class="checkboxes__text text mrg-left-10") Письменный стол
-                        li(class="checkboxes__item mrg-top-10")
-                            +checkbox('chair', 'amenities')
-                            p(class="checkboxes__text text mrg-left-10") Стул для кормления
-                        li(class="checkboxes__item mrg-top-10")
-                            +checkbox('bad', 'amenities')
-                            p(class="checkboxes__text text mrg-left-10") Кроватка
-                        li(class="checkboxes__item mrg-top-10")
-                            +checkbox('tv', 'amenities')
-                            p(class="checkboxes__text text mrg-left-10") Телевизор
-                        li(class="checkboxes__item mrg-top-10")
-                            +checkbox('shampoo', 'amenities')
-                            p(class="checkboxes__text text mrg-left-10") Шампунь
+                p(class="checkboxes checkbox-select label mrg-top-30", form="filters", data-dropdown="dropdown") 
+                    | Дополнительные удобства 
+                    span(class="checkbox-select__arrow", data-dropdown="dropdown")
+                ul(class="checkboxes__list dropdown_hide")
+                    li(class="checkboxes__item mrg-top-10")
+                        +checkbox('breakfast', 'amenities')
+                        p(class="checkboxes__text text mrg-left-10") Завтрак
+                    li(class="checkboxes__item mrg-top-10")
+                        +checkbox('desk', 'amenities')
+                        p(class="checkboxes__text text mrg-left-10") Письменный стол
+                    li(class="checkboxes__item mrg-top-10")
+                        +checkbox('chair', 'amenities')
+                        p(class="checkboxes__text text mrg-left-10") Стул для кормления
+                    li(class="checkboxes__item mrg-top-10")
+                        +checkbox('bad', 'amenities')
+                        p(class="checkboxes__text text mrg-left-10") Кроватка
+                    li(class="checkboxes__item mrg-top-10")
+                        +checkbox('tv', 'amenities')
+                        p(class="checkboxes__text text mrg-left-10") Телевизор
+                    li(class="checkboxes__item mrg-top-10")
+                        +checkbox('shampoo', 'amenities')
+                        p(class="checkboxes__text text mrg-left-10") Шампунь
         main(class="rooms")
-            div(class="rooms__inner")
-                h1(class="rooms__title title-h1")
-                    | Номера, которые мы для вас подобрали
-                div(class="chambers mrg-top-20")
-                    //- chamber [колличество звёзд], отзывы, номер комнаты, тип комнаты(люкс), цена, путь до картинки
-                    +chamber(
-                        ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-painted'],
-                        145, 888, 'люкс', 9900, './images/chamber-image-one.jpg'
-                    )
-                    +chamber(
-                        ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-empty'],
-                        65, 840, '', 9900, './images/chamber-image-two.jpg'
-                    )
-                    +chamber(
-                        ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
-                        35, 980, '', 8500, './images/chamber-image-three.jpg'
-                    )
-                    +chamber(
-                        ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-painted'],
-                        19, 856, '', 7300, './images/chamber-image-fhour.jpg'
-                    )
-                    +chamber(
-                        ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-empty'],
-                        44, 740, '', 6000, './images/chamber-image-five.jpg'
-                    )
-                    +chamber(
-                        ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
-                        56, 982, '', 5800, './images/chamber-image-six.jpg'
-                    )
-                    +chamber(
-                        ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-painted'],
-                        45, 678, '', 5500, './images/chamber-image-seven.jpg'
-                    )
-                    +chamber(
-                        ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-empty'],
-                        39, 450, '', 5300, './images/chamber-image-eight.jpg'
-                    )
-                    +chamber(
-                        ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
-                        77, 350, '', 5000, './images/chamber-image-nine.jpg'
-                    )
-                    +chamber(
-                        ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-painted'],
-                        25, 666, '', 5000, './images/chamber-image-ten.jpg'
-                    )
-                    +chamber(
-                        ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
-                        35, 444, '', 5000, './images/chamber-image-eleven.jpg'
-                    )
-                    +chamber(
-                        ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
-                        55, 352, '', 5000, './images/chamber-image-twelwe.jpg'
-                    )
-                div(class="pagination mrg-top-40")
-                    div(class="pagination__inner")
-                        div(class="pagination__controlls")
-                            ul(class="pagination__list")
-                                li(class="pagination__item")
-                                    a(class="pagination__link button-circle_pirple", href="#") 1
-                                li(class="pagination__item")
-                                    a(class="pagination__link", href="#") 2
-                                li(class="pagination__item")
-                                    a(class="pagination__link", href="#") 3
-                                li(class="pagination__item")
-                                    a(class="pagination__link", href="#") ...
-                                li(class="pagination__item") 
-                                    a(class="pagination__link", href="#") 15
-                            a(class="pagination__next-button")
-                        p(class="pagination__text text mrg-top-10")
-                            | 1 – 12 из 100+ вариантов аренды
+            h1(class="rooms__title title-h1")
+                | Номера, которые мы для вас подобрали
+            div(class="chambers mrg-top-20")
+                //- chamber [колличество звёзд], отзывы, номер комнаты, тип комнаты(люкс), цена, путь до картинки
+                +chamber(
+                    ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-painted'],
+                    145, 888, 'люкс', 9900, './images/chamber-image-one.jpg'
+                )
+                +chamber(
+                    ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-empty'],
+                    65, 840, '', 9900, './images/chamber-image-two.jpg'
+                )
+                +chamber(
+                    ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
+                    35, 980, '', 8500, './images/chamber-image-three.jpg'
+                )
+                +chamber(
+                    ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-painted'],
+                    19, 856, '', 7300, './images/chamber-image-fhour.jpg'
+                )
+                +chamber(
+                    ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-empty'],
+                    44, 740, '', 6000, './images/chamber-image-five.jpg'
+                )
+                +chamber(
+                    ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
+                    56, 982, '', 5800, './images/chamber-image-six.jpg'
+                )
+                +chamber(
+                    ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-painted'],
+                    45, 678, '', 5500, './images/chamber-image-seven.jpg'
+                )
+                +chamber(
+                    ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-empty'],
+                    39, 450, '', 5300, './images/chamber-image-eight.jpg'
+                )
+                +chamber(
+                    ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
+                    77, 350, '', 5000, './images/chamber-image-nine.jpg'
+                )
+                +chamber(
+                    ['star-painted', 'star-painted', 'star-painted', 'star-painted', 'star-painted'],
+                    25, 666, '', 5000, './images/chamber-image-ten.jpg'
+                )
+                +chamber(
+                    ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
+                    35, 444, '', 5000, './images/chamber-image-eleven.jpg'
+                )
+                +chamber(
+                    ['star-painted', 'star-painted', 'star-painted', 'star-empty', 'star-empty'],
+                    55, 352, '', 5000, './images/chamber-image-twelwe.jpg'
+                )
+            include ../includes/pagination/pagination.pug
