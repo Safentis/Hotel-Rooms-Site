@@ -1,113 +1,134 @@
-function init(maxPriceValue, min, max, rangeId) {
+function init(props) {
+    const { button1Id, button2Id } = props;
+    const buttonLeft = document.querySelector(`#${button1Id}`) || document.querySelector(`${button1Id}`);
+    const buttonRight = document.querySelector(`#${button2Id}`) || document.querySelector(`${button2Id}`);
 
-    if (!document.querySelector(`#${rangeId}`)) return;
+    buttonLeft.addEventListener('mousedown', handlerMouseDownEvent);
+    buttonRight.addEventListener('mousedown', handlerMouseDownEvent);
 
-    function setCost() {
-        let xMin = min / maxPriceValue * 100;
-        let xMax = max / maxPriceValue * 100;
+    // * Функция calcCommonProcents используется для простого расчёта процентов
+    // * минимальной и максимальной цены от допустимого порога.
 
-        let range = document.querySelector(`#${rangeId}`);
-        let b2 = range.querySelector('[data-btn="button2"]');
-        let b1 = range.querySelector('[data-btn="button1"]');
-        
-        let between = b2.nextElementSibling || 
-            b2.previousElementSibling || 
-            b1.nextElementSibling || 
-            b1.previousElementSibling;
+    const calcCommonProcents = (int, totalCost) => Math.floor(int / totalCost * 100);
 
-        b2.style.left = xMin + '%';
-        b1.style.left = xMax + '%';
-        between.style.marginLeft = xMin + '%';
-        between.style.marginRight = 100 - xMax + '%';
-    
-        let mrgLeft2 = parseFloat(getComputedStyle(b2).left);
-        let mrgLeft1 = parseFloat(getComputedStyle(b1).left);
+    // * Функция calcProcents используется для расчёта процентов
+    // * той или иной кнопки относительно левой иили правой сторон.
 
-        calculatePrices(mrgLeft2, 'min', range, b2);
-        calculatePrices(mrgLeft1, 'max', range, b1);
-    }
+    const calcProcents = (int, slider, button) => Math.floor(int / (slider.clientWidth - button.offsetWidth) * 100);
 
-    setCost();
-    
-    function getCoords(btn, slider) {
-        let right = slider.clientWidth - btn.offsetLeft;
-        let left = btn.offsetLeft;
+    // * Функция getButtonsCoords используется для расчёта растояния кнопок
+    // * от правого и ливого края слайдера.
+
+    function getButtonsCoords(button, slider) {
+        let right = slider.clientWidth - button.offsetLeft;
+        let left = button.offsetLeft;
 
         return { right, left };
     }
 
-    function calculatePrices(value, type, slider, btn) {
-        const minHTML = slider.previousElementSibling.querySelector('[data-cost="min"]');
-        const maxHTML = slider.previousElementSibling.querySelector('[data-cost="max"]');
-        let procent = (value / (slider.clientWidth - btn.offsetWidth) * 100).toFixed(0);
-        let number = maxPriceValue * +procent / 100;
-        
-        switch(type) {
-            case 'min':
-                minHTML.innerHTML = number + '₽';
-            break;
-            case 'max':
-                maxHTML.innerHTML = number + '₽';
-            break;
-            default:
-                return
-        }
+    // * Функция calcCostValue используется для расчёта 
+    // * минимальной и максимальной цены во время движения ползунков.
+
+    function calcCostValue(int, slider, button, elem) {
+        const { totalCost } = props;
+        let procent = calcProcents(int, slider, button);
+        let number = totalCost * +procent / 100;
+
+        elem.innerHTML = number + '₽';
+
+        return;
     }
 
-    document.addEventListener('mousedown', (e) => {
-
-        if (!e.target.dataset.btn) return;
-       
-        e.stopPropagation();
-        e.preventDefault();
-
+    function handlerMouseDownEvent(e) {
         document.addEventListener('mousemove', mouseMove);
         document.addEventListener('mouseup', mouseUp);
+        
+        const button = e.target;
+        const slider = button.parentElement;
+        const between = button.nextElementSibling || button.previousElementSibling;
 
-        const btn = e.target;
-        const slider = e.target.parentElement;
-        const between = e.target.nextElementSibling || e.target.previousElementSibling;
+        const { minCostId, maxCostId } = props;
 
-        let shiftX = e.clientX - btn.getBoundingClientRect().left;
-        let sliderLeftCoordsX = slider.getBoundingClientRect().x;
+        let shiftX = e.clientX - button.getBoundingClientRect().left;
+        let sliderLeftCoordsX = button.parentElement.getBoundingClientRect().x;
+
+        let min = document.querySelector(`#${minCostId}`) || document.querySelector(`${minCostId}`);
+        let max = document.querySelector(`#${maxCostId}`) || document.querySelector(`${maxCostId}`);
 
         function mouseMove(e) {
-            let btnDragTarget = +(e.pageX - shiftX - sliderLeftCoordsX).toFixed(0);
-            let sliderWidth = slider.clientWidth - btn.offsetWidth
+            e.stopPropagation();
+            e.preventDefault();
+        
+            let curentButton = +(e.pageX - shiftX - sliderLeftCoordsX).toFixed(0);
+            let sliderWidth = slider.clientWidth - button.offsetWidth
 
-            if (btnDragTarget > sliderWidth) btnDragTarget = sliderWidth; 
-            if (btnDragTarget < 0) btnDragTarget = 0;
-
-            const { right, left } = getCoords(btn, slider);
-            const type = btn.dataset.btn;
-
-            switch(type) {
+            if (curentButton > sliderWidth) curentButton = sliderWidth; 
+            if (curentButton < 0) curentButton = 0;
+            
+            let { left, right } = getButtonsCoords(button, slider);
+            let attr = button.dataset.btn;            
+            
+            switch(attr) {
                 case 'button1':
-                    calculatePrices(btnDragTarget, 'max', slider, btn);
-
-                    btn.style.left = btnDragTarget + 'px';
-                    between.style.marginRight = right - btn.offsetWidth / 2 + 'px';
+                    button.style.left = curentButton + 'px';
+                    between.style.marginLeft = left + button.offsetWidth / 2 + 'px';
+                    calcCostValue(left, slider, button, min);
                 break;
                 case 'button2':
-                    calculatePrices(btnDragTarget, 'min', slider, btn);
-
-                    btn.style.left = btnDragTarget + 'px';
-                    between.style.marginLeft = left + btn.offsetWidth / 2 + 'px';
+                    button.style.left = curentButton + 'px';
+                    between.style.marginRight = right - button.offsetWidth / 2 + 'px';
+                    calcCostValue(left, slider, button, max);
                 break;
                 default:
                     return;
             }
+
+            return false;
         }
 
         function mouseUp() {
             document.removeEventListener('mousemove', mouseMove);
             document.removeEventListener('mouseup', mouseUp);
         }
+    }
 
-        return false;
-    });
+    // * Функция setStartCost выставляет стартовое значение минимальной и максимальной цены,
+    // * высчитывает и применяет стили для "средней линии" и кнопок-маркеров. 
+    // * Положение кнопок относительно левой и правой стороны, 
+    // * зависит от минимальной и максимальной цены.
 
+    function setStartCost() {
+        const { minCostId, maxCostId, minCost, maxCost, totalCost } = props;
+
+        document.querySelector(`#${minCostId}`).innerHTML = minCost;
+        document.querySelector(`#${maxCostId}`).innerHTML = maxCost;
+        
+        let between = buttonLeft.nextElementSibling || buttonRight.previousElementSibling;
+
+        let xMin = calcCommonProcents(minCost, totalCost);
+        let xMax = calcCommonProcents(maxCost, totalCost);
+
+        buttonLeft.style.left = xMin + '%';
+        buttonRight.style.left = xMax + '%';
+
+        between.style.marginLeft = xMin + '%';
+        between.style.marginRight = 100 - xMax + '%';
+    }
+
+    setStartCost()
+
+    buttonLeft.ondragstart = () => false;
+    buttonRight.ondragstart = () => false;
 }
 
-// TOTAL_VALUE / MIN_VALUE / MAX_VALUE / RANGE_ID
-init(50000, 30000, 40000, 'range');
+const props = {
+    totalCost: 100000,
+    minCost: 11000,
+    maxCost: 88000,
+    button1Id: 'button1',
+    button2Id: 'button2',
+    minCostId: 'min1',
+    maxCostId: 'min2',
+};
+
+init(props);

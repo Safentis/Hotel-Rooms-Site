@@ -25,7 +25,7 @@ block content
                     readonly
                 )
                 +select()
-                +range('range')
+                +range()
                 fieldset(class="checkboxes label mrg-top-30", form="filters") 
                     | Правила дома
                     ul(class="checkboxes__list")
@@ -52,7 +52,7 @@ block content
                                 p(class="checkboxes__text text_active") Помощник для инвалидов
                                 p(class="checkboxes__text text_small") На 1 этаже вас встретит специалист  и проводит до номера.
                 +select('mrg-top-30', false)
-                p(class="checkboxes checkbox-select label mrg-top-30", form="filters", data-dropdown="dropdown") 
+                p(class="checkboxes checkbox-select label mrg-top-30", data-dropdown="dropdown") 
                     | Дополнительные удобства 
                     span(class="checkbox-select__arrow", data-dropdown="dropdown")
                 ul(class="checkboxes__list dropdown_hide")
