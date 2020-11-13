@@ -1,0 +1,30 @@
+// INTELLIGENCE
+.intelligence {
+    min-width: 28rem;
+    
+    &__item {
+        align-items: center;
+        display: flex;
+        &:first-of-type {
+            padding-bottom: 2rem;
+        }
+        &:last-of-type {
+            padding-top: 2rem;
+        }
+        &:nth-of-type(1n+2) {
+            border-top: .1rem solid $dark-shade-1;
+        }
+    }
+    &__item:not(:first-of-type):not(:last-of-type) {
+        padding: 2rem 0;
+    }
+    &__content {
+        margin-left: 1.3rem;
+    }
+    &__name {
+        @extend .text_darkshade;
+    }
+    &__text {
+
+    }
+}

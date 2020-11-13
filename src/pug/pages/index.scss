@@ -1,19 +1,11 @@
-.index-page {
+.selection {
     background: center / cover no-repeat url('../../assets/images/index-bg.jpg');
     padding: 7rem 0 1.8rem 0;
-}
-.main__text {
-    display: block;
-    margin-left: auto;
-    margin-top: 32rem;
-    max-width: 29.7rem;
-    text-align: right;
-}
-.card {
-    background: #fff;
-    border: .1rem solid rgba(0, 0, 0, 0.12);
-    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.2);
-    border-radius: .4rem;
-    max-width: 38rem;
-    padding: 4rem 3rem 3rem 3rem;
+    
+    &__description {
+        max-width: 29.7rem;
+        margin-top: 32rem;
+        margin-left: auto;
+        text-align: right;    
+    }
 }

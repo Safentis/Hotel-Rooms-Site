@@ -1,16 +1,53 @@
+/*UTILITS*/
 @import './utilits/fonts.scss';
 @import './utilits/normalize.scss';
 @import './utilits/properties.scss';
 @import './utilits/base.scss';
 @import './utilits/mixins.scss';
-@import './classes/classes.scss';
 
+/*CLASSES*/
+@import './classes/text.scss';
+@import './classes/input.scss';
+@import './classes/margin.scss';
+@import './classes/card.scss';
 
-@import '../../pug/components/header/header.scss';
-@import '../../pug/components/footer/footer.scss';
+/*COMPONENTS*/
+@import '../../pug/components/button/button.scss';
+@import '../../pug/components/inputs/dropdown/dropdown.scss';
+@import '../../pug/components/inputs/calendar/calendar.scss';
+@import '../../pug/components/checkboxes/checkbox-list/checkbox-list.scss';
+@import '../../pug/components/checkboxes/rich-checkbox-list/rich-checkbox-list.scss';
+@import '../../pug/components/radio/radio.scss';
+@import '../../pug/components/toggle/toggle.scss';
+@import '../../pug/components/likebutton/like-button.scss';
+@import '../../pug/components/stars/stars.scss';
+@import '../../pug/components/range/range.scss';
+@import '../../pug/components/pagination/pagination.scss';
 
+@import '../../pug/components/ui-nav/ui-nav.scss';
+
+/*INCLUDES*/
+@import '../../pug/includes/header-ui-kit/header-ui-kit.scss';
+@import '../../pug/includes/header/header.scss';
+@import '../../pug/includes/footer/footer.scss';
+
+@import '../../pug/includes/card-room-search/card-room-search.scss';
+@import '../../pug/includes/card-account-reg/card-account-reg.scss';
+@import '../../pug/includes/card-room-info/card-room-info.scss';
+@import '../../pug/includes/card-room-number/card-room-number.scss';
+@import '../../pug/includes/card-account-log/card-account-log.scss';
+
+@import '../../pug/includes/intelligence/intelligence.scss';
+@import '../../pug/includes/comment/comment.scss';
+@import '../../pug/includes/bullet-list/bullet-list.scss';
+
+/*PAGES*/
 @import '../../pug/pages/index.scss';
 @import '../../pug/pages/login.scss';
 @import '../../pug/pages/registration.scss';
 @import '../../pug/pages/details.scss';
-@import '../../pug/pages/filters.scss';
+@import '../../pug/pages/filter.scss';
+@import '../../pug/pages/ui-forms.scss';
+@import '../../pug/pages/ui-colors.scss';
+@import '../../pug/pages/ui-cards.scss';
+@import '../../pug/pages/ui-page-parts.scss';

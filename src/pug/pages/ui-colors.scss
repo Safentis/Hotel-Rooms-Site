@@ -1,0 +1,74 @@
+.index {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &__colors {
+        margin: 0 0 14.5rem 1rem;
+    }
+    &__fonts {
+        margin: 0 5.6rem 0 0;
+    }
+}
+.color-block {
+    display: flex;
+    align-items: center;
+
+    @each $num, $bgColor in (
+        1: $dark-shade-100, 
+        2: $dark-shade-75, 
+        3: $dark-shade-50, 
+        4: $dark-shade-25, 
+        5: $dark-shade-5, 
+        6: $dark-shade-1, 
+        7: $purple, 
+        8: $green
+    ) {
+            
+        &:nth-of-type(#{$num}) > .color-block__square {
+            background-color: $bgColor;
+    }
+    }
+    &__square {
+        border-radius: .6rem;
+        height: 7rem;
+        width: 7rem;
+    }
+    &__text {
+        @extend .title-h2;
+        margin-left: 4rem;
+    }
+}
+
+.font-block {
+    display: flex;
+    max-width: 39.6rem;
+    @each $num, $text in (
+        1 : 'title-h1', 
+        2 : 'title-h2', 
+        3 : 'title-h3', 
+        4 : 'text'
+    ) {
+        &:nth-of-type(#{$num}) > .font-block__tag,
+        &:nth-of-type(#{$num}) > .font-block__text 
+        {
+            @extend .#{$text};
+        }
+        &:nth-of-type(#{$num}) > .font-block__tag
+        {
+            color: $dark-shade-25;
+            font-weight: normal;
+            font-family: $montserrat-family;
+        }
+    }
+    &__tag {
+        text-align: right;
+        max-width: 3.7rem;
+        min-width: 3.7rem;
+    }
+    &__text {
+        margin-left: 3rem;
+        word-wrap: break-word;
+    }
+}

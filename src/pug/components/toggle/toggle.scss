@@ -1,0 +1,37 @@
+.toggle-wrapper {
+    display: flex;
+    align-items: center;
+}
+.toggle {
+    border-radius: 1rem;
+    cursor: pointer;
+    position: relative;
+    height: 2rem;
+    width: 4rem;
+    &__element {
+        border-radius: 50%;
+        max-height: 1.2rem;
+        min-height: 1.2rem;
+        position: absolute;
+        top: 15.5%;
+        right: 10%;
+        max-width: 1.2rem;
+        min-width: 1.2rem;
+    }
+    &_active {
+        border: .1rem solid $purple;
+    }
+    &_noactive {
+        border: .1rem solid $dark-shade-25;
+    }
+}
+.toggle__element_active {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+.toggle__element_noactive {
+    background-color: $dark-shade-25;
+    left: 10%;
+}
+.toggle-text {
+    margin-left: 1rem;
+}

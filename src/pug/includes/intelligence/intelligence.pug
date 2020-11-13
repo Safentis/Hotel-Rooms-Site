@@ -1,0 +1,12 @@
+//- INTELLIGENCE
+mixin intelligenceItem(name, text, icon)
+    li(class="intelligence__item")
+        div(class=`intelligence__image ${icon}`)
+        div(class="intelligence__content")
+            p(class="intelligence__name") #{name}
+            p(class="intelligence__text") #{text}
+
+mixin intelligenceBlock(classList)
+    ul(class=`intelligence ${classList}`)
+        +intelligenceItem('Комфорт', 'Шумопоглощающие стены', 'smile')
+        +intelligenceItem('Удобство', 'Окно в каждой из спален', 'build')

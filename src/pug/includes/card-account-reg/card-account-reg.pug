@@ -1,0 +1,34 @@
+include ../../components/radio/radio.pug
+include ../../components/toggle/toggle.pug
+include ../../components/button/button.pug
+
+mixin accountRegistration(mrg)
+    section(class=`card ${mrg}`)
+        div(class="card__header")
+            h1(class="card__title")
+                | Регистрация аккаунта
+        form(class="card__form form", method="POST", id="card-registration")
+            p
+                label(class="form__label form__label_opacity-0", for="reg-name") Имя
+                input(class="form__input", type="text", id="reg-name", placeholder="Имя")
+            p(class="mrg-t-10")
+                label(class="form__label form__label_opacity-0", for="reg-surname") Фамилия
+                input(class="form__input", type="text", id="reg-surname", placeholder="Фамилия")
+            +radioButtons('mrg-t-10')
+            p(class="mrg-t-20")
+                label(class="form__label", for="reg-birthday") дата рождения
+                input(class="form__input", type="text", id="reg-birthday", placeholder="ДД.ММ.ГГГГ")
+            fieldset(class="fieldset mrg-t-20", form="card-registration")
+                legend(class="fieldset__legend") данные для входа в сервис
+                p
+                    label(class="form__label form__label_opacity-0", for="log-email") email
+                    input(class="form__input", type="text", id="log-email", placeholder="Email")
+                p(class="mrg-t-10")
+                    label(class="form__label form__label_opacity-0", for="log-name") name
+                    input(class="form__input", type="text", id="log-name", placeholder="Пароль")
+                +toggle('toggle_noactive', 'toggle__element_noactive', 'mrg-t-10')
+                +buttonWidget('form__button_mrg-20', 'перейти к оплате')
+        div(class="account mrg-t-30")
+            p(class="account__text")
+                | Уже есть аккаунт на Toxin
+            +buttonLogin('account__button', 'войти')

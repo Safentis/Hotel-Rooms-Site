@@ -1,0 +1,25 @@
+//- BUTTONS
+include ../../components/button/button.pug
+
+header(class="header")
+    div(class="header__inner container")
+        a(class="header__logo", href="index.html")
+            img(src="./images/logo.svg", title="Toxin", alt="Toxin", width="105", height="40")
+        nav(class="header__nav")
+            ul(class="header__nav-list")
+                li(class="header__nav-item")
+                    a(class="header__nav-link", href="#")
+                        | О нас
+                li(class="header__nav-item header__nav-dropdown")
+                    | Услуги
+                li(class="header__nav-item")
+                    a(class="header__nav-link", href="#")
+                        | Вакансии
+                li(class="header__nav-item")
+                    a(class="header__nav-link", href="#")
+                        | Новости
+                li(class="header__nav-item header__nav-dropdown")
+                    | Соглашения
+        div(class="header__buttons")
+            +buttonLogin('header__login', 'войти')
+            +buttonRegistration('header__registration', 'зарегистрироваться')

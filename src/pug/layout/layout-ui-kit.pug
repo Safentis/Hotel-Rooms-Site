@@ -1,0 +1,16 @@
+block variables 
+    -var pageTitle = '';
+
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        title #{pageTitle}
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="keywords", content="UI-KIT")
+        meta(name="description", content="UI-KIT PAGE")
+    body(class=`body-${pageTitle}`)
+        block header
+            include ../includes/header-ui-kit/header-ui-kit.pug
+        block content
+        

@@ -1,0 +1,6 @@
+mixin radioButtons(mrg = '')
+    div(class=`radio ${mrg}`)
+        input(class="radio__input", type="radio", name="sex", value="male", id="male", checked)
+        label(class="radio__label", for="male") Мужчина
+        input(class="radio__input", type="radio", name="sex", value="female", id="female")
+        label(class="radio__label", for="female") Женщина

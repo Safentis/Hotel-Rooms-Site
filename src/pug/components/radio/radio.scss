@@ -1,0 +1,32 @@
+.radio {
+    display: flex;
+    &__label {
+        cursor: pointer;
+        display: inline-flex;
+        margin-right: 2rem;
+    }
+    &__input {
+        opacity: 0;   
+        position: absolute;
+        z-index: -1;
+    }
+    &__input + &__label {
+        &::before {
+            border-radius: 50%;
+            border: .1rem solid $purple;
+            content: '';
+            cursor: pointer;
+            display: block;
+            height: 2rem;
+            width: 2rem;
+            margin-right: 1rem;
+        }
+    }
+    &__input:checked + &__label {
+        &::before {
+            content: '';
+            background: center / 100% 75% no-repeat url('../images/circle.svg');
+            text-align: center;
+        }
+    }
+}

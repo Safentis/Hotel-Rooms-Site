@@ -1,0 +1,30 @@
+.room-card {
+    background-color: #fff;
+    box-shadow: 0 1rem 2rem rgba(31, 32, 65, 0.05);
+    border-radius: .4rem;
+    max-width: 27rem;
+
+    &__image {
+        border-top-left-radius: .4rem;
+        border-top-right-radius: .4rem;
+    }
+    &__info {
+        padding: 1rem 1.7rem 1.3rem 2rem;
+    }
+    &__number {
+        border-bottom: .1rem solid rgba(31, 32, 65, 0.1);
+        padding-bottom: .5rem;
+    }
+    &__callback {
+        display: flex;
+        justify-content: space-between;
+        padding-top: .75rem;
+    }
+    &__integer {
+        font-size: 1.8rem;
+    }
+    &__count {
+        @extend .text_darkshade;
+        margin-right: .5rem;
+    }
+}

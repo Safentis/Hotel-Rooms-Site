@@ -1,0 +1,17 @@
+mixin accountLogin(mrg)
+    section(class=`card ${mrg}`)
+        div(class="card__header")
+            h1(class="card__title") 
+                | Войти
+        form(class="card__form form", method="GET")
+            p
+                label(class="form__label form__label_opacity-0", for="log-email") Имя
+                input(class="form__input", type="text", id="login-email", placeholder="Email")
+            p(class="mrg-t-10")
+                label(class="form__label form__label_opacity-0", for="log-name") Имя
+                input(class="form__input", type="text", id="login-name", placeholder="Имя")
+            +buttonWidget('form__button_mrg-20', 'войти')
+        div(class="account mrg-t-30")
+            p(class="account__text")
+                | Нет аккаунта на Toxin?
+            +buttonLogin('account__button', 'создать')

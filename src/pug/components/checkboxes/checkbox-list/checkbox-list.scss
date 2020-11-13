@@ -1,0 +1,60 @@
+
+.checkbox-buttons__label {
+    @extend .label;
+}
+.checkbox-buttons__list {
+    margin-top: 1.656rem;
+}
+.checkboxes__item {
+    align-items: flex-start;
+    display: flex;
+    margin-top: 1rem;
+    line-height: 1.6rem;
+}
+.checkboxes__text {
+    max-width: 19.2rem;
+    margin-left: 1rem;
+}
+.checkbox-input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+.checkbox-label {
+    border-radius: .4rem;
+    border: .1rem solid $dark-shade-25;
+    cursor: pointer;
+    display: block;
+    max-height: 2rem;
+    min-height: 2rem;
+    max-width: 2rem;
+    min-width: 2rem;
+}
+.checkbox-input:checked + .checkbox-label {
+    background: 70% 40% / 100% 60% no-repeat url('../images/checkbox-arrow.svg');
+    border: 1px solid $purple;
+}
+.checkbox-arrow_close {
+    position: relative;
+    cursor: pointer;
+    &::after {
+        background: right / 41% 50% no-repeat url('../images/select-arrow.svg');
+        content: '';
+        display: block;
+        position: absolute;
+        height: 3rem;
+        width: 3rem;
+        top: -50%;
+        right: 4%;
+    }
+}
+.checkbox-arrow_open {
+    @extend .checkbox-arrow_close;
+    &::after {
+        transform: rotate(180deg);
+        right: 0;
+    }
+}
+.checkbox_hide {
+    display: none;
+}

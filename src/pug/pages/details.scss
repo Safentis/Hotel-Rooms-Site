@@ -1,74 +1,166 @@
-@import '../components/details/information.scss';
-@import '../components/details/impression.scss';
-@import '../components/details/commentary.scss';
-@import '../components/details/form.scss';
-
-// IMAGES_BLOCK
-.images {
+.details__images {
     display: grid;
-    max-width: 170.1rem;
-    grid-template-columns: 2.1fr 1fr;
-    margin: 0 auto;
+    grid-template-columns: 98.1rem, 1fr;
 }
-.images__main,
-.images__top-photo,
-.images__bottom-photo {
+.details__images_left {
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
     width: 100%;
 }
-.images__main {
-    grid-area: 1 / 1 / 3 / 2; 
+.details__images_top-right {
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+    height: 100%;
+    max-width: 100%;
 }
-.images__top-photo {
-    grid-area: 1 / 2 / 2 / 3;
+.details__images_bottom-right {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+    height: 100%;
+    max-width: 100%;
 }
-.images__bottom-photo {
-    grid-area: 2 / 2 / 3 / 3;
-}
-
-// MAIN-COLS
-.room {
+.details__columns {
     display: flex;
     flex-wrap: wrap;
-    padding: 7rem 0;
+    padding: 7rem 0 7.5rem 0;
 }
-.room__col-description {
-    max-width: 70.7rem;
-}
-.room__col-form {
+.details__info {
     flex: 1 0 0;
 }
-.room__top,
-.room__bottom {
+.details__card {
+    flex: 1 auto 0;
+}
+.details__row-top {
     display: flex;
     flex-wrap: wrap;
 }
-.card-room {
-    margin-left: auto;
+.details__row-middle {
+    margin-top: 3.3rem;
 }
-
-
-// ROW_BOTTOM
-// RULES_BLOCK
-.rules {
-    max-width: 27.1rem;
-}
-.rules__title {
-    margin-left: 2rem;
-}
-.rules__item {
+.details__row-bottom {
     display: flex;
-    align-items: center;
-    @include listStyle($dark-shade-25);
-    &::before {
-        margin-right: 1rem;
+    flex-wrap: wrap;
+    margin-top: 3.5rem;
+}
+.details__intelligence {
+    margin-right: 8rem;
+}
+.details__impression {
+
+}
+.details__cancel {
+    margin-left: 7rem;
+}
+.details__card-info {
+    margin-left: 7rem;
+}
+
+.icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 86% 86%;
+    height: 4.8rem;
+    width: 4.8rem;
+}
+.smile {
+    @extend .icon;
+    background-image: url('../../assets/images/details-smile-face-icon.svg');
+}
+.build {
+    @extend .icon;
+    background-image: url('../../assets/images/details-factory-icon.svg');
+}
+.fire {
+    @extend .icon;
+    background-image: url('../../assets/images/details-fire-icon.svg');
+}
+
+.info {
+    &__title {
+        @extend .title-h2;
+    }
+    &__content {
+        &:nth-of-type(1) {
+            margin-top: 2rem;
+        }
+        &:nth-of-type(1n+2) {
+            margin-top: 2.7rem;
+        }
+    }
+    &__comments {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__comments-count {
+        @extend .text;
+        color: $dark-shade-50;
+    }
+    &__title_mrg-l {
+        margin-left: 2rem;
     }
 }
 
-// CANCEL_BLOCK
-.cancel {
-    max-width: 34.1rem;
+
+.impression {
+    align-items: flex-end;
+    display: flex;
+
+    &__diagram {
+
+    }
+    &__list {
+        margin-left: 3rem;
+    }
+    &__item {
+        align-items: center;
+        display: flex;
+        text-transform: capitalize;
+
+        &::before {
+            border-radius: 50%;
+            content: '';
+            display: block;
+            height: 1rem;
+            margin-right: .5rem;
+            width: 1rem;
+        }
+        
+        @each $num, $color in (
+            1: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%), 
+            2: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%),
+            3: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%),
+            4: linear-gradient(180deg, #919191 0%, #3D4975 100%)
+        ) {
+            &:nth-of-type(#{$num}) {
+                &::before {
+                    background: $color;
+                }
+            }
+        }
+    }
 }
-.cancel-margin {
-    margin-left: 9rem;
+.diagram {
+    align-items: center;
+    background: center / contain no-repeat url('../images/details-circle-diagram.svg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 12rem;
+    height: 12rem;
+    padding: 2rem 1.5rem;
+
+    &__count {
+        @extend .title-h1;
+        color: $purple;
+        word-break: break-all;
+    }
+    &__voices {
+        @extend .title-h3;
+        color: $purple;
+        word-break: break-all;
+    }
 }
 
+.cancel {
+    max-width: 34.1rem
+}

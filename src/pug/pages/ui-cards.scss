@@ -1,0 +1,18 @@
+.body-ui-cards {
+    background-color: #E5E5E5;
+}
+.ui-cards {
+    display: grid;
+    grid-template-columns: 38rem 38rem 1fr;
+    grid-gap: 4rem;
+    margin-top: 6.5rem;
+}
+.ui-cards__coll_3 {
+    position: relative;
+}
+.ui-cards__calendar {
+    top: 0;
+}
+.ui-cards__room-card {
+    margin-top: 42.5rem;
+}

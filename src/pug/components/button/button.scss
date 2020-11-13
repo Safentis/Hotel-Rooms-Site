@@ -1,0 +1,70 @@
+.button {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.button-login,
+.button-registration,
+.button-form,
+.button-select {
+    @extend .button;
+    @extend .title-h3;
+}
+
+.button_hover_opacity {
+    opacity: 0.5;
+}
+.button_hover_color {
+    color: $dark-shade-50 !important;
+}
+
+.button-registration,
+.button-login {
+    border-radius: 2.2rem;
+    display: inline-block;
+    &:hover {
+        @extend .button_hover_opacity;
+    }
+}
+.button-login {
+    border: .25rem solid $purple;
+    color: $purple;
+    padding: 1.23rem 1.7rem;
+    min-width: 9.9rem;
+}
+.button-registration {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: #fff;
+    padding: 1.48rem 2rem;
+}
+.button-select {
+    color: $purple;
+    padding: 0;
+    &:hover {
+        @extend .button_hover_color;
+    }
+}
+.button-form {
+    @extend .button-registration;
+    align-items: center;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    &::after {
+        background-position: center;
+        background-size: 42.5%;
+        background-repeat: no-repeat;
+        background-image: url('../images/arrow-right-button.svg');
+        content: '';
+        display: block;
+        position: absolute;
+        height: 4.4rem;
+        width: 4.4rem;
+        right: 0;
+    }
+    width: 100%;
+}

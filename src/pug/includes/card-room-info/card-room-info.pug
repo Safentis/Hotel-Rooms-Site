@@ -1,0 +1,32 @@
+include ../../components/inputs/calendar/calendar.pug
+include ../../components/inputs/dropdown/dropdown.pug
+include ../../components/button/button.pug
+
+mixin cardInfo(classInfo = '')
+    section(class=`card ${classInfo}`)
+        div(class="room-info")
+            h2(class="room-info__title") 
+                | <span class="room-info__number">№</span> 
+                | 888
+                | <span class="room-info__number-type">Люкс</span>
+            p(class="room-info__cost") 
+                | <span class="room-info__price"> 9 990₽ </span>
+                | в сутки
+        form(class="card__form form", method="POST")
+            +calendar('form__calendar')
+            +dropdownGuests('form__dropdown', 'number-beds')
+            ul(class="price-list form__price-list")
+                li(class="price-list__item")
+                    p(class="price-list__service") 9 990₽ х 4 суток
+                    p(class="price-list__cost") 39 960₽
+                li(class="price-list__item")
+                    p(class="price-list__service price-list__info") Сбор за услуги: скидка 2 179₽
+                    p(class="price-list__cost") 0₽
+                li(class="price-list__item")
+                    p(class="price-list__service price-list__info") Сбор за дополнительные услуги
+                    p(class="price-list__cost") 300₽
+            p(class="total-cost form__total-cost")
+                span(class="total-cost__text") Итого
+                span(class="total-cost__underline")
+                span(class="total-cost__price") 38 081₽
+            +buttonWidget('form__button_mrg-20', 'забронировать')

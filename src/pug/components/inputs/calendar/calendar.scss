@@ -1,0 +1,130 @@
+// CALENDAR
+.calendar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.calendar_hide {
+    display: none;
+}
+.calendar {
+    background-color: #fff;
+    border: .1rem solid $dark-shade-25;
+    box-sizing: border-box;
+    box-shadow: 0 1rem 2rem rgba(31, 32, 65, 0.05);
+    border-radius: .4rem;
+    padding: 2rem;
+    position: absolute;
+    max-width: 32rem;
+    top: 105%;
+    z-index: 10;
+
+    &__arrow-prev,
+    &__arrow-next {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 75%;
+        cursor: pointer;
+        display: inline-block;
+        height: 2.4rem;
+        position: absolute;
+        width: 2.4rem;
+    }
+    &__arrow-prev {
+        background-image: url('../images/arrow-left.svg');
+        left: 2rem;
+    }
+    &__arrow-next {
+        background-image: url('../images/arrow-right.svg');
+        right: 2rem;
+    }
+    &__table {
+        margin-top: 3rem;
+        border-spacing: 0;
+    }
+    &__month {
+        @extend .title-h2;
+        text-align: center;
+    }
+    &__days-item {
+        color: $purple;
+        font-weight: 700;
+    }
+    &__cell {
+        // min-height: 5rem;
+    }
+
+    &__days-item,
+    &__cell {
+        cursor: pointer;
+        text-align: center;
+        height: 3.85rem;
+        width: 4rem;
+    }
+    &__days-item,
+    &__num,
+    &__other-num {
+        font-size: 1.2rem;
+    }
+    &__num {
+        color: $dark-shade-50;
+    }
+    &__other-num {
+        color: $dark-shade-25;
+    }
+    &__buttons {
+        display: flex;
+        margin-top: 2rem;
+        justify-content: space-between;
+    }
+}
+
+.calendar__curent-date,
+.calendar_active-date {
+    border-radius: 50%;
+    color: #fff;
+}
+.calendar__curent-date {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+}
+.calendar_active-date {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+.entry-edge,
+.departure-edge {
+    position: relative;
+    &::after {
+        content: '';
+        display: block;
+        background: linear-gradient(
+        180deg,
+        rgba($color: #BC9CFF, $alpha: 0.25) 0%, 
+        rgba($color: #8BA4F9, $alpha: 0.25) 100%
+        );
+        height: 100%;
+        position: absolute;
+        width: 2rem;
+        z-index: -1;
+        top: 0;
+    }
+
+}
+.entry-edge {
+    &::after {
+        right: 0;
+    }
+}
+.departure-edge {
+    &::after {
+        left: 0;
+    }
+}
+
+.calendar_grey-line {
+    background: linear-gradient(
+        180deg,
+        rgba($color: #BC9CFF, $alpha: 0.25) 0%, 
+        rgba($color: #8BA4F9, $alpha: 0.25) 100%
+    );
+}

@@ -1,0 +1,33 @@
+extends ../layout/layout-ui-kit.pug
+
+block variables
+    -var pageTitle = 'ui-colors-and-types'
+
+mixin colorBlock(mrg, name, hash)
+    div(class=`color-block ${mrg}`)
+        div(class="color-block__square mrg-right-40")
+        div(class="color-block__text")
+            p(class='color-block__name') #{name}
+            p(class='color-block__hash') #{hash}
+
+mixin fontBlock(mrg, tag, text)
+    div(class=`font-block ${mrg}`)
+        p(class="font-block__tag") #{tag}
+        p(class="font-block__text") #{text}
+
+block content
+    main(class="index container")
+        include ../components/ui-nav/ui-nav.pug
+        div(class="index__colors")
+            +colorBlock('', 'Dark Shade 100%', '#1F2041')
+            +colorBlock('mrg-t-20', 'Dark Shade 75%', '#1F2041')
+            +colorBlock('mrg-t-20', 'Dark Shade 50%', '#1F2041')
+            +colorBlock('mrg-t-20', 'Dark Shade 25%', '#1F2041')
+            +colorBlock('mrg-t-20', 'Dark Shade 5%', '#1F2041')
+            +colorBlock('mrg-t-20', 'Purple', '#BC9CFF')
+            +colorBlock('mrg-t-20', 'Green', '#6FCF97')
+        div(class="index__fonts")
+            +fontBlock('', 'H1', 'This one is the sub-section or widget title')
+            +fontBlock('mrg-t-50', 'H2', 'Next one is the item title inside widgets')
+            +fontBlock('mrg-t-50', 'H3', 'This is a label or CTA text')
+            +fontBlock('mrg-t-50', 'body', 'This is the body text which is used for most of the design, like paragraphs, lists, etc.')

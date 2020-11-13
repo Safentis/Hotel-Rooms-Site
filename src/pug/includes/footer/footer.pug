@@ -1,0 +1,49 @@
+mixin socialItem(social)
+    li(class="socials__item")
+        a(class="socials__link", href="#", title=`${social}`)
+            img(class="socials__img", 
+                src=`./images/${social}.svg`, 
+                width="24", 
+                height="24", 
+                alt=`${social}`, 
+                title="мы в #{social}"
+            )
+
+mixin cetegoryItem(title, arr)
+    li(class="category")
+        h2(class="category__title") #{title}
+        ul(class="category__list")
+            each item in arr
+                li(class="category__item") 
+                    a(class="category__link", href="#") 
+                        | #{item}
+
+footer(class="footer")
+    div(class="footer__top container")
+        div(class="footer__info")
+            a(class="footer__logo", href="index.html")
+                img(src="./images/logo.svg", title="Toxin", alt="Toxin", width="105", height="40")
+            p(class="footer__text")
+                | Бронирование номеров в лучшем 
+                | отеле 2019 года по версии 
+                | ассоциации «Отельные взгляды»
+        nav(class="footer__nav")
+            ul(class="footer__nav-list")
+                +cetegoryItem('навигация', ['О нас', 'Новости', 'Служба поддержки', 'Услуги'])
+                +cetegoryItem('о нас', ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'])
+                +cetegoryItem('Служба поддержки', ['Соглашения', 'Сообщества', 'Связь с нами'])
+                li(class="category")
+                    h2(class="category__title") Подписка
+                    ul(class="category__list")
+                        li(class="category__item category__text") Получайте специальные предложения и новости сервиса
+                        li(class="category__item")
+                            label(class="category__input-label", for="subscribe")
+                            input(class="category__input", id="subscribe", placeholder="Email")
+    div(class="footer__bottom")
+        div(class="footer__bottom-inner container")
+            p(class="copyright") 
+                | Copyright © 2018 Toxin отель. Все права зачищены.
+            ul(class="socials")
+                +socialItem('twitter')
+                +socialItem('facebook')
+                +socialItem('instagram')

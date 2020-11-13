@@ -1,0 +1,74 @@
+.room-info {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    &__title {
+        @extend .title-h1;
+    }
+    &__number {
+        font-size: 1.4rem;
+    }
+    &__number-type {
+        @extend .title-h3;
+        color: $purple;
+    }
+    &__price {
+        @extend .text_darkshade;
+    }
+}
+
+.price-list {
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+    &__info {
+        position: relative;
+        &::after {
+            align-items: center;
+            border: .1rem solid $dark-shade-25;
+            border-radius: 50%;
+            content: 'i';
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            height: 2rem;
+            position: absolute;
+            right: -2.5rem;
+            top: 0;
+            font-size: 1.2rem;
+            width: 2rem;
+        }
+    }
+    &__service {
+        max-width: 21.4rem;
+        line-height: 1.8rem;
+    }
+    &__cost {
+
+    }
+}
+
+.total-cost {
+    @extend .title-h2;
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+
+    &__text {
+        flex: 1 auto auto;
+        text-align: left;
+    }
+    &__underline {
+        flex: 1;
+        border-bottom: .1rem solid $dark-shade-25;
+        height: .1rem;
+        margin: 0 .25rem .5rem .25rem;
+    }
+    &__price {
+        flex: 1 auto auto;
+        text-align: right;
+    }
+}

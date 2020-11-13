@@ -1,0 +1,11 @@
+mixin pagination(mrg)
+    div(class=`pagination ${mrg}`)
+        ul(class="pagination__list")
+            li(class="pagination__item pagination__item_active") 1
+            li(class="pagination__item") 2
+            li(class="pagination__item") 3
+            li(class="pagination__item") ...
+            li(class="pagination__item") 15
+            li(class="pagination__item pagination__item_green") 
+        p(class="pagination__text")
+            | 1 – 12 из 100+ вариантов аренды

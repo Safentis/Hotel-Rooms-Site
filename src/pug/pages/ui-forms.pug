@@ -1,0 +1,201 @@
+extends ../layout/layout-ui-kit.pug
+
+block variables
+    -var pageTitle = 'ui-forms'
+
+//- CHECKBOX-LIST
+include ../components/checkboxes/checkbox-list/checkbox-list.pug
+//- RADIO
+include ../components/radio/radio.pug
+//- TOGGLE
+include ../components/toggle/toggle.pug
+//- LIKE-BUTTON
+include ../components/likebutton/like-button.pug
+//- STARS
+include ../components/stars/stars.pug
+//- RANGE
+include ../components/range/range.pug
+//- BUTTONS
+include ../components/button/button.pug
+//- PAGINATION
+include ../components/pagination/pagination.pug
+//- DROPDOWN
+include ../components/inputs/dropdown/dropdown.pug 
+//- CALENDAR
+include ../components/inputs/calendar/calendar.pug 
+//- CHECKBOXES
+include ../components/checkboxes/rich-checkbox-list/rich-checkbox-list.pug
+//- INTELLIGENCE
+include ../includes/intelligence/intelligence.pug
+//- COMMENT
+include ../includes/comment/comment.pug
+//- COMMENT
+include ../includes/bullet-list/bullet-list.pug
+
+block content
+    main(class="ui-kit container")
+        include ../components/ui-nav/ui-nav.pug
+        div(class="ui-kit__row ui-kit__row_1")
+            div(class="ui-kit__col ui-kit__col_1")
+                //- COL1 -----------------------------
+                label(class="label label-ui-kit", for="email")
+                    span(class="label__name") Text Field
+                    span(class="label__state") Default
+                input(class="input", type="email", id="email", placeholder="Email")
+                
+                label(class="label label-ui-kit mrg-t-20", for="text")
+                    span(class="label__name") Text Field
+                    span(class="label__state") Hover / Focus
+                input(class="input input_hover-ui-kit", type="text", id="text", placeholder="This is pretty awesome")
+                
+                label(class="label mrg-t-20", for="select")
+                    | Dropdown
+                input(class="input-select", type="text", id="select", placeholder="Сколько гостей", readonly)
+                
+                label(class="label mrg-t-30", for="date")
+                    | masked text field
+                input(class="input", type="text", id="date", placeholder="ДД.ММ.ГГГГ")
+                
+                //- CALENDAR
+                +calendar('mrg-t-40')
+                
+                //- FILTER-DATES
+                label(class="label mrg-t-40", for="filter")
+                    | filter date dropdown
+                input(class="input-filter-date", type="text", id="filter", placeholder="19 авг - 23 авг", readonly)
+
+                //- SUBSCRIBE
+                label(class="label label-ui-kit mrg-t-40", for="subscrire")
+                    | subscription text field
+                input(class="input-subscription", type="text", id="subscrire", placeholder="Email")
+
+            div(class="ui-kit__col ui-kit__col_2")
+                //- COL2 -----------------------------
+                //- CHECKBOX-LIST
+                +checkboxes('')
+                
+                //- RADIO
+                p(class="label mrg-t-50") Radio Buttons
+                +radioButtons('mrg-t-16')
+                
+                //- TOGGLE
+                //- classButton, classElement, nrg
+                p(class="label mrg-t-40") Toggle
+                +toggle('toggle_active', 'toggle__element_active', 'mrg-t-10')
+                +toggle('toggle_noactive', 'toggle__element_noactive', 'mrg-t-10')
+
+                //- LIKE-BUTTON
+                //- classLike, classElement, text
+                p(class="label mrg-t-40") like button
+                +like('like_noactive mrg-t-16', 'like__count_noactive', '2')
+                +like('like_active mrg-t-16 mrg-l-10', 'like__count_active', '12')
+
+                //- STARS
+                //- arr, mrg
+                P(class="label mrg-t-40") rate button
+                +stars(['on', 'on', 'on', 'on', 'on'], 'mrg-t-16 mrg-r-20')
+                +stars(['on', 'on', 'on', 'on', 'off'])
+            div(class="ui-kit__col ui-kit__col_3")
+                //- COL3 -----------------------------
+                //- RANGE
+                //- mrg
+                +range()
+                
+                //- BUTTONS
+                p(class="label mrg-t-40") buttons
+                div(class="button-uikit_purple mrg-t-16")
+                    +buttonLogin('mrg-r-20', 'click me')
+                    +buttonLogin('button_hover_opacity', 'click me')
+                div(class="button-uikit_white mrg-t-30")
+                    +buttonRegistration('mrg-r-20', 'click me')
+                    +buttonRegistration('button_hover_opacity', 'click me')
+                div(class="button-uikit-select mrg-t-30")
+                    +buttonSelect('mrg-r-20', 'click me')
+                    +buttonSelect('button_hover_color mrg-r-20', 'click me')
+                +buttonWidget('mrg-t-20', 'перейти к оплате')
+
+                //- PAGINATION
+                p(class="label mrg-t-40") pagination
+                +pagination('mrg-t-16')
+        div(class="ui-kit__row ui-kit__row_2")
+            div(class="ui-kit__col ui-kit__col_4")
+                //- COL4 -----------------------------
+                //- DROPDOWN
+                //- classDropdown, classHideNestedList, 'id' 
+                div(class="dropdown dropdown-width-266")
+                    label(class="dropdown__label", for="beds-drop-close")
+                        | dropdown
+                    input(class="dropdown__input", type="text", id="beds-drop-close", placeholder="2 спальни, 2 кровати...", readonly)
+                
+                div(class="dropdown dropdown-width-266 mrg-t-20")
+                    label(class="label label-ui-kit", for="beds-drop-open")
+                        span(class="label__name") dropdown
+                        span(class="label__state") expended
+                    input(class="dropdown__input", type="text", id="beds-drop-open", placeholder="2 спальни, 2 кровати...", readonly)
+                    ul(class="dropdown__nested nested")
+                        +nestedItem('спальни', 2, 'counter__button_active')
+                        +nestedItem('кровати', 1, 'counter__button_active')
+                        +nestedItem('ванные комнаты')
+
+                //- CHECKBOXES-DROPDOWN
+                P(class="label ui-kit__label-checkbox checkbox-arrow_close") expandable checkbox list
+                //- -------------------------------------------------------------
+                div(class=`checkbox-buttons mrg-t-50`)
+                    p(class=`checkbox-buttons__label checkbox-arrow_open`) expandable checkbox list
+                    ul(class="checkbox-buttons__list checkboxes")
+                        each value, item in { 'breakfast':'Завтрак', 'desk':'Письменный стол', 'chair':'Стул для кормления', 'bed':'Кроватка', 'tv':'Телевизор', 'shampoo':'Шампунь' } 
+                            +checkboxesItem('services', item, value)
+                    
+            div(class="ui-kit__col ui-kit__col_5")
+                //- COL5 -----------------------------
+                div(class="dropdown dropdown-width-32")
+                    label(class="dropdown__label", for="peoples-drop-zero")
+                        | dropdown
+                    input(class="dropdown__input", type="text", id="peoples-drop-zero", placeholder="Сколько гостей", readonly)
+                    ul(class="dropdown__nested nested")
+                        +nestedItem('взрослые')
+                        +nestedItem('дети')
+                        +nestedItem('младенцы')
+                        +nestedItemButtons()
+                        
+                +richCheckboxes('ui-kit__label-dropdown', 'rich Checkbox Buttons')
+
+            div(class="ui-kit__col ui-kit__col_6")
+                //- COL6 -----------------------------
+                div(class="dropdown dropdown-width-32")
+                    label(class="dropdown__label", for="peoples-drop")
+                        | dropdown
+                    input(class="dropdown__input", type="text", id="peoples-drop", placeholder="3 гостя", readonly)
+                    ul(class="dropdown__nested nested")
+                        +nestedItem('взрослые', 2, 'counter__button_active')
+                        +nestedItem('дети', 1, 'counter__button_active')
+                        +nestedItem('младенцы')
+                        +nestedItemButtons('')
+
+                //- BULLET-LIST
+                p(class="label ui-kit__label-bullet") bullet list
+                +bulletList('mrg-t-16')
+                //- ul(class="bullet-list mrg-t-16")
+                //-     li(class="bullet-list__item") Нельзя с питомцами
+                //-     li(class="bullet-list__item") Без вечеринок и мероприятий
+                //-     li(class="bullet-list__item") Время прибытия — после 13:00, а выезд до 12:00
+        div(class="ui-kit__row ui-kit__row_3")
+            div(class="ui-kit__col ui-kit__col_7")
+                //- COL7 -----------------------------
+                +intelligenceBlock('ui-kit__feature')
+            
+            div(class="ui-kit__col ui-kit__col_8")
+                //- COMMENT
+                +commentMale()
+                //- div(class="comment")
+                //-     div(class="comment__user")
+                //-         a(class="comment__avatar")
+                //-             img(src="./images/details-avatar-male.png", alt="user-avatar", width="48", height="48")
+                //-         +like('comment__like like_active', 'like__count_active', '12')
+                //-     div(class="comment__content")
+                //-         div(class="comment__info")
+                //-             p(class="comment__name") Мурад Сарафанов
+                //-             p(class="comment__action") 5 дней назад
+                //-         p(class="comment__text")
+                //-             | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. 
+                //-             | И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.

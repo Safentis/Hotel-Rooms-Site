@@ -1,0 +1,37 @@
+//- DROPDOWN-SELECTS
+mixin nestedItem(categoryName, value = 0, classButton = 'counter__button_noactive')
+    li(class="nested__item")
+        p(class="nested__category") #{categoryName}
+        div(class="counter")
+            button(class=`counter__button ${classButton}`, type="button") -
+            span(class="counter__value") #{value}
+            button(class="counter__button counter__button_active", type="button") +
+
+mixin nestedItemButtons(classHide = 'nested__clear-btn_hide')
+    li(class="nested__item nested__buttons")
+        button(class=`nested__clear-btn ${classHide}`, type="button") очистить
+        button(class="nested__apply-btn", type="button") применить
+
+
+//- DROPDOWN-BEDS
+mixin dropdownBeds(classDropdown, id = 'beds', label)
+    div(class=`dropdown ${classDropdown}`)
+        label(class="dropdown__label", for=`${id}`)
+            | #{label}
+        input(class="dropdown__input", type="text", id=`${id}`, placeholder="2 спальни, 2 кровати...", readonly)
+        ul(class=`dropdown__nested nested nested_hide`)
+            +nestedItem('спальни')
+            +nestedItem('кровати')
+            +nestedItem('ванные комнаты')
+
+//- DROPDOWN-PEOPLES
+mixin dropdownGuests(classDropdown, id = 'peoples')
+    div(class=`dropdown ${classDropdown}`)
+        label(class="dropdown__label", for=`${id}`)
+            | гости
+        input(class="dropdown__input", type="text", id=`${id}`, placeholder="Сколько гостей", readonly)
+        ul(class=`dropdown__nested nested nested_hide`)
+            +nestedItem('взрослые')
+            +nestedItem('дети')
+            +nestedItem('младенцы')
+            +nestedItemButtons(classHideButtons)

@@ -1,0 +1,58 @@
+extends ../layout/layout-ui-kit.pug
+
+block variables
+    -var pageTitle = 'ui-cards'
+
+//- CALENDAR
+include ../components/inputs/calendar/calendar.pug
+//- DROPDOWN
+include ../components/inputs/dropdown/dropdown.pug
+//- RADIO
+include ../components/radio/radio.pug
+//- TOGGLE
+include ../components/toggle/toggle.pug
+//- CALENDAR
+include ../components/inputs/calendar/calendar.pug
+//- STARS
+include ../components/stars/stars.pug
+
+block content
+    main(class="ui-cards container")
+        include ../components/ui-nav/ui-nav.pug
+        div(class="ui-cards__coll_1")
+            //- 1
+            include ../includes/card-room-search/card-room-search.pug
+            
+            //- 2
+            include ../includes/card-account-reg/card-account-reg.pug
+            +accountRegistration('mrg-t-40')
+        div(class="ui-cards__coll_2")
+            //- 3
+            include ../includes/card-room-info/card-room-info.pug
+            +cardInfo()
+            //- 4
+            include ../includes/card-account-log/card-account-log.pug
+            +accountLogin('mrg-t-40')
+
+        div(class="ui-cards__coll_3")
+            //- 5
+            include ../includes/card-room-number/card-room-number.pug
+            +calendarBody('ui-cards__calendar', 'month-calendar', 'body-calendar')                            
+            +roomCard(
+                './images/chamber-image-one.jpg', 
+                888, 
+                9900,
+                ['on', 'on', 'on', 'on', 'on'], 
+                145,
+                '',
+                'ui-cards__room-card'
+            )
+            +roomCard(
+                './images/chamber-image-two.jpg', 
+                840, 
+                9900,
+                ['on', 'on', 'on', 'on', 'on'], 
+                65,
+                '',
+                'mrg-t-40'
+            )

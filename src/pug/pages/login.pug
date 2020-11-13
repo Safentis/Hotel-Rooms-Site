@@ -1,38 +1,15 @@
 extends ../layout/layout.pug
+include ../includes/card-account-log/card-account-log.pug
 
 block head
     head
         meta(charset="UTF-8")
-        title Войти в личный кабинет
+        title Login page
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(name="keywords", content="Toxin, О нас, Услуги, Войти")
-        meta(name="description", content="Здесь Вы сможете подобрать номер на любой вкус")
+        meta(name="keywords", content="registration, Toxin, login")
+        meta(name="description", content="to login in the account")
 
 block content
-    main(class="login login-page")
-        div(class="login__inner container")
-            section(class="card card-login")
-                h1(class="card__title title-h1")
-                    | Войти
-                form(class="form", method="POST", id="login", name="login")
-                    label(class="label label-opacity-0", for="email") Email
-                    input(class="input input_hover mrg-top-20", 
-                        id="email", 
-                        type="email", 
-                        placeholder="Email",
-                    )
-                    label(class="label label-opacity-0", for="password") Пароль
-                    input(class="input input_hover mrg-top-10", 
-                        id="password", 
-                        type="password", 
-                        placeholder="Пароль",
-                    )
-                    button(class="button-form-large mrg-top-20", 
-                        type="submit", 
-                        form="login"
-                    ) Войти
-                div(class="block-login mrg-top-30")
-                    p(class="text")
-                        | Нет аккаунта на Toxin?
-                    a(class="button-form-login", href="registration.html")
-                        | Создать
+    main(class="login")
+        div(class="login__inner")
+            +accountLogin('login__card')

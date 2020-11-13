@@ -1,0 +1,24 @@
+.ui-headers-footers > .ui-nav > .ui-nav__item:nth-of-type(4) > .ui-nav__link,
+.ui-cards > .ui-nav > .ui-nav__item:nth-of-type(3) > .ui-nav__link,
+.ui-kit > .ui-nav > .ui-nav__item:nth-of-type(2) > .ui-nav__link,
+.index > .ui-nav > .ui-nav__item:nth-of-type(1) > .ui-nav__link {
+    color: $purple;
+}
+.ui-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+
+    &__item {
+        text-transform: uppercase;
+    }
+    &__link {
+        @extend .title-h3;
+    }
+}
+
+.ui-nav__item:hover {
+    opacity: .5;
+}

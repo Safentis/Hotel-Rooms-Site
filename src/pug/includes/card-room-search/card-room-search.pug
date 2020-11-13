@@ -1,0 +1,12 @@
+include ../../components/inputs/calendar/calendar.pug
+include ../../components/inputs/dropdown/dropdown.pug
+include ../../components/button/button.pug
+
+section(class="card")
+    div(class="card__header")
+        h1(class="card__title")
+            | Найдём номера под<br> ваши пожелания
+    form(class="card__form form", method="GET", id="card-search")
+        +calendar('form__calendar')
+        +dropdownGuests('form__dropdown', 'beds')
+        +buttonWidget('form__button_mrg-31', 'подобрать номер')

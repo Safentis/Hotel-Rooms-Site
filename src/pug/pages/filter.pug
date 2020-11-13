@@ -1,0 +1,104 @@
+extends ../layout/layout.pug
+
+//- INCLUDES
+include ../components/range/range.pug
+
+include ../components/inputs/dropdown/dropdown.pug
+include ../components/range/range.pug
+//- roomCard(src, number, price, starsArr, callback, type = 'Люкс', mrg)
+include ../includes/card-room-number/card-room-number.pug
+include ../components/checkboxes/checkbox-list/checkbox-list.pug
+include ../components/checkboxes/rich-checkbox-list/rich-checkbox-list.pug
+include ../components/pagination/pagination.pug
+
+block head
+    head
+        meta(charset="UTF-8")
+        title Filter page
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(name="keywords", content="numbers, searc, filters")
+        meta(name="description", content="The page contain a lot of numbers")
+
+block content
+    main(class="search container")
+        section(class="search__filters")
+            form(class="filters", method="GET", id="filters")
+                label(class="label", for="filter")
+                    | даты пребывания в отеле
+                input(class="input-filter-date", type="text", id="filter", placeholder="19 авг - 23 авг", readonly)
+                +dropdownGuests('filters__guests')
+                +range('filters__range', 'диапазон цены')
+                p(class="range-text") Стоимость за сутки пребывания в номере
+                +checkboxes('filters__rules', 'правила дома')
+                +richCheckboxes('filters__accessebiliity', 'доступность')
+                +dropdownBeds('filters__beds', '', 'удобства номера')
+                +checkboxesDropdown(
+                    'filters__services', 
+                    'дополнительные удобства', 
+                    'services',
+                    { 'breakfast':'Завтрак', 'desk':'Письменный стол', 'chair':'Стул для кормления', 'bed':'Кроватка', 'tv':'Телевизор', 'shampoo':'Шампунь' } 
+                )
+        section(class="result search__result")
+            h1(class="result__title") Номера, которые мы для вас подобрали
+            div(class="result__cards")
+                +roomCard(
+                    './images/chamber-image-one.jpg', 888, 9900,
+                    ['on', 'on', 'on', 'on', 'on'], 
+                    145, 'люкс',''
+                )
+                +roomCard(
+                    './images/chamber-image-two.jpg', 840, 9900,
+                    ['on', 'on', 'on', 'on', 'off'], 
+                    65, '',''
+                )
+                +roomCard(
+                    './images/chamber-image-three.jpg', 980, 8500,
+                    ['on', 'on', 'on', 'off', 'off'], 
+                    145, 'люкс',''
+                )
+                +roomCard(
+                    './images/chamber-image-fhour.jpg', 856, 7300,
+                    ['on', 'on', 'on', 'on', 'off'], 
+                    19, '',''
+                )
+                +roomCard(
+                    './images/chamber-image-five.jpg', 740, 6000,
+                    ['on', 'on', 'on', 'on', 'on'], 
+                    44, 'люкс',''
+                )
+                +roomCard(
+                    './images/chamber-image-six.jpg', 982, 5800,
+                    ['on', 'on', 'on', 'off', 'off'], 
+                    56, '',''
+                )
+                +roomCard(
+                    './images/chamber-image-seven.jpg', 678, 5000,
+                    ['on', 'on', 'on', 'on', 'on'], 
+                    45, '',''
+                )
+                +roomCard(
+                    './images/chamber-image-eight.jpg', 450, 5300,
+                    ['on', 'on', 'on', 'off', 'off'], 
+                    39, '',''
+                )
+                +roomCard(
+                    './images/chamber-image-nine.jpg', 350, 5000,
+                    ['on', 'on', 'on', 'off', 'off'], 
+                    77, '',''
+                )
+                +roomCard(
+                    './images/chamber-image-ten.jpg', 666, 5000,
+                    ['on', 'on', 'on', 'on', 'on'], 
+                    25, '',''
+                )
+                +roomCard(
+                    './images/chamber-image-eleven.jpg', 444, 5000,
+                    ['on', 'on', 'on', 'off', 'off'], 
+                    15, '',''
+                )
+                +roomCard(
+                    './images/chamber-image-twelwe.jpg', 852, 5000,
+                    ['on', 'on', 'on', 'off', 'off'], 
+                    55, '',''
+                )
+            +pagination('result__pagination')

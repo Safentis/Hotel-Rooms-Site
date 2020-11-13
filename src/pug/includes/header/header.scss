@@ -1,0 +1,76 @@
+.header {
+    background-color: #fff;
+    box-shadow: 0rem 1rem 2rem rgba(31, 32, 65, 0.05);
+    &__inner {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1.5rem 0;
+    }
+    &__logo {
+        align-items: center;
+        display: flex;
+        margin-right: auto;
+    }
+    &__nav {
+        margin-right: 2.65rem;
+    }
+    &__nav-list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__nav-dropdown {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        &::after {
+            content: '';
+            display: block;
+            background-position: right;
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+            background-image: url('../images/select-arrow.svg');
+            height: 2.1rem;
+            width: 2.4rem;
+        }
+    }
+    &__nav-item {
+        color: $dark-shade-50;
+        &:nth-of-type(-n+4) {
+            margin-right: 2rem;
+        }
+    }
+    &__nav-link {
+        color: $dark-shade-50;
+    }
+    &__header__buttons {
+        align-items: center;
+        display: flex;
+    }
+    &__login {
+        margin-right: 2rem;
+        padding: .7rem 1.9rem .7rem 1.9rem;
+        min-width: 6rem;
+    }
+    &__login,
+    &__registration {
+        padding: 1rem 1.9rem 1rem 1.9rem;
+    }
+
+    &__user {
+        position: relative;
+        &::before {
+            border-left: .1rem solid rgba(31, 32, 65, 0.1);
+            content: '';
+            display: block;
+            height: 3rem;
+            position: absolute;
+            width: .1rem;
+            top: -.5rem;
+            left: 0;
+        }
+    }
+    &__user-name {
+        margin-left: 2rem;
+    }
+}

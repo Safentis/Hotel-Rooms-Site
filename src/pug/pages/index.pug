@@ -1,25 +1,16 @@
 extends ../layout/layout.pug
-include ../includes/calendar/calendar.pug
-include ../includes/select/select.pug
 
 block head
     head
         meta(charset="UTF-8")
-        title Поиск номеров
+        title Landing page
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(name="keywords", content="Поиск номеров, подобрать номера")
-        meta(name="description", content="Здесь Вы сможете подобрать номер на любой вкус")
+        meta(name="keywords", content="numbers, search")
+        meta(name="description", content="search a number for a good rest")
 
 block content
-    main(class="main index-page")
-        div(class="main__inner container")
-            section(class="card")
-                h1(class="title-h1")
-                    | Найдём номера под<br> ваши пожелания
-                form(class="form", method="GET", name="selection", id="selection")
-                    +calendar()
-                    +select()
-                    a(class="button-form-large mrg-top-30", href="filters.html")
-                        | подобрать номер
-            p(class="main__text text")
+    main(class="selection")
+        div(class="selection__inner container")
+            include ../includes/card-room-search/card-room-search.pug
+            p(class="selection__description")
                 | Лучшие номера для вашей работы, отдыха и просто вдохновения

@@ -1,0 +1,47 @@
+extends ../layout/layout-ui-kit.pug
+
+block variables
+    -var pageTitle = 'ui-page-parts'
+
+block content
+    main(class="ui-page-parts")
+        include ../components/ui-nav/ui-nav.pug
+
+        //- HEADER
+        include ../includes/header/header.pug
+
+        header(class="header mrg-t-40 mrg-b-40")
+            div(class="header__inner container")
+                a(class="header__logo", href="index.html")
+                    img(src="./images/logo.svg", title="Toxin", alt="Toxin", width="105", height="40")
+                nav(class="header__nav")
+                    ul(class="header__nav-list")
+                        li(class="header__nav-item")
+                            a(class="header__nav-link", href="#")
+                                | О нас
+                        li(class="header__nav-item header__nav-dropdown")
+                            | Услуги
+                        li(class="header__nav-item")
+                            a(class="header__nav-link", href="#")
+                                | Вакансии
+                        li(class="header__nav-item")
+                            a(class="header__nav-link", href="#")
+                                | Новости
+                        li(class="header__nav-item header__nav-dropdown")
+                            | Соглашения
+                div(class="header__user")
+                    a(class="header__user-name", href="#") 
+                        | Юлий Цезарь
+
+        //-FOOTER 
+        include ../includes/footer/footer.pug
+
+        footer(class="footer-ui")
+            a(class="footer-ui__logo", href="index.html")
+                img(src="./images/logo.svg", title="Toxin", alt="Toxin", width="105", height="40")
+            p(class="footer-ui__copyright") 
+                | Copyright © 2018 Toxin отель. Все права зачищены.
+            ul(class="footer-ui__socials")
+                +socialItem('twitter')
+                +socialItem('facebook')
+                +socialItem('instagram')

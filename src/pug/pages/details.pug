@@ -1,43 +1,85 @@
 extends ../layout/layout.pug
 
+//- INCLUDES
+include ../includes/intelligence/intelligence.pug
+include ../includes/comment/comment.pug
+include ../includes/bullet-list/bullet-list.pug
+include ../includes/card-room-info/card-room-info.pug
+
 block head
     head
         meta(charset="UTF-8")
-        title Детали номера
+        title Details page
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(name="keywords", content="Поиск номеров, подобрать номера")
-        meta(name="description", content="Здесь Вы сможете подобрать номер на любой вкус")
+        meta(name="keywords", content="numbers, details")
+        meta(name="description", content="The page content details about hotel number, comments and callbacks")
 
 block content
-    main(class="main details-page")
-        div(class="main__inner")
-            div(class="images")
-                img(class="images__main", src="./images/details-first-photo.jpg", alt="Фото номера", width="981", height="485")
-                img(class="images__top-photo", src="./images/details-second-photo.jpg", alt="Фото номера", width="461", height="243")
-                img(class="images__bottom-photo", src="./images/details-third-photo.jpg", alt="Фото номера", width="461", height="243")
-            div(class="room container")
-                div(class="room__col-description")
-                    div(class="room__top")
-                        include ../components/details/information.pug
-                        include ../components/details/impression.pug
-                    div(class="room__middle mrg-top-30")
-                       include ../components/details/commentary.pug
-                    div(class="room__bottom mrg-top-40")
-                        section(class="rules")
-                            h2(class="rules__title title-h2") Правила
-                            ul(class="rules__list text")
-                                li(class="rules__item mrg-top-20")
-                                    | Нельзя с питомцами
-                                li(class="rules__item mrg-top-10")
-                                    | Без вечеринок и мероприятий
-                                li(class="rules__item mrg-top-10")
-                                    | Время прибытия — после 13:00,
-                                    | а выезд до 12:00
-                        section(class="cancel cancel-margin")
-                            h2(class="cancel__title title-h2") Отмена
-                            p(class="cancel__text text mrg-top-20")
-                                | Бесплатная отмена в течение 48 ч. 
-                                | После этого при отмене не позднее чем за 5 дн. 
-                                | до прибытия вы получите полный возврат за вычетом сбора за услуги.
-                div(class="room__col-form")
-                    include ../components/details/form.pug
+    main(class="details")
+        div(class="details__images")
+            img(class="details__images_left", 
+                src="./images/details-first-photo.jpg",
+                width="981", 
+                height="485", 
+                alt="Фото номера"
+            )
+            img(class="details__images_top-right", 
+                src="./images/details-second-photo.jpg", 
+                width="461", 
+                height="243", 
+                alt="Фото номера"
+            )
+            img(class="details__images_bottom-right", 
+                src="./images/details-third-photo.jpg",
+                width="461", 
+                height="243",  
+                alt="Фото номера"
+            )
+        div(class="details__columns container")
+            div(class="details__info")
+                div(class="details__row-top")
+
+                    //- INTELLIGENCE
+                    section(class="info details__intelligence")
+                        h2(class="info__title") Сведения о номере
+                        ul(class="intelligence info__content")
+                            +intelligenceItem('Комфорт', 'Шумопоглощающие стены', 'smile')
+                            +intelligenceItem('Удобство', 'Окно в каждой из спален', 'build')
+                            +intelligenceItem('Уют', 'Номер оснащён камином', 'fire')
+                    
+                    //- IMPRESSION
+                    section(class="info details__impression")
+                        h2(class="info__title") Впечатления от номера
+                        div(class="impression info__content")
+                            div(class="diagram impression__diagram ")
+                                p(class="diagram__count") 260
+                                p(class="diagram__voices") Голосов
+                            ul(class="impression__list")
+                                li(class="impression__item") Великолепно
+                                li(class="impression__item") Хорошо
+                                li(class="impression__item") Удовлетварительно
+                                li(class="impression__item") Разочарован
+                div(class="details__row-middle")
+
+                    //- COMMENTS
+                    section(class="info")
+                        h2(class="info__title info__comments") Отзывы посетителей номера
+                            span(class="info__comments-count") 2 отзыва
+                        +commentMale('info__content')
+                        +commentFemale('info__content')
+                div(class="details__row-bottom")
+
+                    //- RULES
+                    section(class="info")
+                        h2(class="info__title info__title_mrg-l") Правила
+                        +bulletList('info__content')
+
+                    //- CANCEL
+                    section(class="info details__cancel")
+                        h2(class="info__title") Отмена
+                        p(class="info__content cancel")
+                            | Бесплатная отмена в течение 48 ч. 
+                            | После этого при отмене не позднее чем за 5 дн. 
+                            | до прибытия вы получите полный возврат за вычетом сбора за услуги.
+            div(class="details__card")
+                +cardInfo('details__card-info')

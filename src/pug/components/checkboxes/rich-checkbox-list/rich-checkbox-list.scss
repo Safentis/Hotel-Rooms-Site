@@ -1,0 +1,15 @@
+.content {
+    display: flex;
+    margin-left: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    &__name {
+        @extend .text_darkshade;
+        // margin-top: .25rem;
+    }
+    &__text {
+        @extend .text_small;
+        margin-top: 1rem;
+        max-width: 24.6rem;
+    }
+}

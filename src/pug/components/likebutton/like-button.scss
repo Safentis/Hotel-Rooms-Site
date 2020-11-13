@@ -1,0 +1,46 @@
+.like {
+    display: inline-block;
+    position: relative;
+    @extend .button;
+    @extend .toggle;
+
+    &_active {
+        @extend .toggle_active;       
+    }
+    &_noactive {
+        @extend .toggle_noactive;
+    }
+    &__count {
+        font-size: 1rem;
+        margin-left: 1rem;
+    }
+}
+
+.like__count_noactive,
+.like__count_active {
+    &::before {
+        background-size: contain;
+        background-position: left;
+        background-repeat: no-repeat;
+        content: '';
+        display: block;
+        height: 1.2rem;
+        position: absolute;
+        width: 1.2rem;
+        top: 20%;
+        left: 10%;
+    }
+}
+
+.like__count_active {
+    color: $purple;
+    &::before {
+        background-image: url('../images/like-active-icon.svg');
+    }
+}
+.like__count_noactive {
+    color: $dark-shade-25;
+    &::before {
+        background-image: url('../images/like-default-icon.svg');
+    }
+}

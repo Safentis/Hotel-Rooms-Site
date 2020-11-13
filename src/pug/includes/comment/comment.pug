@@ -1,0 +1,30 @@
+//- LIKE-BUTTON
+include ../../components/likebutton/like-button.pug
+
+mixin commentMale(classComment = '')
+    div(class=`comment ${classComment}`)
+        div(class="comment__user")
+            a(class="comment__avatar")
+                img(src="./images/details-avatar-male.png", alt="user-avatar", width="48", height="48")
+            +like('comment__like like_active', 'like__count_active', '12')
+        div(class="comment__content")
+            div(class="comment__info")
+                p(class="comment__name") Мурад Сарафанов
+                p(class="comment__action") 5 дней назад
+            p(class="comment__text")
+                | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. 
+                | И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+
+mixin commentFemale(classComment = '')
+    div(class=`comment ${classComment}`)
+        div(class="comment__user")
+            a(class="comment__avatar")
+                img(src="./images/details-avatar-female.png", alt="user-avatar", width="48", height="48")
+            +like('comment__like like_noactive', 'like__count_noactive', '2')
+        div(class="comment__content")
+            div(class="comment__info")
+                p(class="comment__name") Патрисия Стёклышкова
+                p(class="comment__action") Неделю назад
+            p(class="comment__text")
+                | Обслуживание на высоте! Всё аккуратно, чисто. 
+                | Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент

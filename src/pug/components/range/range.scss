@@ -1,0 +1,39 @@
+.range {
+    align-items: flex-start;
+    display: flex;
+    max-width: 26.6rem;
+    justify-content: space-between;
+    &__cost {
+        @extend .label;
+    }
+    &__value {
+        line-height: 1.5rem;
+    }
+}
+
+.slider {
+    background-color: #fff;
+    border: .1rem solid $dark-shade-25;
+    border-radius: .3rem;
+    height: .6rem;
+    position: relative;
+    max-width: 26.6rem;
+    margin-top: 1.7rem;
+    &__button {
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        border-radius: 50%;
+        cursor: pointer;
+        max-width: 1.2rem;
+        min-width: 1.2rem;
+        max-height: 1.2rem;
+        min-height: 1.2rem;
+        position: absolute;
+        top: -105%;
+    }
+    &__between {
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        display: block;
+        height: .6rem;
+        width: auto;
+    }
+}

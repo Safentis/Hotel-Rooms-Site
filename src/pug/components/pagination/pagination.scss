@@ -1,0 +1,39 @@
+.pagination {
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+    &__item {
+        @extend .title-h3;
+        align-items: center;
+        border-radius: 50%;
+        color: $dark-shade-50;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        padding: 1.5rem 2rem;
+        max-width: 4rem;
+        max-height: 4rem;
+    }
+    &__text {
+        margin-top: 1rem;
+    }
+    &__item_active {
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        color: #fff;
+    }
+    &__item_green {
+        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        position: relative;
+        width: 4rem;
+        height: 4rem;
+        &:after {
+            background: center / 75% no-repeat url('../images/arrow-right-button.svg');
+            content: '';
+            display: block;
+            height: 2.4rem;
+            position: absolute;
+            width: 2.4rem;
+        }
+    }
+}

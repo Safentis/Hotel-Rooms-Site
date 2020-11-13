@@ -1,0 +1,22 @@
+//- CHECKBOXES-LIST
+
+mixin checkboxesItem(groupName, id, text)
+    li(class="checkboxes__item")
+        input(class="checkbox-input", type="checkbox", name=`${groupName}`, id=`${id}`)
+        label(class="checkbox-label", for=`${id}`)
+        p(class="checkboxes__text") #{text}
+
+mixin checkboxes(classCheckbox, label = 'Checkbox Buttons')
+    div(class=`checkbox-buttons ${classCheckbox}`)
+        p(class="checkbox-buttons__label") #{label}
+        ul(class="checkbox-buttons__list checkboxes")
+            +checkboxesItem('rules', 'smoke', 'Можно курить')
+            +checkboxesItem('rules', 'pet', 'Можно с питомцами')
+            +checkboxesItem('rules', 'huests', 'Можно пригласить гостей (до 10 человек)')
+
+mixin checkboxesDropdown(classCheckbox, label = 'Checkbox Buttons', name, obj)
+    div(class=`checkbox-buttons ${classCheckbox}`)
+        p(class=`checkbox-buttons__label checkbox-arrow_close`) #{label}
+        ul(class="checkbox-buttons__list checkboxes checkbox_hide")
+            each value, item in obj
+                +checkboxesItem(name, item, value)

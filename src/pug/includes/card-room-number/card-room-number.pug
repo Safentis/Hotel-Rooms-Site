@@ -1,0 +1,19 @@
+include ../../components/stars/stars.pug
+
+mixin roomCard(src, number, price, starsArr, callback, type = 'Люкс', mrg)
+    section(class=`room-card ${mrg}`)
+        img(class="room-card__image", src=`${src}`, width="270", height="151", alt="Изображение номера")
+        div(class="room-card__info")
+            div(class="room-card__number room-info")
+                h1(class="room-info__title") 
+                    | <span class="room-info__number">№</span> 
+                    | <span class="room-card__integer">#{number}</span>
+                    | <span class="room-info__number-type">#{type}</span>
+                p(class="room-info__cost") 
+                    | <span class="room-info__price">#{price}</span>
+                    | в сутки
+            div(class="room-card__callback")
+                +stars(starsArr, 'room-card__stars')
+                p(class="room-card__text")
+                    span(class="room-card__count") #{callback}
+                    | Отзывов

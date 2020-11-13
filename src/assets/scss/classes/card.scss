@@ -1,0 +1,48 @@
+.card {
+    background-color: #fff;
+    border: .1rem solid rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.2);
+    border-radius: .4rem;
+    width: 38rem;
+    padding: 4rem 3rem 3rem 3rem;
+
+    &__title {
+        @extend .title-h1;
+    }
+    &__form {
+        margin-top: 2rem;
+    }
+}  
+
+.form {
+    &__button_mrg-31 {
+        margin-top: 3.1rem;
+    }
+    &__button_mrg-20 {
+        margin-top: 2rem;
+    }
+    &__calendar {
+        margin-top: 2rem;
+    }
+    &__dropdown {
+        margin-top: 2rem;
+    }
+    &__field {
+        margin-top: 1rem;
+    }
+    &__input {
+        @extend .input;
+    }
+    &__label {
+        @extend .label;
+    }
+    &__label_opacity-0 {
+        @extend .label-opacity-0;
+    }
+    &__price-list {
+        margin-top: 2rem;
+    }
+    &__total-cost {
+        margin-top: 3rem;
+    }
+}

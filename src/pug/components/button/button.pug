@@ -1,0 +1,15 @@
+mixin buttonRegistration(buttonClass = '', text)
+    a(class=`button-registration ${buttonClass}`, href="#")
+        | #{text}
+
+mixin buttonLogin(buttonClass = '', text)
+    a(class=`button-login ${buttonClass}`, href="#")
+        | #{text}
+
+mixin buttonSelect(buttonClass = '', text)
+    button(class=`button-select ${buttonClass}`, type="button")
+        | #{text}
+
+mixin buttonWidget(buttonClass = '', text)
+    a(class=`button-form ${buttonClass}`, href="#")
+        | #{text}
