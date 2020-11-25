@@ -18,7 +18,7 @@
     &__nested {
         position: absolute;
         width: 100%;
-        z-index: 10;
+        z-index: 5;
     }
 }
 .nested {
@@ -43,8 +43,15 @@
     &__apply-btn {
         @extend .button-select;
     }
+    &__clear-btn {
+        transition: .5s;
+        transform: translateX(0rem);
+        opacity: 1;
+    }
     &__clear-btn_hide {
         visibility: hidden;
+        transform: translateX(6rem);
+        opacity: .1;
     }
 }
 .nested_hide {

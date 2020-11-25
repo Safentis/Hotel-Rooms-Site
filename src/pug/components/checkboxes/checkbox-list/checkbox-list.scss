@@ -1,4 +1,6 @@
-
+.checkbox-buttons {
+    max-width: 26.6rem;
+}
 .checkbox-buttons__label {
     @extend .label;
 }
@@ -26,8 +28,8 @@
     cursor: pointer;
     display: block;
     max-height: 2rem;
-    min-height: 2rem;
     max-width: 2rem;
+    min-height: 2rem;
     min-width: 2rem;
 }
 .checkbox-input:checked + .checkbox-label {
@@ -38,12 +40,12 @@
     position: relative;
     cursor: pointer;
     &::after {
-        background: right / 41% 50% no-repeat url('../images/select-arrow.svg');
+        background: right / 50% 50% no-repeat url('../images/select-arrow.svg');
         content: '';
         display: block;
         position: absolute;
-        height: 3rem;
-        width: 3rem;
+        height: 2.4rem;
+        width: 2.4rem;
         top: -50%;
         right: 4%;
     }
@@ -52,7 +54,7 @@
     @extend .checkbox-arrow_close;
     &::after {
         transform: rotate(180deg);
-        right: 0;
+        right: -.5%;
     }
 }
 .checkbox_hide {

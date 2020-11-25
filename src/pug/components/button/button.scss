@@ -5,47 +5,44 @@
     outline: none;
     text-transform: uppercase;
     text-align: center;
+    transition: .35s;
 }
-
-.button-login,
-.button-registration,
-.button-form,
-.button-select {
-    @extend .button;
-    @extend .title-h3;
-}
-
 .button_hover_opacity {
     opacity: 0.5;
 }
 .button_hover_color {
     color: $dark-shade-50 !important;
 }
-
-.button-registration,
-.button-login {
+.button-login,
+.button-registration {
+    @extend .button;
+    @extend .title-h3;
     border-radius: 2.2rem;
-    display: inline-block;
+    text-align: center;
     &:hover {
         @extend .button_hover_opacity;
     }
 }
-.button-login {
-    border: .25rem solid $purple;
-    color: $purple;
-    padding: 1.23rem 1.7rem;
-    min-width: 9.9rem;
-}
 .button-registration {
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     color: #fff;
-    padding: 1.48rem 2rem;
+    padding: 1.5rem 1.9rem;
+}
+.button-login {
+    border-top: .25rem solid #BC9CFF;
+    border-right: .25rem solid  #8BA4F9;
+    border-bottom: .25rem solid #8BA4F9;
+    border-left: .25rem solid  #8BA4F9;
+    color: $purple;
+    padding: 1.25rem 1.65rem;
 }
 .button-select {
+    @extend .button;
+    @extend .title-h3;
     color: $purple;
     padding: 0;
     &:hover {
-        @extend .button_hover_color;
+        color: $dark-shade-50;
     }
 }
 .button-form {

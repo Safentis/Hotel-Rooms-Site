@@ -1,15 +1,15 @@
-mixin buttonRegistration(buttonClass = '', text)
-    a(class=`button-registration ${buttonClass}`, href="#")
+mixin buttonRegistration(buttonClass = '', text, href = "#")
+    a(class=`button-registration ${buttonClass}`, href=`${href}`)
         | #{text}
 
-mixin buttonLogin(buttonClass = '', text)
-    a(class=`button-login ${buttonClass}`, href="#")
+mixin buttonLogin(buttonClass = '', text, href = "#")
+    a(class=`button-login ${buttonClass}`, href=`${href}`)
         | #{text}
 
 mixin buttonSelect(buttonClass = '', text)
     button(class=`button-select ${buttonClass}`, type="button")
         | #{text}
 
-mixin buttonWidget(buttonClass = '', text)
-    a(class=`button-form ${buttonClass}`, href="#")
+mixin buttonWidget(buttonClass = '', text, href = "#")
+    a(class=`button-form ${buttonClass}`, href=`${href}`)
         | #{text}

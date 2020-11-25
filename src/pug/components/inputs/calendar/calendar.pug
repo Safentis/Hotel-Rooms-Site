@@ -1,14 +1,14 @@
 include ../../button/button.pug
 
-mixin calendar(mrg = '', classHide = 'calendar_hide')
+mixin calendar(mrg = '', classHide = 'nested_hide')
     div(class=`calendar-wrapper ${mrg}`)
         label(class="label-calendar")
             | прибытие
-            input(class="input-calendar", id="entry", type="text", placeholder="ДД.ММ.ГГГГ", readonly)
+            input(class="input-calendar", data-dropdown="dropdown", id="entry", type="text", placeholder="ДД.ММ.ГГГГ", readonly)
 
         label(class="label-calendar")
             | выезд
-            input(class="input-calendar", id="departure", type="text", placeholder="ДД.ММ.ГГГГ", readonly)
+            input(class="input-calendar", data-dropdown="dropdown", id="departure", type="text", placeholder="ДД.ММ.ГГГГ", readonly)
         +calendarBody(classHide)
 
 mixin calendarBody(classHide = '')

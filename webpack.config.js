@@ -114,7 +114,7 @@ module.exports = {
         new CopyWebpackPlugin({
             patterns: [
                 {from: `${PATHS.src}/assets/images`, to: `${PATHS.dist}/images`},
-                {from: `${PATHS.src}/static`, to: ``}
+                {from: `${PATHS.src}/static`, to: `${PATHS.dist}/images`}
             ]
         }),
         ...PAGES.map(page => new HTMLWebpackPlugin({

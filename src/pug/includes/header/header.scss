@@ -49,14 +49,12 @@
     }
     &__login {
         margin-right: 2rem;
-        padding: .7rem 1.9rem .7rem 1.9rem;
-        min-width: 6rem;
+        padding: .8rem 1.8rem .8rem 1.8rem;
+        // min-width: 6rem;
     }
-    &__login,
     &__registration {
         padding: 1rem 1.9rem 1rem 1.9rem;
     }
-
     &__user {
         position: relative;
         &::before {

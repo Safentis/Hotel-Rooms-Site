@@ -16,7 +16,7 @@ mixin checkboxes(classCheckbox, label = 'Checkbox Buttons')
 
 mixin checkboxesDropdown(classCheckbox, label = 'Checkbox Buttons', name, obj)
     div(class=`checkbox-buttons ${classCheckbox}`)
-        p(class=`checkbox-buttons__label checkbox-arrow_close`) #{label}
-        ul(class="checkbox-buttons__list checkboxes checkbox_hide")
+        p(class=`checkbox-buttons__label checkbox-arrow_close`, data-dropdown="dropdown") #{label}
+        ul(class="checkbox-buttons__list checkboxes nested_hide")
             each value, item in obj
                 +checkboxesItem(name, item, value)

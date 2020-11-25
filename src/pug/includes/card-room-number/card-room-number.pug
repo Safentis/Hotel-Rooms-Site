@@ -17,3 +17,11 @@ mixin roomCard(src, number, price, starsArr, callback, type = 'Люкс', mrg)
                 p(class="room-card__text")
                     span(class="room-card__count") #{callback}
                     | Отзывов
+        div(class="room-card__arrows")
+            span(class="room-card__arrow-left")
+            span(class="room-card__arrow-right")
+        ul(class="dots")
+            li(class="dots__item dots__item_active")
+            li(class="dots__item")
+            li(class="dots__item")
+            li(class="dots__item")

@@ -2,10 +2,8 @@ extends ../layout/layout.pug
 
 //- INCLUDES
 include ../components/range/range.pug
-
 include ../components/inputs/dropdown/dropdown.pug
 include ../components/range/range.pug
-//- roomCard(src, number, price, starsArr, callback, type = 'Люкс', mrg)
 include ../includes/card-room-number/card-room-number.pug
 include ../components/checkboxes/checkbox-list/checkbox-list.pug
 include ../components/checkboxes/rich-checkbox-list/rich-checkbox-list.pug
@@ -18,6 +16,7 @@ block head
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(name="keywords", content="numbers, searc, filters")
         meta(name="description", content="The page contain a lot of numbers")
+        link(rel="shortcut icon", href="../images/favicon.ico", type="image/x-icon")
 
 block content
     main(class="search container")

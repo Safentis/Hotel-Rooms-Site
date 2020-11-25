@@ -109,8 +109,8 @@ class Handlers {
         this.year = new Date().getFullYear();
         this.month = new Date().getMonth();
         this.curentDate = new Date().toLocaleDateString();
-        this.entry = {flag: false, date: 0};
-        this.departure = {flag: false, date: 0};
+        this.entry = { flag: false, date: 0 };
+        this.departure = { flag: false, date: 0 };
         this.entryInput = undefined;
         this.departureInput = undefined;
     }
@@ -154,17 +154,28 @@ class Handlers {
     handleCell(e, td) {
         if (this.entry.flag && this.departure.flag) return;
 
+
         if (this.entry.flag) {
-            this.departure.flag = true;
-            this.departure.date = td.dataset.date;
-            this.compareDate(this.departure.date);
-            td.classList.add('calendar_active-date');
-            this.handleBetweenCells(e);
+            
+            // если дата выезда будет меньше даты въезда
+            // то маркер не отметит ячейку и не запишет
+            // дату в объект this.departure
+            if (!this.compareDate(td.dataset.date, true)) return;
+            if (this.compareDate(td.dataset.date)) {
+                this.departure.flag = true;
+                this.departure.date = td.dataset.date;
+                td.classList.add('calendar_active-date');
+                this.handleBetweenCells(e);
+            }
+
         } else {
-            this.entry.flag = true;
-            this.entry.date = td.dataset.date;
-            this.compareDate(this.entry.date);
-            td.classList.add('calendar_active-date');
+
+            if (this.compareDate(td.dataset.date)) {
+                this.entry.flag = true;
+                this.entry.date = td.dataset.date;
+                td.classList.add('calendar_active-date');
+            }
+
         }
     }
     /**
@@ -247,14 +258,41 @@ class Handlers {
         this.entry.flag = false;
         this.departure.flag = false;
     }
-    compareDate(date) {
+    compareDate(date, flag = false) {
+        let curentDate = flag ? this.entry.date.split('.') : this.curentDate.split('.');
+        let selectDate = date.split('.');
         
+        let [curentDay, curentMonth, curentYear] = curentDate;
+        let [selectDay, selectMonth, selectYear] = selectDate;
+
+        if (
+            (selectDay >= curentDay) === true &&
+            (selectMonth < curentMonth) === true &&
+            (selectMonth === curentMonth) === false &&
+            (selectYear > curentYear) === false
+                ||
+            (selectDay >= curentDay) === false &&
+            (selectMonth < curentMonth) === false &&
+            (selectMonth === curentMonth) === true &&
+            (selectYear > curentYear) === false
+                ||
+            (selectDay >= curentDay) === false &&
+            (selectMonth < curentMonth) === true &&
+            (selectMonth === curentMonth) === false &&
+            (selectYear > curentYear) === false
+        ) 
+        {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
 }
 
 class Events {
     handleEvent(e) {
-        let method = `on${e.type[0].toUpperCase() + e.type.slice(1)}`;
+        let method = 'on' + e.type[0].toUpperCase() + e.type.slice(1);
         this[method](e);        
     }
     onClick(e) {

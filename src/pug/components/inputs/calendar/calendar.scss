@@ -5,9 +5,6 @@
     position: relative;
 }
 
-.calendar_hide {
-    display: none;
-}
 .calendar {
     background-color: #fff;
     border: .1rem solid $dark-shade-25;
@@ -51,9 +48,7 @@
         color: $purple;
         font-weight: 700;
     }
-    &__cell {
-        // min-height: 5rem;
-    }
+    &__cell {}
 
     &__days-item,
     &__cell {

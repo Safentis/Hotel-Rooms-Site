@@ -44,27 +44,21 @@
     margin-top: 25.75rem;
 }
 
-// BULLET-LIST
-.bullet-list {
-    &__item {
-        align-items: flex-start;
-        display: flex;
-        margin-top: 1rem;
-        margin-left: 2rem;
-        width: 27.1rem;
-        position: relative;
-        &::before {
-            background-color: $dark-shade-25;
-            border-radius: 50%;
-            content: '';
-            display: block;
-            max-height: 1rem;
-            min-height: 1rem;
-            max-width: 1rem;
-            min-width: 1rem;
-            position: absolute;
-            left: -2rem;
-            top: .5rem;
-        }
-    }
+.label-uikit-buttons {
+    margin-top: 4.5rem;
+}
+.ui-kit__label-checkbox {
+    max-width: 26.6rem;
+}
+.button-uikit_purple {
+    margin-top: 2.6rem;
+}
+.button-uikit_white {
+    margin-top: 5rem;
+}
+.button-uikit-select {
+    margin-top: 3.6rem;
+}
+.button-uikit-widget {
+    margin-top: 2.8rem;
 }

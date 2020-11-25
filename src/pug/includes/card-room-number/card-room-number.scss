@@ -3,6 +3,7 @@
     box-shadow: 0 1rem 2rem rgba(31, 32, 65, 0.05);
     border-radius: .4rem;
     max-width: 27rem;
+    position: relative;
 
     &__image {
         border-top-left-radius: .4rem;
@@ -26,5 +27,61 @@
     &__count {
         @extend .text_darkshade;
         margin-right: .5rem;
+    }
+
+    &__arrows {
+        position: absolute;
+        opacity: .3;
+        top: 5.3rem;
+        transition: .3s;
+        transform: translateY(-5.3rem);
+        visibility: hidden;
+        width: 100%;
+    }
+    &__arrow-left,
+    &__arrow-right {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 20%;
+        cursor: pointer;
+        height: 4.4rem;
+        position: absolute;    
+        width: 4.4rem;    
+    }
+    &__arrow-left {
+        background-image: url('../images/chamber-arrow-left.svg');
+        left: 0rem;
+    }
+    &__arrow-right {
+        background-image: url('../images/chamber-arrow-right.svg');
+        right: 0rem;
+    }
+}
+
+.room-card:hover > .room-card__arrows {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.dots {
+    display: flex;
+    position: absolute;
+    top: 12.84rem;
+    right: 1.511rem;
+
+    &__item {
+        border-radius: 50%;
+        border: .1rem solid #fff;
+        cursor: pointer;
+        height: .75rem;
+        width: .75rem;
+
+        &:nth-of-type(1n+2) {
+            margin-left: .375rem;
+        }
+    }
+    &__item_active {
+        background-color: #fff;
     }
 }

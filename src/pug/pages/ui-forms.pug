@@ -99,20 +99,21 @@ block content
                 //- COL3 -----------------------------
                 //- RANGE
                 //- mrg
-                +range()
+                +range('', 'Range Slider')
                 
                 //- BUTTONS
-                p(class="label mrg-t-40") buttons
-                div(class="button-uikit_purple mrg-t-16")
-                    +buttonLogin('mrg-r-20', 'click me')
-                    +buttonLogin('button_hover_opacity', 'click me')
-                div(class="button-uikit_white mrg-t-30")
+                p(class="label label-uikit-buttons") buttons
+                div(class="button-uikit_purple")
                     +buttonRegistration('mrg-r-20', 'click me')
                     +buttonRegistration('button_hover_opacity', 'click me')
-                div(class="button-uikit-select mrg-t-30")
+                div(class="button-uikit_white")
+                    +buttonLogin('mrg-r-20', 'click me')
+                    +buttonLogin('button_hover_opacity', 'click me')
+                div(class="button-uikit-select")
                     +buttonSelect('mrg-r-20', 'click me')
                     +buttonSelect('button_hover_color mrg-r-20', 'click me')
-                +buttonWidget('mrg-t-20', 'перейти к оплате')
+                div(class="button-uikit-widget")
+                    +buttonWidget('', 'перейти к оплате')
 
                 //- PAGINATION
                 p(class="label mrg-t-40") pagination
@@ -133,9 +134,9 @@ block content
                         span(class="label__state") expended
                     input(class="dropdown__input", type="text", id="beds-drop-open", placeholder="2 спальни, 2 кровати...", readonly)
                     ul(class="dropdown__nested nested")
-                        +nestedItem('спальни', 2, 'counter__button_active')
-                        +nestedItem('кровати', 1, 'counter__button_active')
-                        +nestedItem('ванные комнаты')
+                        +nestedItem('спальни', 'set-minus', 'set-plus', 2, 'counter__button_active')
+                        +nestedItem('кровати', 'set-minus', 'set-plus', 2, 'counter__button_active')
+                        +nestedItem('ванные комнаты', 'set-minus', 'set-plus')
 
                 //- CHECKBOXES-DROPDOWN
                 P(class="label ui-kit__label-checkbox checkbox-arrow_close") expandable checkbox list
@@ -152,7 +153,7 @@ block content
                     label(class="dropdown__label", for="peoples-drop-zero")
                         | dropdown
                     input(class="dropdown__input", type="text", id="peoples-drop-zero", placeholder="Сколько гостей", readonly)
-                    ul(class="dropdown__nested nested")
+                    ul(class="dropdown__nested nested", data-count="0")
                         +nestedItem('взрослые')
                         +nestedItem('дети')
                         +nestedItem('младенцы')
@@ -166,36 +167,19 @@ block content
                     label(class="dropdown__label", for="peoples-drop")
                         | dropdown
                     input(class="dropdown__input", type="text", id="peoples-drop", placeholder="3 гостя", readonly)
-                    ul(class="dropdown__nested nested")
-                        +nestedItem('взрослые', 2, 'counter__button_active')
-                        +nestedItem('дети', 1, 'counter__button_active')
+                    ul(class="dropdown__nested nested", data-count="0")
+                        +nestedItem('взрослые', 'minus', 'plus', 2, 'counter__button_active')
+                        +nestedItem('дети', 'minus', 'plus', 1, 'counter__button_active')
                         +nestedItem('младенцы')
                         +nestedItemButtons('')
 
                 //- BULLET-LIST
                 p(class="label ui-kit__label-bullet") bullet list
                 +bulletList('mrg-t-16')
-                //- ul(class="bullet-list mrg-t-16")
-                //-     li(class="bullet-list__item") Нельзя с питомцами
-                //-     li(class="bullet-list__item") Без вечеринок и мероприятий
-                //-     li(class="bullet-list__item") Время прибытия — после 13:00, а выезд до 12:00
         div(class="ui-kit__row ui-kit__row_3")
             div(class="ui-kit__col ui-kit__col_7")
                 //- COL7 -----------------------------
                 +intelligenceBlock('ui-kit__feature')
-            
             div(class="ui-kit__col ui-kit__col_8")
                 //- COMMENT
                 +commentMale()
-                //- div(class="comment")
-                //-     div(class="comment__user")
-                //-         a(class="comment__avatar")
-                //-             img(src="./images/details-avatar-male.png", alt="user-avatar", width="48", height="48")
-                //-         +like('comment__like like_active', 'like__count_active', '12')
-                //-     div(class="comment__content")
-                //-         div(class="comment__info")
-                //-             p(class="comment__name") Мурад Сарафанов
-                //-             p(class="comment__action") 5 дней назад
-                //-         p(class="comment__text")
-                //-             | Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. 
-                //-             | И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
