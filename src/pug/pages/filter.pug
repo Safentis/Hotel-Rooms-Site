@@ -20,25 +20,20 @@ block head
 
 block content
     main(class="search container")
-        section(class="search__filters")
+        div(class="search__filters")
             form(class="filters", method="GET", id="filters")
                 label(class="label", for="filter")
                     | даты пребывания в отеле
                 input(class="input-filter-date", type="text", id="filter", placeholder="19 авг - 23 авг", readonly)
-                +dropdownGuests('filters__guests')
+                +dropdown('filters__guests', 'guests-filter', 'guests-filter-input')
                 +range('filters__range', 'диапазон цены')
                 p(class="range-text") Стоимость за сутки пребывания в номере
                 +checkboxes('filters__rules', 'правила дома')
                 +richCheckboxes('filters__accessebiliity', 'доступность')
-                +dropdownBeds('filters__beds', '', 'удобства номера')
-                +checkboxesDropdown(
-                    'filters__services', 
-                    'дополнительные удобства', 
-                    'services',
-                    { 'breakfast':'Завтрак', 'desk':'Письменный стол', 'chair':'Стул для кормления', 'bed':'Кроватка', 'tv':'Телевизор', 'shampoo':'Шампунь' } 
-                )
+                +dropdown('filters__beds', 'beds-filter', 'beds-filter-input')
+                +checkboxesDropdown('filters__services', 'checkbox-dropdown')
         section(class="result search__result")
-            h1(class="result__title") Номера, которые мы для вас подобрали
+            h2(class="result__title") Номера, которые мы для вас подобрали
             div(class="result__cards")
                 +roomCard(
                     './images/chamber-image-one.jpg', 888, 9900,

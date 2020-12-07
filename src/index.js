@@ -6,3 +6,4 @@ import './pug/components/range/range.js';
 import './pug/components/toggle/toggle.js';
 import './pug/components/inputs/dropdown/dropdown.js';
 import './pug/components/inputs/calendar/calendar.js';
+import './pug/components/checkboxes/checkbox-list/checkbox-list.js';

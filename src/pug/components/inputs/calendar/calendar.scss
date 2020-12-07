@@ -1,8 +1,11 @@
 // CALENDAR
 .calendar-wrapper {
+    position: relative;
+}
+
+.calendar-inputs {
     display: flex;
     justify-content: space-between;
-    position: relative;
 }
 
 .calendar {
@@ -122,4 +125,8 @@
         rgba($color: #BC9CFF, $alpha: 0.25) 0%, 
         rgba($color: #8BA4F9, $alpha: 0.25) 100%
     );
+}
+
+.calendar_hide {
+    display: none;
 }

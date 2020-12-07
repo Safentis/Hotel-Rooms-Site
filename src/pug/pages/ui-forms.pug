@@ -3,33 +3,19 @@ extends ../layout/layout-ui-kit.pug
 block variables
     -var pageTitle = 'ui-forms'
 
-//- CHECKBOX-LIST
 include ../components/checkboxes/checkbox-list/checkbox-list.pug
-//- RADIO
 include ../components/radio/radio.pug
-//- TOGGLE
 include ../components/toggle/toggle.pug
-//- LIKE-BUTTON
 include ../components/likebutton/like-button.pug
-//- STARS
 include ../components/stars/stars.pug
-//- RANGE
 include ../components/range/range.pug
-//- BUTTONS
 include ../components/button/button.pug
-//- PAGINATION
 include ../components/pagination/pagination.pug
-//- DROPDOWN
 include ../components/inputs/dropdown/dropdown.pug 
-//- CALENDAR
 include ../components/inputs/calendar/calendar.pug 
-//- CHECKBOXES
 include ../components/checkboxes/rich-checkbox-list/rich-checkbox-list.pug
-//- INTELLIGENCE
 include ../includes/intelligence/intelligence.pug
-//- COMMENT
 include ../includes/comment/comment.pug
-//- COMMENT
 include ../includes/bullet-list/bullet-list.pug
 
 block content
@@ -48,21 +34,20 @@ block content
                     span(class="label__state") Hover / Focus
                 input(class="input input_hover-ui-kit", type="text", id="text", placeholder="This is pretty awesome")
                 
-                label(class="label mrg-t-20", for="select")
-                    | Dropdown
-                input(class="input-select", type="text", id="select", placeholder="Сколько гостей", readonly)
+                +dropdown("mrg-t-20", "ui-peoples1", "ui-peoples-input1") 
                 
                 label(class="label mrg-t-30", for="date")
                     | masked text field
                 input(class="input", type="text", id="date", placeholder="ДД.ММ.ГГГГ")
                 
                 //- CALENDAR
-                +calendar('mrg-t-40')
+                +calendar('mrg-t-40', 'ui-calendar-wrapper')
                 
-                //- FILTER-DATES
+                FILTER-DATES
                 label(class="label mrg-t-40", for="filter")
                     | filter date dropdown
                 input(class="input-filter-date", type="text", id="filter", placeholder="19 авг - 23 авг", readonly)
+
 
                 //- SUBSCRIBE
                 label(class="label label-ui-kit mrg-t-40", for="subscrire")
@@ -122,56 +107,24 @@ block content
             div(class="ui-kit__col ui-kit__col_4")
                 //- COL4 -----------------------------
                 //- DROPDOWN
-                //- classDropdown, classHideNestedList, 'id' 
-                div(class="dropdown dropdown-width-266")
-                    label(class="dropdown__label", for="beds-drop-close")
-                        | dropdown
-                    input(class="dropdown__input", type="text", id="beds-drop-close", placeholder="2 спальни, 2 кровати...", readonly)
-                
-                div(class="dropdown dropdown-width-266 mrg-t-20")
-                    label(class="label label-ui-kit", for="beds-drop-open")
-                        span(class="label__name") dropdown
-                        span(class="label__state") expended
-                    input(class="dropdown__input", type="text", id="beds-drop-open", placeholder="2 спальни, 2 кровати...", readonly)
-                    ul(class="dropdown__nested nested")
-                        +nestedItem('спальни', 'set-minus', 'set-plus', 2, 'counter__button_active')
-                        +nestedItem('кровати', 'set-minus', 'set-plus', 2, 'counter__button_active')
-                        +nestedItem('ванные комнаты', 'set-minus', 'set-plus')
+                +dropdown("dropdown-width-266", "ui-options1", "ui-peoples-input1") 
+                +dropdown("dropdown-width-266 mrg-t-20", "ui-options2", "ui-peoples-input2")
 
                 //- CHECKBOXES-DROPDOWN
                 P(class="label ui-kit__label-checkbox checkbox-arrow_close") expandable checkbox list
                 //- -------------------------------------------------------------
-                div(class=`checkbox-buttons mrg-t-50`)
-                    p(class=`checkbox-buttons__label checkbox-arrow_open`) expandable checkbox list
-                    ul(class="checkbox-buttons__list checkboxes")
-                        each value, item in { 'breakfast':'Завтрак', 'desk':'Письменный стол', 'chair':'Стул для кормления', 'bed':'Кроватка', 'tv':'Телевизор', 'shampoo':'Шампунь' } 
-                            +checkboxesItem('services', item, value)
+                +checkboxesDropdown('checkbox-buttons mrg-t-50', 'ui-checkbox-dropdown')
+               
                     
             div(class="ui-kit__col ui-kit__col_5")
                 //- COL5 -----------------------------
-                div(class="dropdown dropdown-width-32")
-                    label(class="dropdown__label", for="peoples-drop-zero")
-                        | dropdown
-                    input(class="dropdown__input", type="text", id="peoples-drop-zero", placeholder="Сколько гостей", readonly)
-                    ul(class="dropdown__nested nested", data-count="0")
-                        +nestedItem('взрослые')
-                        +nestedItem('дети')
-                        +nestedItem('младенцы')
-                        +nestedItemButtons()
-                        
+
+                +dropdown("dropdown-width-32", "ui-peoples2", "ui-peoples-input2")
                 +richCheckboxes('ui-kit__label-dropdown', 'rich Checkbox Buttons')
 
             div(class="ui-kit__col ui-kit__col_6")
                 //- COL6 -----------------------------
-                div(class="dropdown dropdown-width-32")
-                    label(class="dropdown__label", for="peoples-drop")
-                        | dropdown
-                    input(class="dropdown__input", type="text", id="peoples-drop", placeholder="3 гостя", readonly)
-                    ul(class="dropdown__nested nested", data-count="0")
-                        +nestedItem('взрослые', 'minus', 'plus', 2, 'counter__button_active')
-                        +nestedItem('дети', 'minus', 'plus', 1, 'counter__button_active')
-                        +nestedItem('младенцы')
-                        +nestedItemButtons('')
+                +dropdown("dropdown-width-32", "ui-peoples3", "ui-peoples-input3")
 
                 //- BULLET-LIST
                 p(class="label ui-kit__label-bullet") bullet list

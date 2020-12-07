@@ -8,17 +8,21 @@
     &__image {
         border-top-left-radius: .4rem;
         border-top-right-radius: .4rem;
+        max-width: 100%;
     }
     &__info {
-        padding: 1rem 1.7rem 1.3rem 2rem;
+        padding: 1rem 1.7rem 2rem 2rem;
     }
     &__number {
         border-bottom: .1rem solid rgba(31, 32, 65, 0.1);
+        display: flex;
+        flex-wrap: wrap;
         padding-bottom: .5rem;
     }
     &__callback {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         padding-top: .75rem;
     }
     &__integer {
@@ -74,8 +78,10 @@
         border-radius: 50%;
         border: .1rem solid #fff;
         cursor: pointer;
-        height: .75rem;
-        width: .75rem;
+        max-height: .75rem;
+        max-width: .75rem;
+        min-height: .75rem;
+        min-width: .75rem;
 
         &:nth-of-type(1n+2) {
             margin-left: .375rem;

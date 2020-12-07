@@ -14,9 +14,5 @@ mixin checkboxes(classCheckbox, label = 'Checkbox Buttons')
             +checkboxesItem('rules', 'pet', 'Можно с питомцами')
             +checkboxesItem('rules', 'huests', 'Можно пригласить гостей (до 10 человек)')
 
-mixin checkboxesDropdown(classCheckbox, label = 'Checkbox Buttons', name, obj)
-    div(class=`checkbox-buttons ${classCheckbox}`)
-        p(class=`checkbox-buttons__label checkbox-arrow_close`, data-dropdown="dropdown") #{label}
-        ul(class="checkbox-buttons__list checkboxes nested_hide")
-            each value, item in obj
-                +checkboxesItem(name, item, value)
+mixin checkboxesDropdown(classCheckbox, idCheckbox = 'checkbox-dropdown')
+    div(class=`checkbox-buttons ${classCheckbox}`, id=`${idCheckbox}`)

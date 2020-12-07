@@ -37,7 +37,8 @@ block content
         div(class="ui-cards__coll_3")
             //- 5
             include ../includes/card-room-number/card-room-number.pug
-            +calendarBody('ui-cards__calendar', 'month-calendar', 'body-calendar')                            
+            //- +calendarBody('ui-cards__calendar', 'month-calendar', 'body-calendar')
+            +calendar('ui-cards__calendar', 'ui-body-calendar')                            
             +roomCard(
                 './images/chamber-image-one.jpg', 
                 888, 

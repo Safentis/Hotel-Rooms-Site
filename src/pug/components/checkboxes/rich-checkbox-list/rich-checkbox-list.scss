@@ -5,7 +5,6 @@
     justify-content: space-between;
     &__name {
         @extend .text_darkshade;
-        // margin-top: .25rem;
     }
     &__text {
         @extend .text_small;

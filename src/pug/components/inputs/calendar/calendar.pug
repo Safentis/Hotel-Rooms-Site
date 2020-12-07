@@ -1,28 +1,6 @@
 include ../../button/button.pug
 
-mixin calendar(mrg = '', classHide = 'nested_hide')
-    div(class=`calendar-wrapper ${mrg}`)
-        label(class="label-calendar")
-            | прибытие
-            input(class="input-calendar", data-dropdown="dropdown", id="entry", type="text", placeholder="ДД.ММ.ГГГГ", readonly)
-
-        label(class="label-calendar")
-            | выезд
-            input(class="input-calendar", data-dropdown="dropdown", id="departure", type="text", placeholder="ДД.ММ.ГГГГ", readonly)
-        +calendarBody(classHide)
-
-mixin calendarBody(classHide = '')
-    div(class=`calendar ${classHide}`)
-        span(class="calendar__arrow-prev", data-arrow="prev")
-        span(class="calendar__arrow-next", data-arrow="next")
-        div(class="calendar__date")
-            p(class="calendar__month", data-month='month')
-        table(class="calendar__table")
-            thead(class="calendar__header")
-                tr(class="calendar__days")
-                    each item in ['Пн', 'Вн', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
-                        th(class="calendar__days-item") #{item}
-            tbody(class="calendar__body", data-body='body')
-        div(class="calendar__buttons")
-            +buttonSelect('calendar__clear', 'очистить')
-            +buttonSelect('calendar__apply', 'применить')
+mixin calendar(mrg = '', idCalendar)
+    div(class=`calendar-wrapper ${mrg}`, id=`${idCalendar}`)
+        div(class="calendar-inputs", data-main="calendar-inputs")
+        div(class=`calendar calendar_hide`, data-main="calendar-main")

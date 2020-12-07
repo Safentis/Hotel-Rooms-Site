@@ -13,8 +13,8 @@ mixin cardInfo(classInfo = '')
                 | <span class="room-info__price"> 9 990₽ </span>
                 | в сутки
         form(class="card__form form", method="POST")
-            +calendar('form__calendar')
-            +dropdownGuests('form__dropdown', 'number-beds')
+            +calendar('form__calendar', 'calendar-card-info')
+            +dropdown('form__dropdown', 'guests-card-info', 'guests-number')
             ul(class="price-list form__price-list")
                 li(class="price-list__item")
                     p(class="price-list__service") 9 990₽ х 4 суток

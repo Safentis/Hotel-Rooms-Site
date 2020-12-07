@@ -1,38 +1,45 @@
-//- DROPDOWN-ITEM-SELECTS
-mixin nestedItem(categoryName, buttonMinus = 'minus', buttonPlus = 'plus', value = 0, classButton = 'counter__button_noactive')
-    li(class="nested__item", data-value="0")
-        p(class="nested__category") #{categoryName}
-        div(class="counter")
-            button(class=`counter__button ${classButton}`, type="button", data-button=`${buttonMinus}`) -
-            span(class="counter__value", data-category=`${categoryName}`) #{value}
-            button(class="counter__button counter__button_active", type="button", data-button=`${buttonPlus}`) +
+//- //- DROPDOWN-ITEM-SELECTS
+//- mixin nestedItem(categoryName, buttonMinus = 'minus', buttonPlus = 'plus', value = 0, classButton = 'counter__button_noactive')
+//-     li(class="nested__item", data-value="0")
+//-         p(class="nested__category") #{categoryName}
+//-         div(class="counter")
+//-             button(class=`counter__button ${classButton}`, type="button", data-button=`${buttonMinus}`) -
+//-             span(class="counter__value", data-category=`${categoryName}`) #{value}
+//-             button(class="counter__button counter__button_active", type="button", data-button=`${buttonPlus}`) +
 
-//- DROPDOWN-ITEM-BUTTONS
-mixin nestedItemButtons(classHide = 'nested__clear-btn_hide')
-    li(class="nested__item nested__buttons")
-        button(class=`nested__clear-btn ${classHide}`, type="button", data-button="clear-all") очистить
-        button(class="nested__apply-btn", type="button", data-button="apply-all") применить
+//- //- DROPDOWN-ITEM-BUTTONS
+//- mixin nestedItemButtons(classHide = 'nested__clear-btn_hide')
+//-     li(class="nested__item nested__buttons")
+//-         button(class=`nested__clear-btn ${classHide}`, type="button", data-button="clear-all") очистить
+//-         button(class="nested__apply-btn", type="button", data-button="apply-all") применить
 
 
-//- DROPDOWN-BEDS
-mixin dropdownBeds(classDropdown, id = 'beds', label)
-    div(class=`dropdown ${classDropdown}`)
-        label(class="dropdown__label", for=`${id}`)
-            | #{label}
-        input(class="dropdown__input", type="text", id=`${id}`, data-dropdown="dropdown", placeholder="2 спальни, 2 кровати...", readonly)
-        ul(class=`dropdown__nested nested nested_hide`, data-count="0")
-            +nestedItem('спальни', 'set-minus', 'set-plus')
-            +nestedItem('кровати', 'set-minus', 'set-plus')
-            +nestedItem('ванные комнаты', 'set-minus', 'set-plus')
+//- //- DROPDOWN-BEDS
+//- mixin dropdownBeds(classDropdown, id = 'beds', label, idSelect = 'select')
+//-     div(class=`dropdown ${classDropdown}`, id=`${idSelect}`)
+//-         label(class="dropdown__label", for=`${id}`)
+//-             | #{label}
+//-         input(class="dropdown__input", type="text", id=`${id}`, data-dropdown="dropdown", placeholder="2 спальни, 2 кровати...", readonly)
+//-         ul(class=`dropdown__nested nested nested_hide`, data-count="0")
+//-             +nestedItem('спальни', 'set-minus', 'set-plus')
+//-             +nestedItem('кровати', 'set-minus', 'set-plus')
+//-             +nestedItem('ванные комнаты', 'set-minus', 'set-plus')
 
 //- DROPDOWN-PEOPLES
-mixin dropdownGuests(classDropdown, id = 'peoples')
-    div(class=`dropdown ${classDropdown}`)
-        label(class="dropdown__label", for=`${id}`)
+//- mixin dropdownGuests(classDropdown, id = 'peoples', idSelect = 'select')
+//-     div(class=`dropdown ${classDropdown}`, id=`${idSelect}`)
+//-         label(class="dropdown__label", for=`${id}`)
+//-             | гости
+//-         input(class="dropdown__input", type="text", id=`${id}`, data-dropdown="dropdown", placeholder="Сколько гостей", readonly)
+//-         ul(class=`dropdown__nested nested nested_hide`, data-count="0")
+//-             +nestedItem('взрослые')
+//-             +nestedItem('дети')
+//-             +nestedItem('младенцы')
+//-             +nestedItemButtons(classHideButtons)
+
+mixin dropdown(classDropdown, idDropdown, idInput)
+    div(class=`dropdown ${classDropdown}`, id=`${idDropdown}`)
+        label(class="dropdown__label", for=`${idInput}`)
             | гости
-        input(class="dropdown__input", type="text", id=`${id}`, data-dropdown="dropdown", placeholder="Сколько гостей", readonly)
+        input(class="dropdown__input", type="text", id=`${idInput}`, data-dropdown="dropdown", readonly)
         ul(class=`dropdown__nested nested nested_hide`, data-count="0")
-            +nestedItem('взрослые')
-            +nestedItem('дети')
-            +nestedItem('младенцы')
-            +nestedItemButtons(classHideButtons)
