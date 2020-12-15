@@ -3,7 +3,7 @@
         display: flex;
         align-items: center;
     }
-    &__item {
+    &__link {
         @extend .title-h3;
         align-items: center;
         border-radius: 50%;
@@ -18,11 +18,11 @@
     &__text {
         margin-top: 1rem;
     }
-    &__item_active {
+    &__link_active {
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
         color: #fff;
     }
-    &__item_green {
+    &__link_green {
         background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
         position: relative;
         width: 4rem;

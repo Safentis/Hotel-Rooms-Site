@@ -1,11 +1,17 @@
+mixin paginationItem(content, active = '')
+    li(class="pagination__item")
+        a(class=`pagination__link ${active}`, href="#")
+            | #{content}
+
 mixin pagination(mrg)
     div(class=`pagination ${mrg}`)
         ul(class="pagination__list")
-            li(class="pagination__item pagination__item_active") 1
-            li(class="pagination__item") 2
-            li(class="pagination__item") 3
-            li(class="pagination__item") ...
-            li(class="pagination__item") 15
-            li(class="pagination__item pagination__item_green") 
+            +paginationItem('1', 'pagination__link_active')
+            +paginationItem('2')
+            +paginationItem('3')
+            +paginationItem('...')
+            +paginationItem('15')
+            li(class="pagination__item")
+                a(class="pagination__link pagination__link_green") 
         p(class="pagination__text")
             | 1 – 12 из 100+ вариантов аренды
